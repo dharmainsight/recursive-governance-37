@@ -13,7 +13,9 @@ def run(args,cwd=None,expect=0):
 def main():
     out=run([SCRIPTS/'validate_registry.py'])
     assert '37/37' in out
-    registry=json.loads((SKILL/'references/factor-registry.json').read_text(encoding='utf-8'))
+    sys.path.insert(0, str(SCRIPTS))
+    from registry_io import load_registry
+    registry=load_registry(SKILL)
     assert len(registry['factors'])==37
     assert registry['group_counts']=={'四念処':4,'四正断':4,'四神足':4,'五根':5,'五力':5,'七覚支':7,'八正道':8}
     # Sample run record must pass structural evaluator.
