@@ -1,0 +1,6 @@
+interface:
+  display_name: "Recursive Governance 37"
+  short_description: "Audit and retrofit a repo with a complete 37-factor recursive agent-governance loop."
+  default_prompt: "Audit this repository with $recursive-governance-37. Map existing sources of truth first, evaluate all 37 factors, and propose the smallest safe augmentation before changing files."
+policy:
+  allow_implicit_invocation: false
