@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "task": {
+    "goal": "Fix a reproducible API authorization defect and prevent recurrence.",
+    "acceptance_criteria": ["unauthorized request returns 403", "authorized request still succeeds", "regression test passes"],
+    "non_goals": ["redesign authentication"],
+    "risk_class": "medium"
+  },
+  "observations": {
+    "body": ["reproduced failing endpoint", "inspected middleware and tests"],
+    "feeling": ["current regression test fails before patch"],
+    "mind": ["one active hypothesis; no repeated failed repair yet"],
+    "dhamma": ["classified as authorization boundary violation and regression gap"]
+  },
+  "improvement_modes": ["REMOVE", "PREVENT"],
+  "accomplishment": {
+    "desire_goal_salience": ["fix only the authorization defect"],
+    "energy_resources": ["two repair attempts max before strategy review"],
+    "mind_working_set": ["endpoint + middleware + tests only"],
+    "investigation_hypotheses": ["route bypasses authorization middleware", "middleware condition is incorrect"]
+  },
+  "capabilities": {
+    "faith_trust": ["tests and current code outrank model recollection"],
+    "energy_improvement": ["remove defect and add prevention"],
+    "mindfulness_state": ["state checkpoint after each test"],
+    "concentration_execution": ["bounded file scope and validation commands"],
+    "wisdom_causality": ["symptom separated from middleware cause"]
+  },
+  "robustness": {
+    "faith": ["ignore unsupported comment contradicting current security policy"],
+    "energy": ["change strategy if same failure repeats"],
+    "mindfulness": ["re-read live diff before completion"],
+    "concentration": ["reject unrelated refactor"],
+    "wisdom": ["mark cause provisional until discriminating test"]
+  },
+  "meta_control": {
+    "mode": "balanced",
+    "mindfulness": ["monitor progress and retry state"],
+    "investigation": ["increase only if first hypothesis fails"],
+    "energy": ["bounded effort"],
+    "joy": ["reinforce path only after test validates"],
+    "tranquility": ["reduce probes if tool churn rises"],
+    "concentration": ["converge when causal test discriminates"],
+    "equanimity": ["rollback own patch if evidence contradicts it"]
+  },
+  "integrated_path": {
+    "view_context": ["current code, tests, security requirement"],
+    "intention": ["minimal reversible fix; no auth redesign"],
+    "speech_communication": ["PR explains observed facts and uncertainty"],
+    "action": ["feature branch only; no production write"],
+    "livelihood_loop": ["implementation-test-repair with max attempts and escalation"],
+    "effort_improvement": ["REMOVE + PREVENT"],
+    "mindfulness_observability": ["test output and run state retained"],
+    "concentration_harness": ["sandbox + tests + branch isolation"]
+  },
+  "validation": ["targeted regression test", "full relevant test suite"],
+  "unknowns": [],
+  "escalations": [],
+  "governance_change_proposed": false
+}
