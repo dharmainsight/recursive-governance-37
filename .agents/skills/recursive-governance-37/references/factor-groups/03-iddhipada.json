@@ -1,0 +1,70 @@
+{
+  "group": "四神足",
+  "count": 4,
+  "factors": [
+    {
+      "id": "iddhipada.desire",
+      "group": "四神足",
+      "japanese": "欲神足",
+      "pali": "chanda",
+      "layer": "operational_kernel",
+      "engineering_role": "goal salience and worthwhile aspiration",
+      "responsibility": ["Keep the task goal, acceptance criteria, priority, and non-goals salient.","Prefer worthwhile completion over activity."],
+      "observables": ["stated goal","acceptance criteria","priority","non-goals","user value"],
+      "failure_modes": ["goal drift","reward hacking","speculative scope expansion","working without success criteria"],
+      "interventions": ["restate goal","freeze non-goals","rank acceptance criteria","stop low-value work"],
+      "eval_questions": ["Can the current action be traced to a worthwhile goal?","Are non-goals protecting scope?"],
+      "canonical_sources": ["SN 51.20"],
+      "links": {},
+      "supporting_model": null
+    },
+    {
+      "id": "iddhipada.energy",
+      "group": "四神足",
+      "japanese": "精進神足",
+      "pali": "viriya",
+      "layer": "operational_kernel",
+      "engineering_role": "resource mobilization",
+      "responsibility": ["Allocate effort, retries, tools, compute, time, and parallelism proportionately."],
+      "observables": ["retry budget","tool count","parallel workers","time budget","compute/token budget"],
+      "failure_modes": ["under-investment","runaway retries","resource burn without information gain"],
+      "interventions": ["increase effort when tractable","cap retries","parallelize independent hypotheses","stop when marginal value falls"],
+      "eval_questions": ["Is resource use proportionate to expected value?","Is each retry adding information?"],
+      "canonical_sources": ["SN 51.20"],
+      "links": {},
+      "supporting_model": null
+    },
+    {
+      "id": "iddhipada.mind",
+      "group": "四神足",
+      "japanese": "心神足",
+      "pali": "citta",
+      "layer": "operational_kernel",
+      "engineering_role": "working-set commitment",
+      "responsibility": ["Maintain coherent working context and commitment to the active problem without narrowing prematurely."],
+      "observables": ["active hypothesis","working set","task context","scope changes","branch count"],
+      "failure_modes": ["context fragmentation","scope explosion","premature fixation","task forgetting"],
+      "interventions": ["compact/restate working set","drop irrelevant context","isolate branches","return to task contract"],
+      "eval_questions": ["Is the active working set coherent?","Is focus stable without becoming fixation?"],
+      "canonical_sources": ["SN 51.20"],
+      "links": {},
+      "supporting_model": null
+    },
+    {
+      "id": "iddhipada.investigation",
+      "group": "四神足",
+      "japanese": "観神足",
+      "pali": "vīmaṃsā",
+      "layer": "operational_kernel",
+      "engineering_role": "experimental inquiry",
+      "responsibility": ["Generate and discriminate hypotheses using evidence, counterevidence, experiments, and root-cause analysis."],
+      "observables": ["hypothesis set","experiment results","counterexamples","causal evidence","information gain"],
+      "failure_modes": ["first-hypothesis lock-in","research without decision","confirmation bias"],
+      "interventions": ["generate alternatives","design discriminating test","seek falsifier","stop research at decision threshold"],
+      "eval_questions": ["Were plausible alternatives considered?","Did the experiment discriminate between hypotheses?"],
+      "canonical_sources": ["SN 51.20"],
+      "links": {},
+      "supporting_model": null
+    }
+  ]
+}
