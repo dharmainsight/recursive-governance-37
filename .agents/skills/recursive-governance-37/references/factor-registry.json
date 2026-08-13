@@ -1,0 +1,32 @@
+{
+  "schema_version": "2.0.0",
+  "model_name": "Recursive Self-Governance 37",
+  "purpose": "Engineering analogy that operationalizes all 37 bodhipakkhiya-dhamma factors as responsibilities, evidence, failure modes, interventions, and evals for repository-based agent loops.",
+  "doctrinal_boundary": "This is an engineering analogy, not a claim that Buddhist doctrine is reducible to software architecture. Canonical-source identifiers constrain the Buddhist side; engineering mappings are explicitly interpretive.",
+  "group_counts": {
+    "四念処": 4,
+    "四正断": 4,
+    "四神足": 4,
+    "五根": 5,
+    "五力": 5,
+    "七覚支": 7,
+    "八正道": 8
+  },
+  "recursive_invariants": [
+    "正精進 integrates the four right efforts.",
+    "正念 integrates the four establishments of mindfulness.",
+    "正定 integrates concentration capability within a harness; the four-jhāna mapping is an engineering analogy, not literal identity.",
+    "正見 uses the four-truth task model; its path component recursively points to the integrated path architecture.",
+    "五根 capability layers reuse operational-kernel functions; 五力 stress-test the corresponding faculties under disturbance.",
+    "七覚支 is the adaptive meta-controller: mindfulness remains active; investigation/energy/joy activate sluggish loops; tranquility/concentration/equanimity calm restless loops."
+  ],
+  "factor_files": [
+    "factor-groups/01-satipatthana.json",
+    "factor-groups/02-right-efforts.json",
+    "factor-groups/03-iddhipada.json",
+    "factor-groups/04-faculties.json",
+    "factor-groups/05-powers.json",
+    "factor-groups/06-awakening-factors.json",
+    "factor-groups/07-eightfold-path.json"
+  ]
+}
