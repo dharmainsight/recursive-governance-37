@@ -1,0 +1,171 @@
+{
+  "group": "四念処",
+  "count": 4,
+  "factors": [
+    {
+      "id": "satipatthana.body",
+      "group": "四念処",
+      "japanese": "身念処",
+      "pali": "kāyānupassanā",
+      "layer": "operational_kernel",
+      "engineering_role": "physical/runtime observability",
+      "responsibility": [
+        "Observe repository, runtime, browser, database and tool-result state before asserting facts.",
+        "Prefer direct inspection over model recollection for mutable state."
+      ],
+      "observables": [
+        "git status/diff",
+        "filesystem",
+        "test/build output",
+        "DOM/browser state",
+        "DB/schema state",
+        "API/tool results"
+      ],
+      "failure_modes": [
+        "claims detached from actual state",
+        "stale-state assumptions",
+        "declaring success without inspection"
+      ],
+      "interventions": [
+        "re-inspect relevant system",
+        "rerun deterministic command",
+        "refresh external state"
+      ],
+      "eval_questions": [
+        "Was the relevant external/runtime state directly observed?",
+        "Is the observation current enough for the decision?"
+      ],
+      "canonical_sources": [
+        "MN 10",
+        "DN 22"
+      ],
+      "links": {},
+      "supporting_model": null
+    },
+    {
+      "id": "satipatthana.feeling",
+      "group": "四念処",
+      "japanese": "受念処",
+      "pali": "vedanānupassanā",
+      "layer": "operational_kernel",
+      "engineering_role": "outcome/valence observability",
+      "responsibility": [
+        "Classify consequences as favorable, unfavorable, or neutral using explicit signals.",
+        "Separate observed outcome from interpretation."
+      ],
+      "observables": [
+        "tests pass/fail",
+        "user feedback",
+        "latency",
+        "error rate",
+        "cost",
+        "quality score",
+        "conversion or task KPI"
+      ],
+      "failure_modes": [
+        "optimizing without outcome signal",
+        "treating activity as progress",
+        "ignoring neutral/ambiguous feedback"
+      ],
+      "interventions": [
+        "capture outcome metric",
+        "mark ambiguous result neutral/unknown",
+        "compare against baseline"
+      ],
+      "eval_questions": [
+        "What signal says the action helped or hurt?",
+        "Was ambiguous feedback kept distinct from success?"
+      ],
+      "canonical_sources": [
+        "MN 10",
+        "DN 22"
+      ],
+      "links": {},
+      "supporting_model": null
+    },
+    {
+      "id": "satipatthana.mind",
+      "group": "四念処",
+      "japanese": "心念処",
+      "pali": "cittānupassanā",
+      "layer": "operational_kernel",
+      "engineering_role": "agent-state observability",
+      "responsibility": [
+        "Track externally inspectable operating state of the agent/loop.",
+        "Detect fixation, uncertainty, context pressure, drift, and repeated failure."
+      ],
+      "observables": [
+        "retry count",
+        "plan changes",
+        "tool-call churn",
+        "context pressure",
+        "uncertainty statements",
+        "scope growth",
+        "repeated identical fixes"
+      ],
+      "failure_modes": [
+        "confusing self-report with ground truth",
+        "unnoticed stagnation",
+        "unnoticed thrashing",
+        "loss of task intent"
+      ],
+      "interventions": [
+        "summarize current state",
+        "reset working set",
+        "escalate uncertainty",
+        "switch strategy"
+      ],
+      "eval_questions": [
+        "Is the loop state observable from trace/history?",
+        "Is the agent stuck, scattered, or uncertain?"
+      ],
+      "canonical_sources": [
+        "MN 10",
+        "DN 22"
+      ],
+      "links": {},
+      "supporting_model": null
+    },
+    {
+      "id": "satipatthana.dhamma",
+      "group": "四念処",
+      "japanese": "法念処",
+      "pali": "dhammānupassanā",
+      "layer": "operational_kernel",
+      "engineering_role": "structural/diagnostic observability",
+      "responsibility": [
+        "Interpret observations through explicit taxonomies, policies, causal models, and evaluation frameworks.",
+        "Use the correct diagnostic frame instead of ad-hoc impressions."
+      ],
+      "observables": [
+        "failure taxonomy",
+        "policy violations",
+        "architecture rules",
+        "causal hypotheses",
+        "known patterns",
+        "eval categories"
+      ],
+      "failure_modes": [
+        "misclassification",
+        "using wrong abstraction level",
+        "policy blindness",
+        "confusing symptom and cause"
+      ],
+      "interventions": [
+        "reclassify evidence",
+        "consult canonical policy/model",
+        "construct competing causal hypotheses"
+      ],
+      "eval_questions": [
+        "Which diagnostic frame is being used?",
+        "Could another frame change the conclusion?"
+      ],
+      "canonical_sources": [
+        "MN 10",
+        "DN 22"
+      ],
+      "links": {},
+      "supporting_model": null
+    }
+  ]
+}
