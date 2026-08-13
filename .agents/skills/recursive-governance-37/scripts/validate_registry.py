@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, json, sys
+import argparse, json
 from pathlib import Path
+from registry_io import load_registry
 
 EXPECTED={'四念処':4,'四正断':4,'四神足':4,'五根':5,'五力':5,'七覚支':7,'八正道':8}
 REQUIRED={'id','group','japanese','pali','layer','engineering_role','responsibility','observables','failure_modes','interventions','eval_questions','canonical_sources','links','supporting_model'}
@@ -9,7 +10,7 @@ REQUIRED={'id','group','japanese','pali','layer','engineering_role','responsibil
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--registry'); args=ap.parse_args()
     path=Path(args.registry) if args.registry else Path(__file__).resolve().parent.parent/'references/factor-registry.json'
-    data=json.loads(path.read_text(encoding='utf-8'))
+    data=load_registry(path.parent.parent if args.registry else None)
     errors=[]; factors=data.get('factors',[])
     if len(factors)!=37: errors.append(f'factor count {len(factors)} != 37')
     ids=[x.get('id') for x in factors]
@@ -33,7 +34,6 @@ def main():
         elif isinstance(obj,dict):
             for v in obj.values(): check_links(v,owner)
     for x in factors: check_links(x.get('links',{}),x['id'])
-    # Required recursive edges
     byid={x['id']:x for x in factors}
     required_edges={
       'path.effort':{'effort.abandon','effort.prevent','effort.develop','effort.maintain'},
