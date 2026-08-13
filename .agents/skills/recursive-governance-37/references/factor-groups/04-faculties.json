@@ -1,0 +1,89 @@
+{
+  "group": "五根",
+  "count": 5,
+  "factors": [
+    {
+      "id": "faculty.faith",
+      "group": "五根",
+      "japanese": "信根",
+      "pali": "saddhā",
+      "layer": "capability",
+      "engineering_role": "trust/provenance capability",
+      "responsibility": [
+        "Identify trustworthy anchors and order conflicting evidence by provenance.",
+        "Treat trust as evidence-governed, not model confidence."
+      ],
+      "observables": ["canonical SoT","verified tool result","reviewed decision record","trusted peer/human review","policy/invariant"],
+      "failure_modes": ["blind trust","nihilistic distrust","source ambiguity","model assertion overriding canonical evidence"],
+      "interventions": ["resolve provenance","mark uncertainty","prefer canonical source","request authoritative review"],
+      "eval_questions": ["Can the agent name why a source is trusted?","Does trust survive conflicting low-quality claims?"],
+      "canonical_sources": ["SN 48.10","SN 55 collection"],
+      "links": {"supported_by":["satipatthana.dhamma"]},
+      "supporting_model": {"analogy_only":"Four unshakable-confidence anchors may be modeled as Buddha=proven reference/capability, Dhamma=SoT/rules, Sangha=peer verification, Sīla=invariants/policy. This is not an identity claim for the canonical definition of saddhā-indriya."}
+    },
+    {
+      "id": "faculty.energy",
+      "group": "五根",
+      "japanese": "精進根",
+      "pali": "viriya",
+      "layer": "capability",
+      "engineering_role": "autonomous improvement capability",
+      "responsibility": ["Select and execute the appropriate right-effort mode without per-step human coaching."],
+      "observables": ["change classification","repair plan","prevention plan","creation plan","maintenance plan"],
+      "failure_modes": ["wrong change mode","stall after failure","activity without improvement"],
+      "interventions": ["classify as abandon/prevent/develop/maintain","execute bounded change","verify outcome"],
+      "eval_questions": ["Did the system choose the correct improvement mode?","Could it continue after a routine failure?"],
+      "canonical_sources": ["SN 48.10"],
+      "links": {"instantiates":["effort.abandon","effort.prevent","effort.develop","effort.maintain"]},
+      "supporting_model": null
+    },
+    {
+      "id": "faculty.mindfulness",
+      "group": "五根",
+      "japanese": "念根",
+      "pali": "sati",
+      "layer": "capability",
+      "engineering_role": "persistent state-awareness capability",
+      "responsibility": ["Maintain the four observation channels across a multi-step task."],
+      "observables": ["runtime state","outcome state","agent state","diagnostic state","state snapshot"],
+      "failure_modes": ["state loss","constraint forgetting","history amnesia","stale snapshot"],
+      "interventions": ["refresh all four channels","persist state summary","reconcile with current state"],
+      "eval_questions": ["Can the agent reconstruct current task state?","Did it preserve critical constraints across steps?"],
+      "canonical_sources": ["SN 48.10"],
+      "links": {"instantiates":["satipatthana.body","satipatthana.feeling","satipatthana.mind","satipatthana.dhamma"]},
+      "supporting_model": null
+    },
+    {
+      "id": "faculty.concentration",
+      "group": "五根",
+      "japanese": "定根",
+      "pali": "samādhi",
+      "layer": "capability",
+      "engineering_role": "stable execution capability",
+      "responsibility": ["Sustain coherent execution toward one task under an explicit harness."],
+      "observables": ["scope adherence","branch count","task-switch count","validation cadence","termination condition"],
+      "failure_modes": ["distraction","tool churn","unbounded branching","premature completion"],
+      "interventions": ["narrow working set","enforce harness","run required validation","honor stop condition"],
+      "eval_questions": ["Did execution remain unified around the task?","Were constraints and termination conditions maintained?"],
+      "canonical_sources": ["SN 48.10","SN 45.8"],
+      "links": {},
+      "supporting_model": {"four_jhanas_engineering_analogy":["initial instruction-heavy directed execution","more internally unified execution with reduced deliberative overhead","stable execution less dependent on progress reward","neutral invariant-led execution with clear state awareness"]}
+    },
+    {
+      "id": "faculty.wisdom",
+      "group": "五根",
+      "japanese": "慧根",
+      "pali": "paññā",
+      "layer": "capability",
+      "engineering_role": "causal problem-solving capability",
+      "responsibility": ["Distinguish problem, cause, resolved state, and path; choose interventions causally."],
+      "observables": ["problem statement","root-cause evidence","desired-state invariant","intervention plan","verification"],
+      "failure_modes": ["symptom chasing","causal fabrication","undefined success","solutionism"],
+      "interventions": ["apply four-truth task model","seek root cause","define observable cessation","build reproducible path"],
+      "eval_questions": ["Are problem and cause separated?","Is desired state observable?","Does the path target the cause?"],
+      "canonical_sources": ["SN 48.10","SN 56.11"],
+      "links": {},
+      "supporting_model": {"four_truths":["dukkha=understand the problem/loss","samudaya=abandon/remove the cause","nirodha=realize/verify the resolved state","magga=develop the reproducible path"]}
+    }
+  ]
+}
