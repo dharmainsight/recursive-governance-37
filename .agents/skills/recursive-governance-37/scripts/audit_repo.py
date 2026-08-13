@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse, json, re
 from pathlib import Path
 from discover_repo import discover, root_of
+from registry_io import load_registry
 
 PATTERNS={
  'satipatthana.body':['test','build','runtime','browser','schema','api','migration','deploy'],
@@ -52,7 +53,7 @@ def text_of(path:Path,limit=50000):
 
 def audit(root:Path):
     root=root_of(root); disc=discover(root)
-    registry=json.loads((Path(__file__).resolve().parent.parent/'references/factor-registry.json').read_text(encoding='utf-8'))
+    registry=load_registry()
     candidates=[]
     for vals in disc['categories'].values(): candidates+=vals
     # Also add root common manifests/docs to catch sparse repos.
