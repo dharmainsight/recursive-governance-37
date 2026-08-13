@@ -17,9 +17,9 @@ Before making governance changes, read:
 2. `references/runtime-protocol.md`
 3. `references/risk-and-escalation.md`
 4. `references/repository-mapping.md`
-5. `references/factor-registry.json` when factor-level detail is needed
+5. `references/factor-registry.json` and its referenced `factor-groups/*.json` files when factor-level detail is needed
 
-The factor registry contains **exactly 37 factors**. Never collapse or silently omit factors in an audit that claims 37-factor coverage.
+The factor registry index plus its seven group files contains **exactly 37 factors**. Never collapse or silently omit factors in an audit that claims 37-factor coverage.
 
 Validate the installed registry with:
 
