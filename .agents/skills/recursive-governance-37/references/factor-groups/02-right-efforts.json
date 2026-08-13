@@ -1,0 +1,70 @@
+{
+  "group": "四正断",
+  "count": 4,
+  "factors": [
+    {
+      "id": "effort.abandon",
+      "group": "四正断",
+      "japanese": "断断",
+      "pali": null,
+      "layer": "operational_kernel",
+      "engineering_role": "remove arisen harmful state",
+      "responsibility": ["Remove defects, incidents, regressions, unsafe state, or known falsehood already present."],
+      "observables": ["open defects","failing tests","incidents","policy violations","known bad state"],
+      "failure_modes": ["patching symptoms only","leaving harmful state active"],
+      "interventions": ["fix root cause","rollback unsafe change","remove invalid artifact"],
+      "eval_questions": ["Was an already-present harmful state actually removed?","Was the cause addressed rather than only the symptom?"],
+      "canonical_sources": ["SN 45.8","AN 4.13-14"],
+      "links": {},
+      "supporting_model": null
+    },
+    {
+      "id": "effort.prevent",
+      "group": "四正断",
+      "japanese": "律儀断",
+      "pali": null,
+      "layer": "operational_kernel",
+      "engineering_role": "prevent unarisen harmful state",
+      "responsibility": ["Add guardrails that make recurrence or foreseeable failure less likely."],
+      "observables": ["missing regression tests","unbounded permissions","unsafe defaults","unhandled edge cases"],
+      "failure_modes": ["reactive-only maintenance","guardrail theater with no enforcement"],
+      "interventions": ["add regression test","reduce privilege","add validation","add policy-as-code"],
+      "eval_questions": ["What foreseeable failure is now harder or impossible?","Is prevention mechanically enforced where possible?"],
+      "canonical_sources": ["SN 45.8","AN 4.13-14"],
+      "links": {},
+      "supporting_model": null
+    },
+    {
+      "id": "effort.develop",
+      "group": "四正断",
+      "japanese": "随護断",
+      "pali": null,
+      "layer": "operational_kernel",
+      "engineering_role": "develop unarisen beneficial state",
+      "responsibility": ["Create missing beneficial capabilities, tests, documentation, or product value."],
+      "observables": ["unmet requirement","missing capability","uncovered invariant","known opportunity"],
+      "failure_modes": ["feature speculation without evidence","creating capability outside scope"],
+      "interventions": ["implement scoped feature","add new verification capability","run bounded experiment"],
+      "eval_questions": ["What beneficial capability did not exist before?","Is it tied to an explicit need or experiment?"],
+      "canonical_sources": ["SN 45.8","AN 4.13-14"],
+      "links": {},
+      "supporting_model": null
+    },
+    {
+      "id": "effort.maintain",
+      "group": "四正断",
+      "japanese": "修断",
+      "pali": null,
+      "layer": "operational_kernel",
+      "engineering_role": "maintain and strengthen arisen beneficial state",
+      "responsibility": ["Preserve, refine, and extend qualities already working."],
+      "observables": ["passing tests","healthy SLO","maintainable code","useful documentation","successful workflow"],
+      "failure_modes": ["regression through neglect","unbounded optimization","refactor without benefit"],
+      "interventions": ["refactor with invariant tests","optimize measured bottleneck","update docs","increase resilience"],
+      "eval_questions": ["What working quality is being preserved or strengthened?","Is improvement measurable or justified?"],
+      "canonical_sources": ["SN 45.8","AN 4.13-14"],
+      "links": {},
+      "supporting_model": null
+    }
+  ]
+}
