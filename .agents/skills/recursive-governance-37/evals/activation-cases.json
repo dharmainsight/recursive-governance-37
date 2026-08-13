@@ -1,0 +1,22 @@
+[
+  {
+    "prompt": "$recursive-governance-37 audit this repo and add a self-correcting agent governance loop",
+    "should_invoke": true,
+    "reason": "Explicit invocation and direct loop-governance request."
+  },
+  {
+    "prompt": "Can you retrofit this repository so agents can safely run recurring implementation loops with SoT, tests, approvals and meta-control?",
+    "should_invoke": false,
+    "reason": "The skill is intentionally explicit-only by policy; the host should not invoke it implicitly even though the task matches."
+  },
+  {
+    "prompt": "Fix the TypeScript error in src/foo.ts",
+    "should_invoke": false,
+    "reason": "Ordinary coding task; no governance retrofit requested."
+  },
+  {
+    "prompt": "$recursive-governance-37 review whether our agent loop is thrashing and whether the governance should change",
+    "should_invoke": true,
+    "reason": "Explicit review/meta-control request."
+  }
+]
