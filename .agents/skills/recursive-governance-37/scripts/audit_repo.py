@@ -18,12 +18,12 @@ PATTERNS={
  'iddhipada.energy':['retry','budget','timeout','parallel','concurrency','resource'],
  'iddhipada.mind':['scope','worktree','branch','context','task'],
  'iddhipada.investigation':['hypothesis','experiment','root cause','rfc','adr','investigation'],
- 'faculty.faith':['source of truth','canonical','provenance','review','policy','agents.md'],
+ 'faculty.faith':['faith/owner','faith/policy','faith/authority','faith/operations','owner','delegated authority','human_only','read_only','canonical'],
  'faculty.energy':['workflow','repair','test','lint','incident'],
  'faculty.mindfulness':['state','trace','log','run-record','observability'],
  'faculty.concentration':['sandbox','ci','test','build','scope','approval'],
  'faculty.wisdom':['root cause','causal','incident','adr','desired state','acceptance'],
- 'power.faith':['prompt injection','untrusted','provenance','precedence','canonical'],
+ 'power.faith':['faith/owner','faith/policy','faith/authority','faith/operations','derivation','delegated authority','escalat','human_only','read_only'],
  'power.energy':['retry','backoff','escalat','failure'],
  'power.mindfulness':['checkpoint','resume','state','history','trace'],
  'power.concentration':['scope','branch','parallel','worktree','limit'],
@@ -56,7 +56,12 @@ def audit(root:Path):
     registry=load_registry()
     candidates=[]
     for vals in disc['categories'].values(): candidates+=vals
-    # Also add root common manifests/docs to catch sparse repos.
+    # Include faith anchors and governance files explicitly when present.
+    faith_dir=root/'docs/agent-governance/faith'
+    if faith_dir.exists():
+        for p in faith_dir.glob('*.md'):
+            try:candidates.append(p.relative_to(root).as_posix())
+            except Exception:pass
     candidates=sorted(set(candidates))[:2000]
     result=[]
     for fac in registry['factors']:
@@ -75,7 +80,14 @@ def audit(root:Path):
     for x in result:
         g=groups.setdefault(x['group'],{'total':0,'candidate':0})
         g['total']+=1; g['candidate']+=1 if x['status']=='candidate_evidence' else 0
-    return {'root':str(root),'files_scanned':disc['files_scanned'],'factor_count':len(result),'group_summary':groups,'factors':result,'warning':'Heuristic evidence discovery only. Candidate presence is not compliance; absence may be false negative. The skill must perform semantic MAP review before changing the repository.'}
+    return {
+        'root':str(root),
+        'files_scanned':disc['files_scanned'],
+        'factor_count':len(result),
+        'group_summary':groups,
+        'factors':result,
+        'warning':'Heuristic evidence discovery only. Candidate presence is not compliance; absence may be false negative. For faith, semantic review must verify that the anchors are human-authored, agent-read-only, and that faith power derives rather than invents policy.'
+    }
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--root',default='.'); ap.add_argument('--output'); args=ap.parse_args()
