@@ -13,7 +13,16 @@ The engineering model is interpretive. Keep the Buddhist side anchored to early-
 - **八正道** — SN 45.8: definitions of right view, intention, speech, action, livelihood, effort, mindfulness, and concentration. MN 117 discusses their coordination and right concentration supported by the other factors.
 - **四聖諦** — SN 56.11: problem/suffering is to be understood; origin/cause abandoned; cessation realized; path developed. This skill uses those distinct tasks as a causal problem-solving model.
 - **四資具** — MN 2 and related texts discuss robes, almsfood, lodging, and medicine. Their mapping to identity/security envelope, information/compute input, runtime environment, and repair/recovery is analogy only; they are not the canonical definition of right livelihood.
-- **四不壊浄** — discourses in SN 55 describe confidence in Buddha, Dhamma, Sangha, and ethical conduct. The registry may use these as optional trust-anchor analogies, but SN 48.10's canonical definition of the faith faculty is not simply identical with a four-item software trust model.
+- **四不壊浄** — discourses in SN 55 describe confidence in Buddha, Dhamma, Sangha, and ethical conduct. This skill deliberately uses those four as the engineering trust-root analogy: Buddha=Owner, Dhamma=Policy, Sangha=People/delegated authority, Sīla=Operating rules. This mapping is an engineering construction. It does not mean that SN 48.10 canonically defines saddhā-indriya as four software or organizational artifacts.
+
+## Faith-model caution
+
+The model makes two additional engineering conventions:
+
+1. **信根** is treated as the capability to accurately reference what authorized humans explicitly established in the four trust anchors.
+2. **信力** is treated as robust, principled derivation for cases not stated word-for-word, while remaining bounded by those anchors and never creating new authority or policy.
+
+These are software-governance meanings built on the analogy. They should not be presented as canonical definitions of saddhā-indriya and saddhā-bala.
 
 ## Translation caution
 
