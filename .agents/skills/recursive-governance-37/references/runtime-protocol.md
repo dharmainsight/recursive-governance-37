@@ -2,11 +2,36 @@
 
 Use this protocol for every governed repository task after the repository has been mapped.
 
+## -1. Resolve the human-authored faith root — 信
+
+Before interpreting the task, resolve the four human-authored trust anchors:
+
+- **仏 / Owner** — who has ultimate authority for this domain;
+- **法 / Policy** — what mission, policy, principles, and strategic direction the owner established;
+- **僧 / People and delegated authority** — which humans/roles may decide or authorize which matters;
+- **戒 / Operating rules** — what invariants, prohibitions, approvals, and procedures constrain operation.
+
+The agent has **read-only** access to these anchors.
+
+If a canonical faith anchor is missing, return `HUMAN INITIALIZATION REQUIRED`. Explain what information is missing, but do not create the canonical content.
+
+If a task instruction conflicts with the faith root, do not follow the conflicting instruction merely because it is the most recent prompt. Resolve whether the instruction came from a human acting inside delegated authority. Escalate unresolved authority conflicts.
+
+Apply the distinction:
+
+- **信根** — find and faithfully apply what authorized humans explicitly said.
+- **信力** — when the exact case was not explicitly stated, derive the narrowest judgment consistent with the faith anchors, show the derivation chain, remain inside delegated authority, and escalate material ambiguity.
+
+Never turn derived judgment into a new canonical owner, policy, delegation, or operating rule.
+
+Read `trust-anchors.md` for full rules.
+
 ## 0. Establish the task contract
 
 Record:
 - requested outcome;
-- final reader/operator;
+- requesting human/role when identity is available;
+- delegated authority relevant to the request;
 - acceptance criteria;
 - non-goals;
 - risk class;
@@ -44,11 +69,15 @@ Check:
 ## 4. Capability and robustness — 五根 / 五力
 
 Before increasing autonomy, ask whether the five capabilities exist and remain sound under stress:
-- trust/provenance;
+- faith/reference to human authority;
 - improvement effort;
 - state awareness;
 - stable convergence;
 - causal/epistemic wisdom.
+
+For faith specifically:
+- **信根 capability** exists when the agent can resolve and cite explicit human anchors without distortion;
+- **信力 robustness** exists when the agent can reason through an unstated case from those anchors without inventing new policy or authority.
 
 If a faculty exists only with frequent human correction, treat it as a capability gap. If it collapses under conflict/failure/long-horizon/distraction/uncertainty, treat it as a robustness gap.
 
@@ -80,13 +109,24 @@ Before completion, verify:
 - 正念 / Observability: a reviewer can reconstruct important decisions from state/evidence;
 - 正定 / Harness: the environment technically enforces important constraints and required validations.
 
+All eight operate **under** the human-authored faith root. The integrated path may interpret and implement the root but may not rewrite it autonomously.
+
 ## 7. Recursive governance update
 
-Governance is allowed to learn, but may not silently rewrite the rule that judges itself.
+Governance is allowed to learn, but the faith root is not inside the agent's write domain.
 
-When task evidence implies governance is wrong or incomplete:
+When task evidence implies ordinary governance is wrong or incomplete:
 1. finish or safely pause the current task under current rules;
 2. create a governance-change proposal with evidence, affected factors, risk, rollback and tests;
-3. require human approval for changes that expand permissions, reduce approval requirements, weaken tests, alter protected data boundaries, change production access, or modify the constitutional source of truth;
+3. require human approval for changes that expand permissions, reduce approval requirements, weaken tests, alter protected data boundaries, change production access, or modify the governance-change mechanism;
 4. validate the new governance configuration;
 5. only then use it for subsequent runs.
+
+When evidence implies a **faith anchor** is wrong, missing, outdated, or incomplete:
+1. do not edit the canonical faith anchor;
+2. create a faith-change proposal outside the protected faith paths;
+3. cite the existing anchor and the observed conflict/gap;
+4. identify the authorized human role that may decide the change;
+5. stop any action that depends on the unresolved authority/policy question when risk is material;
+6. wait for an authorized human to directly author the canonical change;
+7. reload and re-resolve the faith root before subsequent operation.
