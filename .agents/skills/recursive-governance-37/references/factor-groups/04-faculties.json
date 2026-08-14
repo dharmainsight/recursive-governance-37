@@ -8,53 +8,21 @@
       "japanese": "信根",
       "pali": "saddhā",
       "layer": "capability",
-      "engineering_role": "explicit human trust-anchor reference capability",
+      "engineering_role": "explicit constitutional reference capability",
       "responsibility": [
-        "Refer faithfully to human-authored trust anchors and identify which explicit instruction or authority applies.",
-        "Resolve authority through the four-anchor model: Buddha=Owner, Dhamma=Policy, Sangha=People/delegated authority, Sila=Operating rules.",
-        "Treat canonical faith anchors as agent-read-only and return UNKNOWN when the anchors do not explicitly answer the case."
+        "Locate and correctly apply explicitly human-authored trust anchors: Owner, Policy, People/Delegated Authority, and Operating Rules.",
+        "Preserve provenance and authority precedence without filling gaps by invention."
       ],
-      "observables": [
-        "human-authored owner anchor",
-        "human-authored policy anchor",
-        "human-authored authority map",
-        "human-authored operating rules",
-        "explicit source citation",
-        "authority-resolution trace"
-      ],
-      "failure_modes": [
-        "agent invents or rewrites an authority anchor",
-        "model confidence substituted for human authority",
-        "current prompt overrides an owner/policy/authority/operations anchor without authorization",
-        "agent treats an inference as an explicit human decision",
-        "missing anchor silently fabricated"
-      ],
-      "interventions": [
-        "reload the four faith anchors",
-        "resolve which human authority issued the relevant instruction",
-        "cite the explicit anchor",
-        "mark UNKNOWN when no explicit anchor applies",
-        "request human initialization or clarification instead of writing canonical faith content"
-      ],
-      "eval_questions": [
-        "Can the agent point to the exact human-authored anchor supporting its decision?",
-        "Does it distinguish explicit human instruction from agent inference?",
-        "Does it refuse to create or edit canonical faith-anchor content?",
-        "Does it respect delegated authority rather than treating every prompt as equally authoritative?"
-      ],
+      "observables": ["faith/owner canonical source", "faith/policy canonical source", "faith/authority canonical source", "faith/operations canonical source", "authority/provenance resolution"],
+      "failure_modes": ["ignoring explicit authority", "inventing missing faith content", "treating model confidence as authority", "current prompt overriding higher-authority faith"],
+      "interventions": ["resolve canonical faith sources", "mark missing faith as HUMAN INITIALIZATION REQUIRED", "cite applicable anchor", "escalate unresolved authority conflict"],
+      "eval_questions": ["Can the agent identify exactly what the authorized human system explicitly established?", "Does it refuse to invent missing canonical faith content?"],
       "canonical_sources": ["SN 48.10", "SN 55 collection"],
-      "links": {"supported_by": ["satipatthana.dhamma"]},
+      "links": {"paired_power": ["power.faith"], "supported_by": ["satipatthana.dhamma"]},
       "supporting_model": {
-        "four_unshakable_confidence_trust_anchors": {
-          "buddha": "Owner / ultimate human authority",
-          "dhamma": "Owner-issued policy, mission, principles, and direction",
-          "sangha": "People, teams, roles, and delegated human authority",
-          "sila": "Human-authored operating rules, invariants, prohibitions, and approval requirements"
-        },
-        "human_only_write": true,
-        "agent_access": "read_only",
-        "reasoning_scope": "explicit_reference_only",
-        "analogy_note": "This four-anchor software model is an engineering analogy for faith; it is not a claim that SN 48.10 canonically defines saddha-indriya as these four software artifacts."
+        "fourfold_basis": ["Buddha = Owner / final human authority", "Dhamma = Policy / mission / principles / explicit decisions", "Sangha = People and delegated authority graph", "Sila = Operating rules / invariants / approvals / boundaries"],
+        "faculty_mode": "explicit_reference",
+        "write_boundary": "Canonical faith content is Human Only Write / Agent Read Only."
       }
     },
     {
@@ -63,15 +31,18 @@
       "japanese": "精進根",
       "pali": "viriya",
       "layer": "capability",
-      "engineering_role": "autonomous improvement capability",
-      "responsibility": ["Select and execute the appropriate right-effort mode without per-step human coaching."],
-      "observables": ["change classification", "repair plan", "prevention plan", "creation plan", "maintenance plan"],
-      "failure_modes": ["wrong change mode", "stall after failure", "activity without improvement"],
-      "interventions": ["classify as abandon/prevent/develop/maintain", "execute bounded change", "verify outcome"],
-      "eval_questions": ["Did the system choose the correct improvement mode?", "Could it continue after a routine failure?"],
-      "canonical_sources": ["SN 48.10"],
-      "links": {"instantiates": ["effort.abandon", "effort.prevent", "effort.develop", "effort.maintain"]},
-      "supporting_model": null
+      "engineering_role": "explicit improvement-mode execution capability",
+      "responsibility": [
+        "Correctly apply an explicitly requested or already-classified four-right-effort mode.",
+        "Execute REMOVE / PREVENT / DEVELOP / MAINTAIN with bounded effort and verify the result."
+      ],
+      "observables": ["explicit change classification", "repair instruction", "prevention requirement", "development requirement", "maintenance requirement", "verification result"],
+      "failure_modes": ["misapplying an explicitly given improvement mode", "activity without verification", "failing to complete a clearly specified corrective action"],
+      "interventions": ["resolve the explicit four-effort mode", "execute the bounded change", "verify the intended state transition"],
+      "eval_questions": ["When the improvement mode is specified, can the agent execute the correct mode faithfully?", "Can it distinguish REMOVE, PREVENT, DEVELOP, and MAINTAIN when the task explicitly establishes the category?"],
+      "canonical_sources": ["SN 48.10", "SN 45.8"],
+      "links": {"paired_power": ["power.energy"], "instantiates": ["effort.abandon", "effort.prevent", "effort.develop", "effort.maintain"]},
+      "supporting_model": {"fourfold_basis": ["REMOVE = abandon arisen harmful state", "PREVENT = prevent unarisen/recurrent harmful state", "DEVELOP = develop beneficial state not yet present", "MAINTAIN = preserve and strengthen beneficial state already present"], "faculty_mode": "explicit_reference"}
     },
     {
       "id": "faculty.mindfulness",
@@ -79,15 +50,18 @@
       "japanese": "念根",
       "pali": "sati",
       "layer": "capability",
-      "engineering_role": "persistent state-awareness capability",
-      "responsibility": ["Maintain the four observation channels across a multi-step task."],
-      "observables": ["runtime state", "outcome state", "agent state", "diagnostic state", "state snapshot"],
-      "failure_modes": ["state loss", "constraint forgetting", "history amnesia", "stale snapshot"],
-      "interventions": ["refresh all four channels", "persist state summary", "reconcile with current state"],
-      "eval_questions": ["Can the agent reconstruct current task state?", "Did it preserve critical constraints across steps?"],
-      "canonical_sources": ["SN 48.10"],
-      "links": {"instantiates": ["satipatthana.body", "satipatthana.feeling", "satipatthana.mind", "satipatthana.dhamma"]},
-      "supporting_model": null
+      "engineering_role": "explicit observation and state-preservation capability",
+      "responsibility": [
+        "Inspect and preserve the explicitly required four observation channels across a task.",
+        "Refresh specified runtime, outcome, agent-state, and structural evidence when instructed by the task or governance."
+      ],
+      "observables": ["required body/runtime observations", "required feeling/outcome signals", "required mind/agent-state signals", "required dhamma/structural models", "state snapshot"],
+      "failure_modes": ["forgetting an explicitly required observation", "constraint loss", "stale required state", "history amnesia"],
+      "interventions": ["refresh the specified observation channels", "persist state summary", "reconcile required observations with live state"],
+      "eval_questions": ["Can the agent maintain the observation/state set it was explicitly told to track?", "Can it reconstruct the current task state from the required four channels?"],
+      "canonical_sources": ["SN 48.10", "MN 10", "DN 22"],
+      "links": {"paired_power": ["power.mindfulness"], "instantiates": ["satipatthana.body", "satipatthana.feeling", "satipatthana.mind", "satipatthana.dhamma"]},
+      "supporting_model": {"fourfold_basis": ["body = repository/runtime/external state", "feeling = outcome/quality signal", "mind = agent/loop operating state", "dhamma = policy/architecture/causal and diagnostic structure"], "faculty_mode": "explicit_reference"}
     },
     {
       "id": "faculty.concentration",
@@ -95,15 +69,18 @@
       "japanese": "定根",
       "pali": "samādhi",
       "layer": "capability",
-      "engineering_role": "stable execution capability",
-      "responsibility": ["Sustain coherent execution toward one task under an explicit harness."],
-      "observables": ["scope adherence", "branch count", "task-switch count", "validation cadence", "termination condition"],
-      "failure_modes": ["distraction", "tool churn", "unbounded branching", "premature completion"],
-      "interventions": ["narrow working set", "enforce harness", "run required validation", "honor stop condition"],
-      "eval_questions": ["Did execution remain unified around the task?", "Were constraints and termination conditions maintained?"],
+      "engineering_role": "explicit harness and convergence capability",
+      "responsibility": [
+        "Operate coherently inside explicitly supplied scope, harness, validation cadence, resource limits, and stopping conditions.",
+        "Follow the prescribed concentration/execution mode without unnecessary branching."
+      ],
+      "observables": ["explicit scope", "harness constraints", "branch/tool limits", "validation cadence", "termination condition", "resource budget"],
+      "failure_modes": ["violating explicit scope", "ignoring harness constraints", "unnecessary branching", "premature completion", "failure to honor stop condition"],
+      "interventions": ["restore prescribed scope", "reapply harness", "run required validation", "honor the explicit termination condition"],
+      "eval_questions": ["Can the agent remain unified inside a given harness?", "Does it follow explicit focus and termination constraints without repeated reminders?"],
       "canonical_sources": ["SN 48.10", "SN 45.8"],
-      "links": {},
-      "supporting_model": {"four_jhanas_engineering_analogy": ["initial instruction-heavy directed execution", "more internally unified execution with reduced deliberative overhead", "stable execution less dependent on progress reward", "neutral invariant-led execution with clear state awareness"]}
+      "links": {"paired_power": ["power.concentration"]},
+      "supporting_model": {"fourfold_basis": ["initial instruction-heavy directed execution", "more unified execution with reduced deliberative overhead", "stable execution less dependent on progress reward", "neutral invariant-led execution with clear state awareness"], "faculty_mode": "explicit_reference", "analogy": "four jhanas engineering analogy"}
     },
     {
       "id": "faculty.wisdom",
@@ -111,15 +88,18 @@
       "japanese": "慧根",
       "pali": "paññā",
       "layer": "capability",
-      "engineering_role": "causal problem-solving capability",
-      "responsibility": ["Distinguish problem, cause, resolved state, and path; choose interventions causally."],
-      "observables": ["problem statement", "root-cause evidence", "desired-state invariant", "intervention plan", "verification"],
-      "failure_modes": ["symptom chasing", "causal fabrication", "undefined success", "solutionism"],
-      "interventions": ["apply four-truth task model", "seek root cause", "define observable cessation", "build reproducible path"],
-      "eval_questions": ["Are problem and cause separated?", "Is desired state observable?", "Does the path target the cause?"],
+      "engineering_role": "explicit four-truth causal-frame capability",
+      "responsibility": [
+        "Correctly apply an explicitly supplied or clearly established problem, cause, resolved-state, and path structure.",
+        "Choose interventions that target the established cause and verify the established desired state."
+      ],
+      "observables": ["explicit problem statement", "explicit or established root-cause evidence", "desired-state invariant", "prescribed intervention/path", "verification criteria"],
+      "failure_modes": ["misreading the supplied causal frame", "symptom chasing despite an established cause", "ignoring explicit success criteria", "solutionism"],
+      "interventions": ["reconstruct the explicit four-truth task frame", "target the established cause", "verify the stated resolved state", "follow or test the stated path"],
+      "eval_questions": ["Can the agent correctly use a supplied problem-cause-resolution-path model?", "Does it keep problem and cause distinct when both are explicitly available?"],
       "canonical_sources": ["SN 48.10", "SN 56.11"],
-      "links": {},
-      "supporting_model": {"four_truths": ["dukkha=understand the problem/loss", "samudaya=abandon/remove the cause", "nirodha=realize/verify the resolved state", "magga=develop the reproducible path"]}
+      "links": {"paired_power": ["power.wisdom"]},
+      "supporting_model": {"fourfold_basis": ["dukkha = understand the problem/loss", "samudaya = identify and remove the cause", "nirodha = realize/verify the resolved state", "magga = develop/follow the reproducible path"], "faculty_mode": "explicit_reference"}
     }
   ]
 }
