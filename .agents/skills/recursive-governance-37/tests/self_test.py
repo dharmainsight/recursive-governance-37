@@ -13,19 +13,36 @@ def run(args,cwd=None,expect=0):
 def main():
     out=run([SCRIPTS/'validate_registry.py'])
     assert '37/37' in out
+    assert 'five faculty-power dual pairs' in out
     sys.path.insert(0, str(SCRIPTS))
     from registry_io import load_registry
     registry=load_registry(SKILL)
     assert len(registry['factors'])==37
     assert registry['group_counts']=={'四念処':4,'四正断':4,'四神足':4,'五根':5,'五力':5,'七覚支':7,'八正道':8}
 
-    faith=next(x for x in registry['factors'] if x['id']=='faculty.faith')
-    assert faith['supporting_model']['human_only_write'] is True
-    assert faith['supporting_model']['agent_access']=='read_only'
-    assert faith['supporting_model']['reasoning_scope']=='explicit_reference_only'
-    power=next(x for x in registry['factors'] if x['id']=='power.faith')
-    assert power['supporting_model']['human_only_write'] is True
-    assert power['supporting_model']['reasoning_scope']=='bounded_principled_derivation'
+    byid={x['id']:x for x in registry['factors']}
+    pairs={
+      'faith':('faculty.faith','power.faith'),
+      'energy':('faculty.energy','power.energy'),
+      'mindfulness':('faculty.mindfulness','power.mindfulness'),
+      'concentration':('faculty.concentration','power.concentration'),
+      'wisdom':('faculty.wisdom','power.wisdom'),
+    }
+    for _,(fid,pid) in pairs.items():
+        f=byid[fid]; p=byid[pid]
+        assert f['supporting_model']['faculty_mode']=='explicit_reference'
+        assert p['supporting_model']['power_mode'].startswith('autonomous_')
+        assert len(f['supporting_model']['fourfold_basis'])==4
+        assert len(p['supporting_model']['fourfold_basis'])==4
+        assert pid in json.dumps(f['links'],ensure_ascii=False)
+        assert fid in json.dumps(p['links'],ensure_ascii=False)
+
+    # Faith has the special human-only canonical write boundary.
+    faith=byid['faculty.faith']
+    power=byid['power.faith']
+    assert 'Human Only Write' in faith['supporting_model']['write_boundary']
+    assert 'Agent Read Only' in faith['supporting_model']['write_boundary']
+    assert 'Human Only Write' in power['supporting_model']['write_boundary']
 
     # Sample run record must pass structural evaluator.
     out=run([SCRIPTS/'evaluate_run_record.py',SKILL/'tests/sample-run-record.json'])
@@ -44,17 +61,15 @@ def main():
         applied=run([SCRIPTS/'scaffold.py','--root',root,'--apply'])
         assert (root/'docs/agent-governance/manifest.json').exists()
         assert 'HUMAN INITIALIZATION REQUIRED' in applied
-        # The agent scaffold must not author faith content.
         assert not (root/'docs/agent-governance/faith/owner.md').exists()
         assert not (root/'docs/agent-governance/faith/policy.md').exists()
         assert not (root/'docs/agent-governance/faith/authority.md').exists()
         assert not (root/'docs/agent-governance/faith/operations.md').exists()
 
-        # Validation must fail until an authorized human initializes the trust root.
         fail=run([SCRIPTS/'validate_repo_governance.py','--root',root],expect=1)
         assert 'HUMAN INITIALIZATION REQUIRED' in fail
 
-        # Simulate authorized human initialization. The skill itself never performs this step.
+        # Simulate authorized human initialization. The skill never performs this step.
         faith_dir=root/'docs/agent-governance/faith'; faith_dir.mkdir(parents=True)
         (faith_dir/'owner.md').write_text('# Owner\nHuman owner: Example Owner\n',encoding='utf-8')
         (faith_dir/'policy.md').write_text('# Policy\nMission: safe service\n',encoding='utf-8')
@@ -64,12 +79,11 @@ def main():
         run([SCRIPTS/'validate_repo_governance.py','--root',root])
         audit=json.loads(run([SCRIPTS/'audit_repo.py','--root',root])); assert audit['factor_count']==37
 
-        # Non-destructive: re-run scaffold and ensure existing ordinary governance file is skipped.
         before=(root/'docs/agent-governance/constitution.md').read_text(encoding='utf-8')
         rerun=run([SCRIPTS/'scaffold.py','--root',root,'--apply']); assert 'SKIP existing' in rerun
         assert 'Faith anchors detected. Do not modify them from an agent run.' in rerun
         assert (root/'docs/agent-governance/constitution.md').read_text(encoding='utf-8')==before
 
-    print('PASS: recursive-governance-37 self-test')
+    print('PASS: recursive-governance-37 self-test with five faculty-power dual pairs')
     return 0
 if __name__=='__main__': raise SystemExit(main())
