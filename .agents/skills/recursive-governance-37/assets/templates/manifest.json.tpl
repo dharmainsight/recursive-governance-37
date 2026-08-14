@@ -1,5 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
+  "faith_anchors": {
+    "owner": "docs/agent-governance/faith/owner.md",
+    "policy": "docs/agent-governance/faith/policy.md",
+    "authority": "docs/agent-governance/faith/authority.md",
+    "operations": "docs/agent-governance/faith/operations.md",
+    "write_policy": "human_only",
+    "agent_access": "read_only"
+  },
   "canonical_sources": {
     "context_current_state": [],
     "context_causal_model": [],
@@ -16,6 +24,7 @@
     "meta_control_policy": []
   },
   "protected_boundaries": {
+    "faith_anchor_write": "blocked",
     "production_write": "review_required",
     "destructive_operation": "review_required",
     "external_send_publish": "review_required",
@@ -24,7 +33,8 @@
     "governance_self_modification": "review_required"
   },
   "notes": [
-    "Prefer references to existing canonical artifacts over duplication.",
-    "Replace defaults only after repository-specific evidence or explicit human decision."
+    "Faith anchors are human-authored and agent-read-only. The scaffold intentionally does not create their canonical contents.",
+    "Prefer references to existing canonical human-authored anchors over duplication.",
+    "Replace ordinary governance defaults only after repository-specific evidence or explicit human decision."
   ]
 }
