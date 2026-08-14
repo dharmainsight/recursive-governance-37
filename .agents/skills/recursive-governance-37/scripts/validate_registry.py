@@ -45,6 +45,22 @@ def main():
         serialized=json.dumps(byid[owner].get('links',{}),ensure_ascii=False)
         miss=[t for t in targets if t not in serialized]
         if miss: errors.append(f'{owner}: missing recursive links {miss}')
+
+    # Faith is the human-authored root of trust. These invariants are structural and mandatory.
+    f=byid.get('faculty.faith',{}).get('supporting_model') or {}
+    if f.get('human_only_write') is not True: errors.append('faculty.faith: human_only_write must be true')
+    if f.get('agent_access')!='read_only': errors.append('faculty.faith: agent_access must be read_only')
+    if f.get('reasoning_scope')!='explicit_reference_only': errors.append('faculty.faith: reasoning_scope must be explicit_reference_only')
+    anchors=f.get('four_unshakable_confidence_trust_anchors') or {}
+    if set(anchors)!={'buddha','dhamma','sangha','sila'}: errors.append('faculty.faith: must define buddha/dhamma/sangha/sila trust anchors')
+
+    p=byid.get('power.faith',{}).get('supporting_model') or {}
+    if p.get('human_only_write') is not True: errors.append('power.faith: human_only_write must be true')
+    if p.get('agent_access')!='read_only': errors.append('power.faith: agent_access must be read_only')
+    if p.get('reasoning_scope')!='bounded_principled_derivation': errors.append('power.faith: reasoning_scope must be bounded_principled_derivation')
+    if not p.get('cannot_create'): errors.append('power.faith: cannot_create constraints must be non-empty')
+    if not p.get('must_escalate_when'): errors.append('power.faith: must_escalate_when must be non-empty')
+
     print(f'Registry: {path}')
     print(f'Factors: {len(factors)}')
     print('Groups:', counts)
@@ -52,6 +68,6 @@ def main():
         print('\nFAIL')
         for e in errors: print('-',e)
         return 1
-    print('\nPASS: exact 37/37 registry and recursive invariants validated')
+    print('\nPASS: exact 37/37 registry, faith-root invariants, and recursive links validated')
     return 0
 if __name__=='__main__': raise SystemExit(main())
