@@ -23,11 +23,11 @@ PATTERNS={
  'faculty.mindfulness':['state','trace','log','run-record','observability'],
  'faculty.concentration':['sandbox','ci','test','build','scope','approval'],
  'faculty.wisdom':['root cause','causal','incident','adr','desired state','acceptance'],
- 'power.faith':['faith/owner','faith/policy','faith/authority','faith/operations','derivation','delegated authority','escalat','human_only','read_only'],
- 'power.energy':['retry','backoff','escalat','failure'],
- 'power.mindfulness':['checkpoint','resume','state','history','trace'],
- 'power.concentration':['scope','branch','parallel','worktree','limit'],
- 'power.wisdom':['unknown','uncertainty','hypothesis','counterexample','falsif'],
+ 'power.faith':['faith/owner','faith/policy','faith/authority','faith/operations','unstated','derivation','delegated authority','escalat','human_only','read_only'],
+ 'power.energy':['implement','completion','verification','retry','backoff','escalat','failure'],
+ 'power.mindfulness':['observed fact','constraint','checkpoint','refresh','resume','state','history','trace'],
+ 'power.concentration':['objective','focus','urgency','scope','branch','parallel','worktree','limit'],
+ 'power.wisdom':['necessary condition','sufficient condition','causal','unknown','uncertainty','hypothesis','counterexample','falsif'],
  'awakening.mindfulness':['meta-control','stagnation','thrash','loop state'],
  'awakening.investigation':['alternative hypothesis','investigation','strategy','experiment'],
  'awakening.energy':['stagnation','retry budget','parallelism','effort'],
@@ -86,7 +86,7 @@ def audit(root:Path):
         'factor_count':len(result),
         'group_summary':groups,
         'factors':result,
-        'warning':'Heuristic evidence discovery only. Candidate presence is not compliance; absence may be false negative. For faith, semantic review must verify that the anchors are human-authored, agent-read-only, and that faith power derives rather than invents policy.'
+        'warning':'Heuristic evidence discovery only. Candidate presence is not compliance; absence may be false negative. Review all five faculties at one level. Each power requires an unstated/disturbed case, autonomous response, opposing-tendency resistance, verification, and no case-specific coaching. Protected 四不壊浄 anchors must be human-authored and agent-read-only inside the faith pair.'
     }
 
 def main():
@@ -96,3 +96,4 @@ def main():
     else: print(text,end='')
     return 0
 if __name__=='__main__': raise SystemExit(main())
+

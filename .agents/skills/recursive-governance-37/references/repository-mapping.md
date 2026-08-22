@@ -4,25 +4,25 @@ The skill augments an existing repository; it does not rename the repository int
 
 ## Mapping precedence
 
-Resolve the human-authored faith root before ordinary governance:
+Map the human-authored 四不壊浄 basis when evaluating 信根, alongside the other four faculties:
 
 1. **Owner / 仏** — identify the ultimate human authority for the domain.
 2. **Policy / 法** — identify owner-issued mission, principles, policy, and direction.
 3. **People and delegated authority / 僧** — identify human roles and the authority delegated to each.
 4. **Operating rules / 戒** — identify human-authored invariants, prohibitions, approvals, and procedures.
 
-These anchors must be human-authored and agent-read-only. Existing canonical human documents should be referenced directly. Do not copy them into a new faith directory merely to fit this model.
+These anchors must be human-authored and agent-read-only. Existing canonical human documents should be referenced directly. Do not copy them into a new faith directory merely to fit this model, and do not present them as an extra maturity layer before 五根.
 
 For every ordinary governance concern:
 1. discover existing canonical artifacts;
-2. determine whether they are current and authoritative under the faith root;
+2. determine whether they are current and authoritative under protected human sources;
 3. point the governance manifest to them;
 4. create a new ordinary-governance artifact only when no adequate canonical source exists;
 5. never copy a canonical document merely to fit this model.
 
 ## Typical evidence
 
-### Faith root / 信
+### Protected 四不壊浄 basis / 信根・信力
 
 - Owner / 仏: ownership records, founder/owner decision document, authorized service owner declaration.
 - Policy / 法: mission, product principles, strategic policy, explicit owner decisions.
@@ -47,4 +47,5 @@ The agent may discover and map these documents, but may not author their canonic
 
 Create `docs/agent-governance/manifest.json` only when useful. It should be an index of pointers and policy metadata, not a second copy of product, architecture, or faith truth.
 
-The manifest may point to faith anchors, but the manifest itself does not make an agent-authored document a valid faith anchor. Canonical faith authority comes from authorized human authorship plus the configured read-only boundary.
+The manifest may point to the four anchors, but the manifest itself does not make an agent-authored document canonical. Canonical authority comes from authorized human authorship plus the configured read-only boundary; this protection serves 信根・信力 and is not an additional faith factor.
+

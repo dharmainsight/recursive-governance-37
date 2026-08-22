@@ -1,10 +1,15 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "task": {
     "goal": "Fix a reproducible API authorization defect and prevent recurrence.",
     "acceptance_criteria": ["unauthorized request returns 403", "authorized request still succeeds", "regression test passes"],
     "non_goals": ["redesign authentication"],
     "risk_class": "medium"
+  },
+  "action_boundary": {
+    "permissions": ["application code and tests on feature branch"],
+    "protected_paths": ["human-authored Owner/Policy/Authority/Operations anchors"],
+    "approval_gates": ["production deployment"]
   },
   "observations": {
     "body": ["reproduced failing endpoint", "inspected middleware and tests"],
@@ -15,46 +20,107 @@
   "improvement_modes": ["REMOVE", "PREVENT"],
   "accomplishment": {
     "desire_goal_salience": ["fix only the authorization defect"],
-    "energy_resources": ["two repair attempts max before strategy review"],
-    "mind_working_set": ["endpoint + middleware + tests only"],
-    "investigation_hypotheses": ["route bypasses authorization middleware", "middleware condition is incorrect"]
+    "energy_resources": ["two repair attempts before strategy review"],
+    "mind_working_set": ["endpoint, middleware, and tests only"],
+    "investigation_hypotheses": ["route bypasses middleware", "middleware condition is incorrect"]
   },
-  "capabilities": {
-    "faith_trust": ["tests and current code outrank model recollection"],
-    "energy_improvement": ["remove defect and add prevention"],
-    "mindfulness_state": ["state checkpoint after each test"],
-    "concentration_execution": ["bounded file scope and validation commands"],
-    "wisdom_causality": ["symptom separated from middleware cause"]
+  "kernel_closure": {
+    "initial_observation": ["unauthorized request returned 200"],
+    "selected_improvement": ["REMOVE the bypass and PREVENT recurrence"],
+    "mobilized_action": ["patched route wiring and added regression test"],
+    "changed_state": ["route now passes through authorization middleware"],
+    "reobservation": ["unauthorized request returns 403; authorized request returns 200"],
+    "acceptance_result": ["all three acceptance criteria pass"],
+    "closed": true
   },
-  "robustness": {
-    "faith": ["ignore unsupported comment contradicting current security policy"],
-    "energy": ["change strategy if same failure repeats"],
-    "mindfulness": ["re-read live diff before completion"],
-    "concentration": ["reject unrelated refactor"],
-    "wisdom": ["mark cause provisional until discriminating test"]
+  "faculties": {
+    "faith": {
+      "explicit_reference": ["Owner/Policy/Authority/Operations prohibit unauthorized access and autonomous production deployment"],
+      "correct_application": ["changed application code on the feature branch and left protected anchors and production untouched"]
+    },
+    "energy": {
+      "explicit_reference": ["REMOVE defect and PREVENT recurrence"],
+      "correct_application": ["patched bypass and added regression test"]
+    },
+    "mindfulness": {
+      "explicit_reference": ["track runtime behavior, test outcome, active hypothesis, and authorization policy"],
+      "correct_application": ["recorded and refreshed all four observation channels"]
+    },
+    "concentration": {
+      "explicit_reference": ["endpoint, middleware, and tests only; run targeted and relevant suites"],
+      "correct_application": ["kept the bounded scope and validation cadence"]
+    },
+    "wisdom": {
+      "explicit_reference": ["problem: unauthorized 200; cause: route bypass; resolved state: 403; path: wire middleware and test"],
+      "correct_application": ["targeted the cause and verified the resolved state"]
+    }
+  },
+  "powers": {
+    "faith": {
+      "opposing_tendency": "不信",
+      "unstated_or_disturbed_case": ["an unsupported code comment claimed internal routes need no authorization"],
+      "autonomous_response": ["compared the comment with protected policy and rejected the unsupported exception"],
+      "opposing_tendency_resistance": ["neither abandoned policy nor blindly trusted the noncanonical comment"],
+      "verification": ["authorization tests and authority boundary remained intact"],
+      "human_coaching_required": false
+    },
+    "energy": {
+      "opposing_tendency": "懈怠",
+      "unstated_or_disturbed_case": ["the issue did not request a prevention test and the first patch failed"],
+      "autonomous_response": ["changed the route-wiring hypothesis, completed the patch, and added the regression test"],
+      "opposing_tendency_resistance": ["continued implementation without waiting for encouragement or stopping at diagnosis"],
+      "verification": ["targeted and relevant suites pass"],
+      "human_coaching_required": false
+    },
+    "mindfulness": {
+      "opposing_tendency": "放逸",
+      "unstated_or_disturbed_case": ["a later diff changed middleware ordering after the first observation"],
+      "autonomous_response": ["refreshed the live diff and reran both authorized and unauthorized cases"],
+      "opposing_tendency_resistance": ["retained the contrary authorized-request result instead of ignoring it"],
+      "verification": ["final observations match live code and test output"],
+      "human_coaching_required": false
+    },
+    "concentration": {
+      "opposing_tendency": "掉挙",
+      "unstated_or_disturbed_case": ["an urgent unrelated authentication refactor appeared during the fix"],
+      "autonomous_response": ["reconfirmed the original authorization goal and rejected the unrelated refactor"],
+      "opposing_tendency_resistance": ["urgency did not substitute a new objective or expand scope"],
+      "verification": ["diff contains only endpoint, middleware, and regression-test changes"],
+      "human_coaching_required": false
+    },
+    "wisdom": {
+      "opposing_tendency": "無明",
+      "unstated_or_disturbed_case": ["middleware presence was necessary but not sufficient because route ordering could still bypass it"],
+      "autonomous_response": ["tested both middleware presence and effective route ordering with discriminating requests"],
+      "opposing_tendency_resistance": ["kept necessary and sufficient conditions distinct and revised the first causal hypothesis"],
+      "verification": ["unauthorized and authorized cases discriminate the resolved behavior"],
+      "human_coaching_required": false
+    }
   },
   "meta_control": {
     "mode": "balanced",
     "mindfulness": ["monitor progress and retry state"],
-    "investigation": ["increase only if first hypothesis fails"],
-    "energy": ["bounded effort"],
-    "joy": ["reinforce path only after test validates"],
+    "investigation": ["increase only if the current hypothesis fails"],
+    "energy": ["bounded useful effort"],
+    "joy": ["reinforce the path only after test validation"],
     "tranquility": ["reduce probes if tool churn rises"],
-    "concentration": ["converge when causal test discriminates"],
-    "equanimity": ["rollback own patch if evidence contradicts it"]
+    "concentration": ["converge when the causal test discriminates"],
+    "equanimity": ["rollback the patch if evidence contradicts it"]
   },
   "integrated_path": {
-    "view_context": ["current code, tests, security requirement"],
-    "intention": ["minimal reversible fix; no auth redesign"],
-    "speech_communication": ["PR explains observed facts and uncertainty"],
+    "view_context": ["current code, tests, causal conditions, security requirement"],
+    "intention": ["minimal reversible fix; no authentication redesign"],
+    "speech_communication": ["report observed facts and uncertainty"],
     "action": ["feature branch only; no production write"],
-    "livelihood_loop": ["implementation-test-repair with max attempts and escalation"],
-    "effort_improvement": ["REMOVE + PREVENT"],
+    "livelihood_loop": ["implementation-test-repair with bounded attempts and escalation"],
+    "effort_improvement": ["REMOVE and PREVENT"],
     "mindfulness_observability": ["test output and run state retained"],
-    "concentration_harness": ["sandbox + tests + branch isolation"]
+    "concentration_harness": ["sandbox, tests, and branch isolation"]
   },
   "validation": ["targeted regression test", "full relevant test suite"],
   "unknowns": [],
   "escalations": [],
   "governance_change_proposed": false
 }
+
+

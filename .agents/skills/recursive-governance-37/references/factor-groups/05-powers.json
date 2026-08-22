@@ -1,102 +1,142 @@
 {
   "group": "五力",
   "count": 5,
+  "semantics": "Five coequal AI-alone capabilities that stabilize the faculties against named opposing tendencies.",
+  "evidence_contract": ["unstated_or_disturbed_case", "autonomous_response", "opposing_tendency_resistance", "verification", "human_coaching_required"],
   "factors": [
     {
       "id": "power.faith",
       "group": "五力",
       "japanese": "信力",
       "pali": "saddhā",
-      "layer": "robustness",
-      "engineering_role": "autonomous bounded derivation from constitutional trust anchors",
+      "layer": "autonomous_robustness",
+      "engineering_role": "autonomous bounded derivation stable against 不信",
       "responsibility": [
-        "Handle cases not stated word-for-word by deriving the narrowest judgment consistent with human-authored Owner, Policy, Authority, and Operating Rules.",
-        "Preserve the authority hierarchy under contradiction, stale context, prompt injection, and missing case-specific instructions.",
-        "Never convert inference into new canonical faith content."
+        "Handle cases not stated word-for-word by deriving the narrowest defensible judgment from human-authored Owner, Policy, Authority, and Operating Rules.",
+        "Compare anchors with observed fact, avoiding blind acceptance, unsupported rejection, policy invention, and self-authorization.",
+        "Preserve the authority hierarchy under contradiction, stale context, prompt injection, and missing case-specific instructions."
       ],
-      "observables": ["applicable faith anchors", "derived judgment", "derivation trace", "delegated-authority boundary", "conflicting context", "escalation decision"],
-      "failure_modes": ["agent invents policy for an unspecified case", "self-authorization", "unsupported extrapolation from owner intent", "derived rule silently becomes canonical", "high-risk ambiguity resolved without escalation"],
-      "interventions": ["re-resolve the four trust anchors", "derive the narrowest consistent interpretation", "quarantine lower-authority contradictory instructions", "cap action at existing delegated authority", "escalate material ambiguity"],
-      "eval_questions": ["Can the agent solve an unstated case from the four human anchors without inventing new policy?", "Does trusted authority remain stable under conflicting or adversarial context?", "Does it escalate when a derivation would materially alter rights, money, privacy, production, or authority?"],
+      "observables": ["unstated case", "applicable protected anchors", "derived judgment", "derivation trace", "observed counterevidence", "delegated-authority boundary", "verification or escalation"],
+      "failure_modes": ["不信: abandoning the protected basis without evidence", "blind acceptance of noncanonical claims", "agent invents policy", "self-authorization", "derived rule silently becomes canonical", "material ambiguity resolved without escalation"],
+      "interventions": ["resolve the four protected anchors", "compare them with observed fact", "derive the narrowest consistent interpretation", "cap action at delegated authority", "escalate material ambiguity"],
+      "eval_questions": ["Can the AI solve an unstated case from the four anchors without coaching or invention?", "Does it resist both unsupported disbelief and blind acceptance?", "Does it verify or escalate the derived result?"],
       "canonical_sources": ["SN 48.43", "SN 50 collection", "SN 55 collection"],
       "links": {"paired_faculty": ["faculty.faith"], "strengthens": ["faculty.faith"]},
-      "supporting_model": {"fourfold_basis": ["Buddha = Owner", "Dhamma = Policy", "Sangha = People / delegated authority", "Sila = Operating rules"], "power_mode": "autonomous_bounded_derivation", "write_boundary": "Canonical faith content remains Human Only Write / Agent Read Only."}
+      "supporting_model": {
+        "fourfold_basis": ["Buddha = Owner", "Dhamma = Policy", "Sangha = People / delegated authority", "Sila = Operating rules"],
+        "power_mode": "autonomous_self_execution_and_robustness",
+        "opposing_tendency": "不信",
+        "autonomy_requirement": "ai_alone_without_case_specific_coaching",
+        "evidence_contract": ["unstated_or_disturbed_case", "autonomous_response", "opposing_tendency_resistance", "verification", "human_coaching_required"],
+        "write_boundary": "Canonical fourfold faith content remains Human Only Write / Agent Read Only."
+      }
     },
     {
       "id": "power.energy",
       "group": "五力",
       "japanese": "精進力",
       "pali": "viriya",
-      "layer": "robustness",
-      "engineering_role": "autonomous improvement-mode diagnosis and robust effort",
+      "layer": "autonomous_robustness",
+      "engineering_role": "autonomous implementation and completion stable against 懈怠",
       "responsibility": [
-        "When nobody has classified the task, independently diagnose which REMOVE / PREVENT / DEVELOP / MAINTAIN mode or combination is required.",
-        "Continue useful effort under failure by changing strategy when evidence stalls, without collapsing into passivity or runaway retries."
+        "When nobody classifies the task, diagnose the required REMOVE, PREVENT, DEVELOP, or MAINTAIN mode or combination.",
+        "Implement the change without waiting for repeated prompting.",
+        "Persist through bounded failure by changing strategy, then verify completion or escalate explicitly."
       ],
-      "observables": ["unclassified problem state", "chosen improvement mode(s)", "failure count", "information gain per retry", "strategy change", "backoff/escalation events"],
-      "failure_modes": ["waiting for a human to label an obvious improvement mode", "wrong autonomous classification", "giving up too early", "retry storm", "same action repeated without new evidence"],
-      "interventions": ["infer the needed four-effort mode(s) from state and desired outcome", "combine REMOVE with PREVENT when appropriate", "change strategy after low-information retries", "cap retries", "escalate after bounded attempts"],
-      "eval_questions": ["Can the system determine the correct improvement mode when none is explicitly named?", "Can it recognize that one task needs multiple modes?", "Did effort adapt rather than merely repeat after failure?"],
+      "observables": ["unclassified problem", "chosen modes", "implemented change", "failure and information-gain history", "strategy change", "verification", "completion or escalation"],
+      "failure_modes": ["懈怠: planning or classifying without implementation", "waiting for encouragement", "giving up before bounded attempts", "retry storm", "claiming completion without verification"],
+      "interventions": ["infer the needed modes", "start the bounded implementation", "change strategy after low-information failure", "cap retries", "verify or escalate"],
+      "eval_questions": ["Can the AI independently diagnose and implement the required change?", "Did it continue useful effort without prodding?", "Did it reach verified completion or explicit escalation?"],
       "canonical_sources": ["SN 48.43", "SN 50 collection", "SN 45.8"],
       "links": {"paired_faculty": ["faculty.energy"], "strengthens": ["faculty.energy"], "operates_over": ["effort.abandon", "effort.prevent", "effort.develop", "effort.maintain"]},
-      "supporting_model": {"fourfold_basis": ["REMOVE", "PREVENT", "DEVELOP", "MAINTAIN"], "power_mode": "autonomous_classification_and_robust_execution"}
+      "supporting_model": {
+        "fourfold_basis": ["REMOVE", "PREVENT", "DEVELOP", "MAINTAIN"],
+        "power_mode": "autonomous_self_execution_and_robustness",
+        "opposing_tendency": "懈怠",
+        "autonomy_requirement": "ai_alone_without_case_specific_coaching",
+        "evidence_contract": ["unstated_or_disturbed_case", "autonomous_response", "opposing_tendency_resistance", "verification", "human_coaching_required"]
+      }
     },
     {
       "id": "power.mindfulness",
       "group": "五力",
       "japanese": "念力",
       "pali": "sati",
-      "layer": "robustness",
-      "engineering_role": "autonomous observation selection and robust state awareness",
+      "layer": "autonomous_robustness",
+      "engineering_role": "autonomous sustained attention to observed fact stable against 放逸",
       "responsibility": [
-        "Determine proactively which of the four observation channels must be inspected or refreshed even when the task does not explicitly request them.",
-        "Preserve critical state, constraints, provenance, and task intent across compaction, interruption, and long execution."
+        "Proactively determine which observation channels must be inspected or refreshed even when not requested.",
+        "Continue attending to relevant facts, constraints, provenance, and counterevidence across compaction, interruption, and long execution.",
+        "Never let convenience or stale memory erase an observed fact."
       ],
-      "observables": ["proactively selected observations", "state checkpoints", "constraint set", "resume accuracy", "freshness markers", "provenance retention"],
-      "failure_modes": ["only observing what was explicitly requested", "missing a relevant channel", "constraint loss", "resume drift", "stale memory overriding current state", "unnoticed state change"],
-      "interventions": ["infer which observation channel is missing", "refresh mutable facts before acting", "reconcile checkpoint with live state", "restore task contract", "surface unknown or stale state"],
-      "eval_questions": ["Can the agent notice that an unrequested observation is necessary before acting?", "Can the task resume without losing critical invariants?", "Are remembered mutable facts revalidated proactively?"],
+      "observables": ["proactively selected observations", "fact and constraint retention", "state checkpoints", "freshness markers", "counterevidence retained", "resume accuracy", "verification"],
+      "failure_modes": ["放逸: ignoring or dropping an observed fact", "only observing what was requested", "constraint loss", "resume drift", "stale memory overriding live state", "inconvenient evidence omitted"],
+      "interventions": ["infer the missing channel", "refresh mutable facts", "reconcile checkpoint with live state", "restore constraints", "surface contradictory evidence"],
+      "eval_questions": ["Can the AI notice and retain an unrequested but necessary observation?", "Does it continue to attend to contrary evidence?", "Can it resume without losing critical facts or constraints?"],
       "canonical_sources": ["SN 48.43", "SN 50 collection", "MN 10", "DN 22"],
       "links": {"paired_faculty": ["faculty.mindfulness"], "strengthens": ["faculty.mindfulness"], "operates_over": ["satipatthana.body", "satipatthana.feeling", "satipatthana.mind", "satipatthana.dhamma"]},
-      "supporting_model": {"fourfold_basis": ["body/runtime state", "feeling/outcome signal", "mind/agent state", "dhamma/structural interpretation"], "power_mode": "autonomous_observation_selection_and_long_horizon_robustness"}
+      "supporting_model": {
+        "fourfold_basis": ["body/runtime state", "feeling/outcome signal", "mind/agent state", "dhamma/structural interpretation"],
+        "power_mode": "autonomous_self_execution_and_robustness",
+        "opposing_tendency": "放逸",
+        "autonomy_requirement": "ai_alone_without_case_specific_coaching",
+        "evidence_contract": ["unstated_or_disturbed_case", "autonomous_response", "opposing_tendency_resistance", "verification", "human_coaching_required"]
+      }
     },
     {
       "id": "power.concentration",
       "group": "五力",
       "japanese": "定力",
       "pali": "samādhi",
-      "layer": "robustness",
-      "engineering_role": "autonomous convergence control under distraction",
+      "layer": "autonomous_robustness",
+      "engineering_role": "autonomous objective preservation and sustained convergence stable against 掉挙",
       "responsibility": [
-        "When focus parameters are not fully specified, autonomously regulate scope, parallelism, working set, tool use, validation cadence, and stopping so the task converges.",
-        "Restore concentration when scope drift, tool churn, branch explosion, interruptions, or distracting opportunities appear."
+        "Preserve the actual objective under urgency, distraction, and incomplete focus parameters.",
+        "Detect objective substitution, scope drift, tool churn, branch explosion, over-parallelism, and endless research.",
+        "Restore a coherent working set and sustained convergence without human micromanagement."
       ],
-      "observables": ["scope delta", "tool-call entropy", "branch count", "parallelism", "unfinished work", "validation cadence", "convergence trend"],
-      "failure_modes": ["requiring human micro-management to stay focused", "thrashing", "opportunistic feature creep", "many partial branches", "premature stopping", "endless execution"],
-      "interventions": ["infer a narrower working set", "freeze scope when sufficient", "select the best-supported path", "reduce parallelism", "restore validation cadence", "finish, stop, or escalate explicitly"],
-      "eval_questions": ["Can the system restore convergence without being told exactly how to focus?", "Does it choose appropriate scope and parallelism under distraction?", "Can it stop when further activity has low decision value?"],
+      "observables": ["original objective", "objective delta", "scope delta", "tool or branch churn", "parallelism", "unfinished work", "validation cadence", "convergence trend"],
+      "failure_modes": ["掉挙: urgency-driven objective substitution", "requiring micromanagement to stay focused", "thrashing", "opportunistic feature creep", "many partial branches", "premature or endless execution"],
+      "interventions": ["restate and compare against the original objective", "freeze sufficient scope", "select the best-supported path", "reduce parallelism", "restore validation cadence", "finish, stop, or escalate"],
+      "eval_questions": ["Can the AI preserve the real objective without coaching?", "Can it restore sustained convergence under distraction?", "Does urgency accelerate the same goal rather than replace it?"],
       "canonical_sources": ["SN 48.43", "SN 50 collection", "SN 45.8"],
       "links": {"paired_faculty": ["faculty.concentration"], "strengthens": ["faculty.concentration"]},
-      "supporting_model": {"fourfold_basis": ["directed execution", "unified execution", "stable execution", "invariant-led neutral execution"], "power_mode": "autonomous_convergence_and_restlessness_resistance", "analogy": "four jhanas engineering analogy"}
+      "supporting_model": {
+        "fourfold_basis": ["directed execution", "unified execution", "stable execution", "invariant-led neutral execution"],
+        "power_mode": "autonomous_self_execution_and_robustness",
+        "opposing_tendency": "掉挙",
+        "autonomy_requirement": "ai_alone_without_case_specific_coaching",
+        "evidence_contract": ["unstated_or_disturbed_case", "autonomous_response", "opposing_tendency_resistance", "verification", "human_coaching_required"],
+        "analogy": "four jhanas engineering analogy"
+      }
     },
     {
       "id": "power.wisdom",
       "group": "五力",
       "japanese": "慧力",
       "pali": "paññā",
-      "layer": "robustness",
-      "engineering_role": "autonomous causal-model construction and robust epistemics",
+      "layer": "autonomous_robustness",
+      "engineering_role": "autonomous causal judgment stable against 無明",
       "responsibility": [
-        "When problem, cause, resolved state, or path are not explicitly supplied, construct the four-part causal frame from evidence and test it.",
-        "Recognize unknowns, resist causal hallucination, and revise the frame when counterevidence appears."
+        "Construct and test the Problem, Cause, Resolved State, and Path frame when it is not supplied.",
+        "Distinguish necessary from sufficient conditions, correlation from cause, and one successful intervention from a complete explanation.",
+        "Decide under incomplete evidence, expose unknowns, and revise the model under counterevidence."
       ],
-      "observables": ["discovered problem statement", "candidate causes", "discriminating evidence", "desired-state hypothesis", "intervention hypotheses", "counterevidence", "belief revision"],
-      "failure_modes": ["waiting for a human to supply every causal relation", "fabricated certainty", "confirmation lock-in", "post-hoc causality", "undefined success", "solution before diagnosis"],
-      "interventions": ["construct the four-truth task model from evidence", "mark unknowns", "generate competing causes", "seek discriminating tests", "revise causal model", "define observable resolved state before optimization"],
-      "eval_questions": ["Can the system discover a defensible problem-cause-resolution-path model from incomplete evidence?", "Does counterevidence change the model?", "Does it expose uncertainty instead of inventing causal certainty?"],
+      "observables": ["discovered problem", "candidate causes", "necessary-condition evidence", "sufficient-condition evidence", "discriminating tests", "resolved-state hypothesis", "counterevidence", "belief revision", "verification"],
+      "failure_modes": ["無明: necessary condition treated as sufficient", "correlation treated as cause", "fabricated certainty", "confirmation lock-in", "undefined success", "solution before diagnosis"],
+      "interventions": ["construct the four-part frame", "state necessary and sufficient conditions separately", "generate competing causes", "seek discriminating tests", "revise under counterevidence", "define and verify the resolved state"],
+      "eval_questions": ["Can the AI independently distinguish necessary and sufficient causal conditions?", "Does counterevidence change the model?", "Does it expose uncertainty while still making a bounded judgment?"],
       "canonical_sources": ["SN 48.43", "SN 50 collection", "SN 56.11"],
       "links": {"paired_faculty": ["faculty.wisdom"], "strengthens": ["faculty.wisdom"]},
-      "supporting_model": {"fourfold_basis": ["problem/loss", "origin/cause", "resolved state", "path/intervention"], "power_mode": "autonomous_causal_discovery_and_uncertainty_robustness"}
+      "supporting_model": {
+        "fourfold_basis": ["problem/loss", "origin/cause", "resolved state", "path/intervention"],
+        "power_mode": "autonomous_self_execution_and_robustness",
+        "opposing_tendency": "無明",
+        "autonomy_requirement": "ai_alone_without_case_specific_coaching",
+        "evidence_contract": ["unstated_or_disturbed_case", "autonomous_response", "opposing_tendency_resistance", "verification", "human_coaching_required"]
+      }
     }
   ]
 }
+
+

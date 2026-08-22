@@ -13,6 +13,15 @@ PAIRS={
   'concentration':('faculty.concentration','power.concentration'),
   'wisdom':('faculty.wisdom','power.wisdom'),
 }
+OPPOSITES={
+  'faith':'不信',
+  'energy':'懈怠',
+  'mindfulness':'放逸',
+  'concentration':'掉挙',
+  'wisdom':'無明',
+}
+FACULTY_EVIDENCE=['explicit_reference','correct_application']
+POWER_EVIDENCE=['unstated_or_disturbed_case','autonomous_response','opposing_tendency_resistance','verification','human_coaching_required']
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--registry'); args=ap.parse_args()
@@ -57,7 +66,12 @@ def main():
         miss=[t for t in targets if t not in serialized]
         if miss: errors.append(f'{owner}: missing recursive links {miss}')
 
-    # Universal faculty-power duality.
+    declared_opposites=data.get('power_opposing_tendencies') or {}
+    expected_opposites={PAIRS[name][1]:value for name,value in OPPOSITES.items()}
+    if declared_opposites!=expected_opposites:
+        errors.append(f'power opposing tendencies {declared_opposites} != {expected_opposites}')
+
+    # Universal, coequal faculty-power duality.
     for name,(fid,pid) in PAIRS.items():
         f=byid.get(fid)
         p=byid.get(pid)
@@ -68,8 +82,16 @@ def main():
         ps=p.get('supporting_model') or {}
         if fs.get('faculty_mode')!='explicit_reference':
             errors.append(f'{fid}: faculty_mode must be explicit_reference')
-        if not str(ps.get('power_mode','')).startswith('autonomous_'):
-            errors.append(f'{pid}: power_mode must be an autonomous_* mode')
+        if fs.get('evidence_contract')!=FACULTY_EVIDENCE:
+            errors.append(f'{fid}: faculty evidence contract must be {FACULTY_EVIDENCE}')
+        if ps.get('power_mode')!='autonomous_self_execution_and_robustness':
+            errors.append(f'{pid}: power_mode must require autonomous self-execution and robustness')
+        if ps.get('opposing_tendency')!=OPPOSITES[name]:
+            errors.append(f'{pid}: opposing_tendency must be {OPPOSITES[name]}')
+        if ps.get('autonomy_requirement')!='ai_alone_without_case_specific_coaching':
+            errors.append(f'{pid}: autonomy requirement must prohibit case-specific human coaching')
+        if ps.get('evidence_contract')!=POWER_EVIDENCE:
+            errors.append(f'{pid}: power evidence contract must be {POWER_EVIDENCE}')
         if len(fs.get('fourfold_basis') or [])!=4:
             errors.append(f'{fid}: fourfold_basis must contain exactly four elements')
         if len(ps.get('fourfold_basis') or [])!=4:
@@ -79,7 +101,7 @@ def main():
         if fid not in json.dumps(p.get('links',{}),ensure_ascii=False):
             errors.append(f'{pid}: must link to paired faculty {fid}')
 
-    # Faith has a special write boundary; duality itself is not special to faith.
+    # Faith has a protected fourfold basis inside the coequal pair; it is not a preliminary layer.
     ff=byid.get('faculty.faith',{}).get('supporting_model') or {}
     fp=byid.get('power.faith',{}).get('supporting_model') or {}
     if 'Human Only Write' not in str(ff.get('write_boundary','')):
@@ -97,6 +119,7 @@ def main():
         print('\nFAIL')
         for e in errors: print('-',e)
         return 1
-    print('\nPASS: exact 37/37 registry, five faculty-power dual pairs, faith-root boundary, and recursive links validated')
+    print('\nPASS: exact 37/37 registry, five coequal faculties, five AI-alone powers with opposing tendencies, protected faith-pair boundary, and recursive links validated')
     return 0
 if __name__=='__main__': raise SystemExit(main())
+

@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "model_name": "Recursive Self-Governance 37",
   "purpose": "Engineering analogy that operationalizes all 37 bodhipakkhiya-dhamma factors as responsibilities, evidence, failure modes, interventions, and evals for repository-based agent loops.",
   "doctrinal_boundary": "This is an engineering analogy, not a claim that Buddhist doctrine is reducible to software architecture. Canonical-source identifiers constrain the Buddhist side; engineering mappings are explicitly interpretive.",
@@ -12,12 +12,22 @@
     "七覚支": 7,
     "八正道": 8
   },
+  "power_opposing_tendencies": {
+    "power.faith": "不信",
+    "power.energy": "懈怠",
+    "power.mindfulness": "放逸",
+    "power.concentration": "掉挙",
+    "power.wisdom": "無明"
+  },
   "recursive_invariants": [
+    "The minimum operational kernel closes only when action changes state and the changed state is reobserved through 四念処.",
     "正精進 integrates the four right efforts.",
     "正念 integrates the four establishments of mindfulness.",
     "正定 integrates concentration capability within a harness; the four-jhāna mapping is an engineering analogy, not literal identity.",
     "正見 uses the four-truth task model; its path component recursively points to the integrated path architecture.",
-    "五根 capability layers reuse operational-kernel functions; 五力 stress-test the corresponding faculties under disturbance.",
+    "All five faculties are coequal explicit-reference capabilities; 信 is not a preliminary layer outside 五根.",
+    "五力 require AI-alone execution under an unstated or disturbed case and resist 不信, 懈怠, 放逸, 掉挙, and 無明 respectively.",
+    "Canonical 四不壊浄 content belongs inside 信根 and 信力 while remaining Human Only Write / Agent Read Only through external technical enforcement.",
     "七覚支 is the adaptive meta-controller: mindfulness remains active; investigation/energy/joy activate sluggish loops; tranquility/concentration/equanimity calm restless loops."
   ],
   "factor_files": [
@@ -30,3 +40,4 @@
     "factor-groups/07-eightfold-path.json"
   ]
 }
+
