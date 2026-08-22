@@ -1,0 +1,155 @@
+Recursive Governance 37 Verbatim Use License
+Version 1.0 — 22 August 2026
+
+Copyright (c) 2026 dharmainsight
+Project: https://github.com/dharmainsight/recursive-governance-37
+
+0. Purpose and status
+
+This License permits use, execution, copying, and redistribution of the Work
+only in unmodified form and with attribution. It does not permit modified or
+adapted versions of the Work. It is a source-available, no-derivatives license
+and is not an open-source license as defined by the Open Source Initiative.
+
+1. Definitions
+
+"Licensor" means dharmainsight and each copyright holder who expressly offers
+a contribution under this License.
+
+"Work" means Recursive Governance 37 and all original files distributed with
+this License, including its source code, documentation, registries, tests,
+templates, and other materials.
+
+"Unmodified Copy" means an exact copy of the Work or an exact copy of one or
+more separable files from the Work. Mechanical operations that do not alter
+content, meaning, or behavior—such as compression, archival packaging,
+transmission, line-ending conversion, or compilation from unmodified source—
+do not by themselves make a copy modified.
+
+"Generated Output" means repository-specific reports, run records, manifests,
+governance documents, and other output produced by executing an Unmodified
+Copy of the Work, including populated copies of files expressly supplied as
+templates under an assets/templates directory.
+
+"You" means the individual or legal entity exercising permissions under this
+License.
+
+2. Permission grant
+
+Subject to every condition in this License, the Licensor grants You a
+worldwide, royalty-free, non-exclusive license for the duration of copyright
+to:
+
+a. use and execute an Unmodified Copy of the Work for any purpose, including
+   commercial and noncommercial purposes;
+
+b. reproduce Unmodified Copies of the Work, in whole or as separable files;
+
+c. redistribute Unmodified Copies of the Work, in source or mechanically
+   compiled form; and
+
+d. include an Unmodified Copy in a larger collection, repository, product, or
+   service, provided the Work remains separable, unmodified, and clearly
+   identified as described in Section 3.
+
+Recipients of a redistributed copy receive these permissions directly from
+the Licensor under this License. You may not sublicense the Work.
+
+3. Attribution and notices
+
+For every copy or redistribution permitted by Section 2, You must:
+
+a. retain the copyright notice and this License;
+
+b. preserve existing author, provenance, and attribution notices; and
+
+c. provide a reasonably prominent attribution stating:
+
+   "Recursive Governance 37 by dharmainsight"
+   https://github.com/dharmainsight/recursive-governance-37
+
+You may not state or imply that the Licensor endorses You, Your work, or Your
+use of the Work.
+
+4. No modifications or derivative works
+
+Except for the Generated Output exception in Section 5, no permission is
+granted to modify, translate, adapt, transform, arrange, or create a derivative
+work from the Work. You may not use, copy, or distribute a modified version of
+the Work under this License.
+
+You may create patches, reviews, or change proposals solely to submit them to
+the Licensor, but this does not grant permission to publish or distribute a
+modified version of the Work. The Licensor may accept, reject, or separately
+license any proposed change.
+
+5. Generated Output exception
+
+You may use, edit, adapt, reproduce, and redistribute Generated Output without
+the no-modification restriction in Section 4. This exception exists so that
+the unmodified skill can audit and scaffold a target repository as intended.
+
+This exception does not permit You to:
+
+a. modify or redistribute the Work itself;
+
+b. present Generated Output as a modified edition, fork, or substitute for
+   Recursive Governance 37; or
+
+c. remove attribution from any substantial portion of the Work reproduced
+   verbatim inside Generated Output.
+
+6. Patents
+
+a. No patent license is granted, whether expressly, by implication, estoppel,
+   or otherwise.
+
+b. As a condition of the permissions in Section 2, You must not:
+
+   i. apply for, prosecute, or knowingly assist another person in applying for
+      or prosecuting a patent claim directed to the Work, a material portion
+      of the Work, or the 37-factor architecture as expressed in the Work; or
+
+   ii. assert, threaten to assert, or knowingly transfer for assertion any
+       patent claim against a person because that person uses, executes,
+       copies, or redistributes an Unmodified Copy as permitted by this
+       License.
+
+c. A breach of Section 6(b) permanently terminates all permissions granted to
+   You under this License.
+
+7. Termination
+
+Any exercise of the Work outside the permissions or conditions of this License
+automatically terminates the permissions granted to You. Except for a breach
+of Section 6(b), permissions are automatically reinstated if You cure the
+breach within 30 days after discovering it. Termination of Your permissions
+does not terminate the permissions of a compliant recipient who received an
+Unmodified Copy from You.
+
+8. No warranty
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO WARRANTIES OF TITLE, NON-INFRINGEMENT,
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, SECURITY, OR
+RELIABILITY. YOU ARE SOLELY RESPONSIBLE FOR DETERMINING WHETHER THE WORK IS
+SUITABLE FOR YOUR PURPOSE AND FOR ALL RISKS ARISING FROM ITS USE.
+
+9. Limitation of liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL THE
+LICENSOR OR ANY CONTRIBUTOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+CONNECTION WITH THE WORK OR THE USE OF OR OTHER DEALINGS IN THE WORK.
+
+10. Severability
+
+If any provision of this License is held unenforceable, that provision will be
+limited or removed only to the minimum extent necessary, and the remaining
+provisions will continue in effect.
+
+11. Additional permission
+
+The Licensor may grant separate written permission for modifications,
+derivative works, patent arrangements, or uses not permitted by this License.
+No separate permission changes the terms for other recipients.
