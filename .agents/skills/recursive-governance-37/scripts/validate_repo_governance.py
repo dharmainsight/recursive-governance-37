@@ -8,7 +8,7 @@ REQUIRED_BOUNDARIES={
     'faith_anchor_write','production_write','destructive_operation','external_send_publish',
     'permission_expansion','weaken_evaluation_gate','governance_self_modification'
 }
-REQUIRED_FAITH_KEYS={'owner','policy','authority','operations','write_policy','agent_access'}
+REQUIRED_FAITH_KEYS={'owner','policy','authority','operations','write_policy','agent_access','semantic_location','preliminary_layer'}
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--root',default='.'); args=ap.parse_args(); root=root_of(Path(args.root)); gov=root/'docs/agent-governance'; errors=[]; warnings=[]
@@ -26,6 +26,8 @@ def main():
         if missing: errors.append('missing faith_anchors keys: '+', '.join(sorted(missing)))
         if faith.get('write_policy')!='human_only': errors.append('faith_anchors.write_policy must be human_only')
         if faith.get('agent_access')!='read_only': errors.append('faith_anchors.agent_access must be read_only')
+        if faith.get('semantic_location')!='inside_faculty_and_power_of_faith': errors.append('faith_anchors.semantic_location must remain inside 信根 and 信力')
+        if faith.get('preliminary_layer') is not False: errors.append('faith_anchors.preliminary_layer must be false')
         for key in ('owner','policy','authority','operations'):
             p=faith.get(key)
             if not isinstance(p,str) or not p:
@@ -69,3 +71,4 @@ def main():
         print('FAIL'); return 1
     print('PASS'); return 0
 if __name__=='__main__': raise SystemExit(main())
+

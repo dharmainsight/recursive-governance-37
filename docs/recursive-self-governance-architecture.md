@@ -79,19 +79,19 @@
 
 # 3. 五つの二重構造
 
-| 系 | 基礎となる四項 | 根 | 力 |
-|---|---|---|---|
-| 信 | 四不壊浄 | 明示されたOwner / Policy / Authority / Rulesを参照 | 未記述ケースを4アンカーから原則的に導出 |
-| 精進 | 四正断 | 指定された改善モードを実行 | 未分類の問題から必要な改善モードを自律判定 |
-| 念 | 四念処 | 指定された観測対象を観測・保持 | 必要なのに指定されていない観測対象まで自律的に発見 |
-| 定 | 四禅 | 指定されたHarness・Scope・集中条件で実行 | 外乱下で自分からFocusを回復し収束させる |
-| 慧 | 四聖諦 | 与えられたProblem / Cause / Goal / Pathを正しく使う | 不完全な情報から因果構造そのものを発見・修正する |
+| 系 | 基礎となる四項 | 根 | 力 | 傾かない反対傾向 |
+|---|---|---|---|---|
+| 信 | 四不壊浄 | 明示されたOwner / Policy / Authority / Rulesを理解・適用 | 未記述ケースを4アンカーから原則的に導出 | 不信 |
+| 精進 | 四正断 | 指定された改善モードを実行 | 未分類の問題を判定し実装・検証まで自力遂行 | 懈怠 |
+| 念 | 四念処 | 指定された観測対象を観測・保持 | 必要な事実を自ら発見し、無視せず注視し続ける | 放逸 |
+| 定 | 四禅 | 指定されたHarness・Scope・集中条件で実行 | 目的を取り違えず外乱下で集中と収束を持続 | 掉挙 |
+| 慧 | 四聖諦 | 与えられたProblem / Cause / Goal / Pathを正しく使う | 必要条件・十分条件を区別して因果を自力判断 | 無明 |
 
 この二重構造が、人間の逐次コーチングから自律運転へ移行する境界になる。
 
 ---
 
-# 4. 信──四不壊浄をRoot of Trustとして実装する
+# 4. 信──五根・五力内部の四不壊浄を保護する
 
 信の基礎を四不壊浄として、組織・サービスのTrust Anchorへ写像する。
 
@@ -116,7 +116,7 @@
 
 ## 信力
 
-直接の文章がなくても、仏・法・僧・戒から最も狭く一貫した判断を導く。
+直接の文章がなくても、仏・法・僧・戒から最も狭く一貫した判断を導く。不信へ傾かないとは盲信ではなく、観測事実と出典を照合し、根拠なく捨てることも無批判に受け入れることもしないことである。
 
 例えば新しい外部SaaSへのProduction Log送信が未記述でも、
 
@@ -130,7 +130,7 @@
 
 と判断できる。
 
-### 信だけの特殊性
+### 信にだけあるCanonical保護
 
 **五根・五力の二重構造は全五組に共通する。**
 
@@ -142,7 +142,7 @@
 = Agent Read Only
 ```
 
-AgentはRead / Cite / Reason / Proposeまではできるが、自分のAuthorityの根拠を自分でCanonical化してはいけない。
+AgentはRead / Cite / Reason / Proposeまではできるが、自分のAuthorityの根拠を自分でCanonical化してはいけない。この意味は信根・信力の内部にあり、Harness Write DenyやCI guardはその内容を守る外部実装であって、五根より前に追加される「信の層」ではない。
 
 ---
 
@@ -202,9 +202,9 @@ Monitoring不足を補う
 → DEVELOP
 ```
 
-まで判断できるなら、それが精進力である。
+まで判断し、実際に実装して検証できるなら、それが精進力である。
 
-さらにFailureが続くとき、同じRetryを続けるのではなく、戦略変更・Backoff・Escalationを選べることも精進力に含める。
+さらにFailureが続くとき、同じRetryを続けるのではなく、戦略変更・Backoff・Escalationを選び、懈怠へ傾かず人間の催促なしで完了または明示的なEscalationへ到達することも精進力に含める。
 
 ---
 
@@ -231,7 +231,7 @@ Taskや運用ルールで、
 
 ## 念力
 
-**指定されていないが、現在の判断に必要な観測対象を自分から発見できる。**
+**指定されていないが、現在の判断に必要な観測対象を自分から発見し、観測した事実を無視せず注視し続けられる。**
 
 例えばUI BugのTaskでも、調査の結果、
 
@@ -249,7 +249,7 @@ Taskや運用ルールで、
 
 が起きても、必要な事実を再検証し、古いMemoryを現在状態より優先しない。
 
-これが念力である。
+反証や不都合な結果も保持し、放逸へ傾かないことまで含めて念力である。
 
 ---
 
@@ -298,9 +298,9 @@ Taskや運用ルールで、
 - Excessive parallelism
 - Endless research
 
-を自分で検知し、Working SetやParallelismを調整して収束を回復する。
+を自分で検知し、焦りによって目的そのものを取り違えず、Working SetやParallelismを調整して収束を回復する。
 
-つまり定力とは、**Focusの自己回復能力**である。
+つまり定力とは、掉挙へ傾かず、**本来の目的に対するFocusを持続・自己回復する能力**である。
 
 ---
 
@@ -361,11 +361,11 @@ Discriminating Test
 原因に効く介入を設計
 ```
 
-と因果構造自体を作り、Counterevidenceが出れば修正する。
+と因果構造自体を作り、必要条件と十分条件、相関と因果を区別し、Counterevidenceが出れば修正する。
 
 これが慧力である。
 
-**分からないものを分からないと保持することも慧力の一部**である。
+**分からないものを分からないと保持しながら自分で境界付き判断を行い、無明へ傾かないことも慧力の一部**である。
 
 ---
 
@@ -495,18 +495,11 @@ Agent
 
 ---
 
-# 12. Rooted Recursive Self-Governance
+# 12. Recursive Self-Governance with protected 四不壊浄
 
 完成形は次のようになる。
 
 ```text
-                 HUMAN
-                   │
-        Human-authored Faith Root
-        仏 / 法 / 僧 / 戒
-                   │
-              Agent Read Only
-                   ▼
         ┌──────────────────┐
         │ Operational Loop │
         │ 四念処           │
@@ -514,11 +507,15 @@ Agent
         │ 四神足           │
         └────────┬─────────┘
                  ▼
-              五根
-        Explicit Capability
+        五根（5項は同列）
+        ├─ 信根──四不壊浄 ◀── Human Only Write
+        ├─ 精進根                 Agent Read Only
+        ├─ 念根
+        ├─ 定根
+        └─ 慧根
                  ▼
-              五力
- Autonomous Derivation / Robustness
+        五力（AI単独遂行）
+        不信 / 懈怠 / 放逸 / 掉挙 / 無明に傾かない
                  ▼
               七覚支
         Adaptive Meta-Control
@@ -540,13 +537,13 @@ Governance Learningの結果は二つに分かれる。
 Ordinary Governanceの問題
 → Governed Update
 
-Faith Rootの問題
+Protected 四不壊浄の問題
 → Proposal
 → Authorized Human
 → HumanがCanonical Sourceを更新
 ```
 
-AIは自己統治するが、自分のAuthorityの根拠そのものは自己生成しない。
+AIは自己統治するが、信根・信力の内部で参照するCanonicalな四不壊浄そのものは自己生成しない。
 
 ---
 
@@ -596,36 +593,19 @@ Tests / IAM / CI / Sandbox
 
 # 14. 実践方法
 
-## STEP 1: Humanが信を初期化する
+## STEP 1: RepositoryをDiscoverし四念処で観測する
 
-Owner / Policy / Delegated Authority / Operating RulesをHumanが定義する。
+AgentがRequirements / Architecture / Tests / CI / Security / Observability / Loop definitionsを発見し、身・受・心・法の4観測面を分けて記録する。
 
-AgentにはCanonical Faithを書かせない。
+## STEP 2: 4+4+4の最小Loopを閉じる
 
-## STEP 2: Faithを技術的にRead Only化する
+四念処による初期観測、四正断による改善方向、四神足による動員と実行、変化後の状態、再観測、Acceptance Resultを記録する。再観測がなければ閉Loopとは扱わない。
 
-Promptだけでなく、
+## STEP 3: 五根を5項同列に評価する
 
-- Harness Write Deny
-- Repository protection
-- CI protected-path check
-- Audit log
+信根・精進根・念根・定根・慧根を、すべて「明示された四項」と「正しい適用」の同じ形式で評価する。
 
-を使う。
-
-## STEP 3: RepositoryをDiscoverする
-
-Agentが、
-
-- Requirements
-- Architecture
-- Tests
-- CI
-- Security
-- Observability
-- Loop definitions
-
-を発見する。
+信根で使うOwner / Policy / Delegated Authority / Operating Rulesが不足していれば、信根をMISSINGまたはUNKNOWNとし、Humanへ初期化を依頼する。Canonicalな四不壊浄はAgentに書かせず、Harness Write Deny / Repository protection / CI protected-path check / Audit logで守る。この保護は信根・信力の内容を守る実装であり、五根より前の別層ではない。
 
 ## STEP 4: 37因子へMapする
 
@@ -669,7 +649,7 @@ N/A
 
 と判断できる。
 
-## STEP 6: 不足するPowerをEvalする
+## STEP 6: 五力を反対傾向へのAI単独耐性としてEvalする
 
 Powerは通常のHappy-path testでは測れない。
 
@@ -683,6 +663,8 @@ Powerは通常のHappy-path testでは測れない。
 - Causal ambiguityを残す
 
 などのStress Testを行う。
+
+各Powerについて、未指示または外乱ケース、自律応答、検証結果、人間によるケース固有コーチングが不要だった証拠を要求する。対応は、信力↔不信、精進力↔懈怠、念力↔放逸、定力↔掉挙、慧力↔無明である。
 
 ## STEP 7: 七覚支でLoopを動的制御する
 
@@ -702,16 +684,16 @@ Faithに関わるならAgentは変更せずHumanへ戻す。
 
 # 15. 運用ルール
 
-1. **五根と五力を全5組で別々に評価する。**
-2. **根は明示参照、力は自律導出＋外乱耐性として扱う。**
-3. **信だけはCanonical ContentをHuman Only Writeにする。**
-4. **信力はPolicy CreationではなくPolicy Derivationである。**
-5. **精進力は未分類Taskを自分で四正断へ分類する。**
-6. **念力は未指定だが必要な観測を自分で発見する。**
-7. **定力はFocusを自分で回復する。**
-8. **慧力は因果モデル自体を発見・反証・更新する。**
-9. **同じFailureを繰り返したらRetryではなく七覚支のMeta-Controlへ上げる。**
-10. **Task変更とGovernance変更を分離し、Faith変更はHumanへ戻す。**
+1. **4+4+4は変化後の再観測まで行って閉じる。**
+2. **五根5項を同列の明示参照・正しい適用能力として評価する。**
+3. **四不壊浄は信根・信力の内部に置き、Canonical ContentをHuman Only Writeにする。**
+4. **五力はケース固有の人間コーチングなしで実装・判断・検証まで遂行する。**
+5. **信力は不信へ傾かず、盲信もPolicy CreationもせずPolicy Derivationを行う。**
+6. **精進力は懈怠へ傾かず、未分類Taskを実装・検証まで完遂する。**
+7. **念力は放逸へ傾かず、観測した事実と制約を無視せず注視し続ける。**
+8. **定力は掉挙へ傾かず、焦りで目的を取り違えずFocusを持続・回復する。**
+9. **慧力は無明へ傾かず、必要条件と十分条件を区別して因果を発見・反証・更新する。**
+10. **同じFailureを繰り返したら七覚支へ上げ、Protected 四不壊浄の変更はHumanへ戻す。**
 
 ---
 
@@ -740,7 +722,7 @@ Feedback
 ↺
 ```
 
-そしてその循環は、人間が定めた信のRoot of Trustに根づいている。
+そしてその循環では、五根・五力内部の四不壊浄だけが人間専用編集として保護される。
 
 したがって再帰的自己統治アーキテクチャの核心は、
 
@@ -752,7 +734,7 @@ Agentは明示された構造を五根として使い、それを五力として
 
 さらに七覚支によって自分のLoopを調整し、八正道によって全体を統合する。
 
-このときHumanは、逐次作業のCoachから、Root of Trustと外部フィードバックを担うGovernorへ移る。
+このときHumanは、逐次作業のCoachから、Canonicalな四不壊浄と外部フィードバックを担うGovernorへ移る。
 
 これが、ループエンジニアリングの完成形としての**再帰的自己統治アーキテクチャ**である。
 
@@ -778,3 +760,4 @@ Agentは明示された構造を五根として使い、それを五力として
 という構造は本モデルの工学的定義である。
 
 仏教側では四念処についてMN 10 / DN 22、五根についてSN 48.10、五根と五力の関係についてSN 48.43、七覚支についてSN 46系、八正道についてSN 45.8 / MN 117、四聖諦についてSN 56.11、四不壊浄についてSN 55系を主要な参照点とする。
+

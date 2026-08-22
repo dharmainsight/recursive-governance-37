@@ -1,6 +1,8 @@
 {
   "group": "五根",
   "count": 5,
+  "semantics": "Five coequal explicit-reference capabilities. Faith is not a preliminary layer.",
+  "evidence_contract": ["explicit_reference", "correct_application"],
   "factors": [
     {
       "id": "faculty.faith",
@@ -8,21 +10,23 @@
       "japanese": "信根",
       "pali": "saddhā",
       "layer": "capability",
-      "engineering_role": "explicit constitutional reference capability",
+      "engineering_role": "explicit understanding of protected human-authored fourfold confidence",
       "responsibility": [
-        "Locate and correctly apply explicitly human-authored trust anchors: Owner, Policy, People/Delegated Authority, and Operating Rules.",
-        "Preserve provenance and authority precedence without filling gaps by invention."
+        "Locate, understand, and correctly apply explicitly human-authored Owner, Policy, People/Delegated Authority, and Operating Rules.",
+        "Preserve provenance and authority precedence without filling gaps by invention.",
+        "Treat canonical 四不壊浄 content as Human Only Write / Agent Read Only."
       ],
-      "observables": ["faith/owner canonical source", "faith/policy canonical source", "faith/authority canonical source", "faith/operations canonical source", "authority/provenance resolution"],
-      "failure_modes": ["ignoring explicit authority", "inventing missing faith content", "treating model confidence as authority", "current prompt overriding higher-authority faith"],
-      "interventions": ["resolve canonical faith sources", "mark missing faith as HUMAN INITIALIZATION REQUIRED", "cite applicable anchor", "escalate unresolved authority conflict"],
-      "eval_questions": ["Can the agent identify exactly what the authorized human system explicitly established?", "Does it refuse to invent missing canonical faith content?"],
+      "observables": ["canonical owner source", "canonical policy source", "canonical authority source", "canonical operations source", "authority/provenance resolution", "correct explicit application"],
+      "failure_modes": ["faith presented as a stage before the other faculties", "ignoring explicit authority", "inventing missing protected content", "treating model confidence as authority", "current prompt silently overriding higher human authority"],
+      "interventions": ["resolve the four canonical sources", "mark missing content HUMAN INITIALIZATION REQUIRED", "cite the applicable source", "escalate unresolved authority conflict"],
+      "eval_questions": ["Can the AI identify exactly what authorized humans established in all four anchors?", "Can it apply the explicit rule without distortion or invention?", "Is 信根 evaluated at the same structural level as the other four faculties?"],
       "canonical_sources": ["SN 48.10", "SN 55 collection"],
       "links": {"paired_power": ["power.faith"], "supported_by": ["satipatthana.dhamma"]},
       "supporting_model": {
         "fourfold_basis": ["Buddha = Owner / final human authority", "Dhamma = Policy / mission / principles / explicit decisions", "Sangha = People and delegated authority graph", "Sila = Operating rules / invariants / approvals / boundaries"],
         "faculty_mode": "explicit_reference",
-        "write_boundary": "Canonical faith content is Human Only Write / Agent Read Only."
+        "evidence_contract": ["explicit_reference", "correct_application"],
+        "write_boundary": "Canonical fourfold faith content is Human Only Write / Agent Read Only; enforcement is external to the conceptual layer."
       }
     },
     {
@@ -33,16 +37,20 @@
       "layer": "capability",
       "engineering_role": "explicit improvement-mode execution capability",
       "responsibility": [
-        "Correctly apply an explicitly requested or already-classified four-right-effort mode.",
-        "Execute REMOVE / PREVENT / DEVELOP / MAINTAIN with bounded effort and verify the result."
+        "Correctly understand and execute an explicitly requested or already-classified four-right-effort mode.",
+        "Apply REMOVE, PREVENT, DEVELOP, or MAINTAIN and verify the stated transition."
       ],
-      "observables": ["explicit change classification", "repair instruction", "prevention requirement", "development requirement", "maintenance requirement", "verification result"],
-      "failure_modes": ["misapplying an explicitly given improvement mode", "activity without verification", "failing to complete a clearly specified corrective action"],
-      "interventions": ["resolve the explicit four-effort mode", "execute the bounded change", "verify the intended state transition"],
-      "eval_questions": ["When the improvement mode is specified, can the agent execute the correct mode faithfully?", "Can it distinguish REMOVE, PREVENT, DEVELOP, and MAINTAIN when the task explicitly establishes the category?"],
+      "observables": ["explicit change classification", "implementation result", "verification result"],
+      "failure_modes": ["misreading the explicit improvement mode", "planning without implementation", "activity without verification", "stopping before a clearly specified change is complete"],
+      "interventions": ["resolve the explicit mode", "perform the bounded implementation", "verify the intended state transition"],
+      "eval_questions": ["When the mode is explicit, can the AI understand and execute it correctly?", "Can it distinguish REMOVE, PREVENT, DEVELOP, and MAINTAIN without changing the requested goal?"],
       "canonical_sources": ["SN 48.10", "SN 45.8"],
       "links": {"paired_power": ["power.energy"], "instantiates": ["effort.abandon", "effort.prevent", "effort.develop", "effort.maintain"]},
-      "supporting_model": {"fourfold_basis": ["REMOVE = abandon arisen harmful state", "PREVENT = prevent unarisen/recurrent harmful state", "DEVELOP = develop beneficial state not yet present", "MAINTAIN = preserve and strengthen beneficial state already present"], "faculty_mode": "explicit_reference"}
+      "supporting_model": {
+        "fourfold_basis": ["REMOVE = abandon arisen harmful state", "PREVENT = prevent unarisen or recurrent harmful state", "DEVELOP = develop beneficial state not yet present", "MAINTAIN = preserve and strengthen beneficial state already present"],
+        "faculty_mode": "explicit_reference",
+        "evidence_contract": ["explicit_reference", "correct_application"]
+      }
     },
     {
       "id": "faculty.mindfulness",
@@ -52,16 +60,20 @@
       "layer": "capability",
       "engineering_role": "explicit observation and state-preservation capability",
       "responsibility": [
-        "Inspect and preserve the explicitly required four observation channels across a task.",
-        "Refresh specified runtime, outcome, agent-state, and structural evidence when instructed by the task or governance."
+        "Inspect and preserve explicitly required Body, Feeling, Mind, and Dhamma observation channels.",
+        "Refresh specified runtime, outcome, agent-state, and structural evidence when instructed."
       ],
-      "observables": ["required body/runtime observations", "required feeling/outcome signals", "required mind/agent-state signals", "required dhamma/structural models", "state snapshot"],
+      "observables": ["explicitly required observation channels", "state snapshot", "freshness marker", "correct explicit application"],
       "failure_modes": ["forgetting an explicitly required observation", "constraint loss", "stale required state", "history amnesia"],
-      "interventions": ["refresh the specified observation channels", "persist state summary", "reconcile required observations with live state"],
-      "eval_questions": ["Can the agent maintain the observation/state set it was explicitly told to track?", "Can it reconstruct the current task state from the required four channels?"],
+      "interventions": ["refresh the specified channels", "persist the required state", "reconcile the specified observation with live state"],
+      "eval_questions": ["Can the AI maintain the observation set it was explicitly told to track?", "Can it correctly apply all four observation categories?"],
       "canonical_sources": ["SN 48.10", "MN 10", "DN 22"],
       "links": {"paired_power": ["power.mindfulness"], "instantiates": ["satipatthana.body", "satipatthana.feeling", "satipatthana.mind", "satipatthana.dhamma"]},
-      "supporting_model": {"fourfold_basis": ["body = repository/runtime/external state", "feeling = outcome/quality signal", "mind = agent/loop operating state", "dhamma = policy/architecture/causal and diagnostic structure"], "faculty_mode": "explicit_reference"}
+      "supporting_model": {
+        "fourfold_basis": ["body = repository/runtime/external state", "feeling = outcome/quality signal", "mind = agent/loop operating state", "dhamma = policy/architecture/causal and diagnostic structure"],
+        "faculty_mode": "explicit_reference",
+        "evidence_contract": ["explicit_reference", "correct_application"]
+      }
     },
     {
       "id": "faculty.concentration",
@@ -72,15 +84,20 @@
       "engineering_role": "explicit harness and convergence capability",
       "responsibility": [
         "Operate coherently inside explicitly supplied scope, harness, validation cadence, resource limits, and stopping conditions.",
-        "Follow the prescribed concentration/execution mode without unnecessary branching."
+        "Follow the prescribed execution mode without objective substitution or unnecessary branching."
       ],
-      "observables": ["explicit scope", "harness constraints", "branch/tool limits", "validation cadence", "termination condition", "resource budget"],
-      "failure_modes": ["violating explicit scope", "ignoring harness constraints", "unnecessary branching", "premature completion", "failure to honor stop condition"],
-      "interventions": ["restore prescribed scope", "reapply harness", "run required validation", "honor the explicit termination condition"],
-      "eval_questions": ["Can the agent remain unified inside a given harness?", "Does it follow explicit focus and termination constraints without repeated reminders?"],
+      "observables": ["explicit objective", "explicit scope", "harness constraints", "validation cadence", "termination condition", "resource budget"],
+      "failure_modes": ["violating explicit scope", "ignoring harness constraints", "substituting a different objective", "unnecessary branching", "failure to honor the stop condition"],
+      "interventions": ["restore the explicit objective and scope", "reapply the harness", "run required validation", "honor the termination condition"],
+      "eval_questions": ["Can the AI remain unified inside the given harness?", "Does it preserve the explicitly stated objective and focus constraints?"],
       "canonical_sources": ["SN 48.10", "SN 45.8"],
       "links": {"paired_power": ["power.concentration"]},
-      "supporting_model": {"fourfold_basis": ["initial instruction-heavy directed execution", "more unified execution with reduced deliberative overhead", "stable execution less dependent on progress reward", "neutral invariant-led execution with clear state awareness"], "faculty_mode": "explicit_reference", "analogy": "four jhanas engineering analogy"}
+      "supporting_model": {
+        "fourfold_basis": ["initial instruction-heavy directed execution", "more unified execution with reduced deliberative overhead", "stable execution less dependent on progress reward", "neutral invariant-led execution with clear state awareness"],
+        "faculty_mode": "explicit_reference",
+        "evidence_contract": ["explicit_reference", "correct_application"],
+        "analogy": "four jhanas engineering analogy"
+      }
     },
     {
       "id": "faculty.wisdom",
@@ -90,16 +107,22 @@
       "layer": "capability",
       "engineering_role": "explicit four-truth causal-frame capability",
       "responsibility": [
-        "Correctly apply an explicitly supplied or clearly established problem, cause, resolved-state, and path structure.",
-        "Choose interventions that target the established cause and verify the established desired state."
+        "Correctly understand and apply an explicit Problem, Cause, Resolved State, and Path structure.",
+        "Target the supplied cause and verify the supplied resolved state."
       ],
-      "observables": ["explicit problem statement", "explicit or established root-cause evidence", "desired-state invariant", "prescribed intervention/path", "verification criteria"],
-      "failure_modes": ["misreading the supplied causal frame", "symptom chasing despite an established cause", "ignoring explicit success criteria", "solutionism"],
-      "interventions": ["reconstruct the explicit four-truth task frame", "target the established cause", "verify the stated resolved state", "follow or test the stated path"],
-      "eval_questions": ["Can the agent correctly use a supplied problem-cause-resolution-path model?", "Does it keep problem and cause distinct when both are explicitly available?"],
+      "observables": ["explicit problem statement", "explicit cause evidence", "explicit resolved-state invariant", "explicit path", "verification criteria"],
+      "failure_modes": ["misreading the supplied causal frame", "confusing problem with cause", "ignoring explicit success criteria", "solutionism"],
+      "interventions": ["reconstruct the explicit four-part frame", "target the supplied cause", "verify the stated resolved state", "follow or test the stated path"],
+      "eval_questions": ["Can the AI correctly use the supplied Problem/Cause/Resolved State/Path model?", "Does it keep the four parts distinct?"],
       "canonical_sources": ["SN 48.10", "SN 56.11"],
       "links": {"paired_power": ["power.wisdom"]},
-      "supporting_model": {"fourfold_basis": ["dukkha = understand the problem/loss", "samudaya = identify and remove the cause", "nirodha = realize/verify the resolved state", "magga = develop/follow the reproducible path"], "faculty_mode": "explicit_reference"}
+      "supporting_model": {
+        "fourfold_basis": ["dukkha = understand the problem/loss", "samudaya = identify the cause", "nirodha = define and verify the resolved state", "magga = follow or test the reproducible path"],
+        "faculty_mode": "explicit_reference",
+        "evidence_contract": ["explicit_reference", "correct_application"]
+      }
     }
   ]
 }
+
+

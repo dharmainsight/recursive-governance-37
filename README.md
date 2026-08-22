@@ -1,60 +1,77 @@
 # Recursive Governance 37 — repo-scoped Agent Skill
 
-Install by extracting this package at the repository root so that the skill lives at:
+Install this package so the skill lives at:
 
-```text
+~~~text
 .agents/skills/recursive-governance-37/
-```
+~~~
 
-The skill implements the full **4 + 4 + 4 + 5 + 5 + 7 + 8 = 37** engineering model as a **rooted recursive self-governance architecture**.
+The skill implements the complete **4 + 4 + 4 + 5 + 5 + 7 + 8 = 37** engineering model as a five-layer recursive self-governance architecture.
 
-## Human-authored Root of Trust — 信
+## Structural order
 
-The recursion is rooted in four trust anchors that only authorized humans may author:
+~~~text
+4+4+4 minimum closed loop
+→ five coequal faculties / 五根
+→ five AI-alone powers / 五力
+→ adaptive meta-control / 七覚支
+→ integrated governance / 八正道
+→ external result and reobservation
+~~~
 
-- **仏 / Owner** — ultimate human ownership and authority
-- **法 / Policy** — owner-issued mission, principles, policy, and direction
-- **僧 / People and delegated authority** — employees/roles and what each may decide
-- **戒 / Operating rules** — invariants, prohibited actions, approvals, security/privacy rules, procedures
+The 4+4+4 kernel is closed only when action changes state and that changed state is observed again.
 
-Agents may **read, cite, and reason from** these anchors, but must not create or modify their canonical content.
+## Five coequal faculties
 
-- **信根** = accurately refer to what humans explicitly established.
-- **信力** = reason from those anchors when the exact case was not explicitly stated, without inventing new authority or policy.
+Each faculty uses the same evidence shape: explicit fourfold reference plus correct application.
 
-See `.agents/skills/recursive-governance-37/references/trust-anchors.md`.
+- **信根 / 四不壊浄** — understand explicit Owner / Policy / Delegated Authority / Operating Rules.
+- **精進根 / 四正断** — execute an explicit REMOVE / PREVENT / DEVELOP / MAINTAIN mode.
+- **念根 / 四念処** — observe and preserve explicit Body / Feeling / Mind / Dhamma channels.
+- **定根 / 四禅 analogy** — follow explicit scope, harness, validation, resource, and stop constraints.
+- **慧根 / 四聖諦** — apply an explicit Problem / Cause / Resolved State / Path frame.
 
-## First run
+信 is not a preliminary layer outside 五根.
 
-Invoke explicitly:
+## Five AI-alone powers
 
-```text
-$recursive-governance-37
-Audit this repository only. Do not change files. Resolve the human-authored Owner / Policy / Authority / Operations trust anchors first, then map the existing SoT, evaluate all 37 factors, identify governance gaps, and propose the smallest safe augmentation plan.
-```
+Each power must handle an unstated or disturbed case without case-specific human coaching, resist its opposing tendency, and reach verification.
 
-The skill defaults to explicit invocation because retrofitting governance is consequential and should not happen merely because an ordinary coding prompt happens to resemble one of its concepts.
+- **信力 ↔ 不信** — derive an unstated case from protected anchors without blind acceptance, invention, or self-authorization.
+- **精進力 ↔ 懈怠** — diagnose, implement, persist through bounded failure, and verify completion without prodding.
+- **念力 ↔ 放逸** — keep attending to relevant observed facts and constraints across change and interruption.
+- **定力 ↔ 掉挙** — preserve the actual objective and sustained convergence under urgency or distraction.
+- **慧力 ↔ 無明** — distinguish necessary from sufficient conditions and revise causal judgment under counterevidence.
 
-## Deterministic self-check
+## Protected 四不壊浄
 
-```bash
+The four canonical sources are the protected basis inside 信根 and 信力:
+
+- 仏 / Owner
+- 法 / Policy
+- 僧 / People and delegated authority
+- 戒 / Operating rules
+
+Their content is **Human Only Write / Agent Read Only**. The harness, repository protection, CI guards, and audit logs enforce that boundary externally; those controls do not create an extra faith factor or maturity layer.
+
+The skill never authors these canonical files. If they are absent, it reports HUMAN INITIALIZATION REQUIRED and blocks only consequential actions that depend on the unresolved authority. Read-only discovery and 4+4+4 analysis may continue.
+
+## Deterministic checks
+
+~~~bash
 python .agents/skills/recursive-governance-37/scripts/validate_registry.py
 python .agents/skills/recursive-governance-37/tests/self_test.py
-```
+~~~
 
-Expected registry result: `PASS: exact 37/37 registry and recursive invariants validated`.
+The run-record evaluator requires kernel-closure evidence, equal faculty evidence, and AI-alone power evidence. Key presence or self-assertion alone does not pass.
 
-## What augmentation creates
+## First audit
 
-`scripts/scaffold.py --apply` may create a non-destructive `docs/agent-governance/` index/constitution after audit.
+~~~text
+$recursive-governance-37
+Audit this repository only. Do not change files. Map existing sources of truth, verify closure of the 4+4+4 kernel, evaluate all five faculties at one level, and stress-test all five powers against 不信・懈怠・放逸・掉挙・無明.
+~~~
 
-It intentionally **does not create or populate canonical faith anchors**. If they are absent, the scaffold prints `HUMAN INITIALIZATION REQUIRED` for:
+The skill remains explicit-only because governance retrofits are consequential.
 
-```text
-docs/agent-governance/faith/owner.md
-docs/agent-governance/faith/policy.md
-docs/agent-governance/faith/authority.md
-docs/agent-governance/faith/operations.md
-```
 
-An authorized human must create those documents directly, or point the manifest to existing human-authored canonical documents. The agent harness should then expose those anchors as read-only or deny agent writes to their paths. Existing canonical docs should be referenced, not copied.

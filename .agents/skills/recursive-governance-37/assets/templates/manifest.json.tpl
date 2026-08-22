@@ -1,12 +1,14 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "faith_anchors": {
     "owner": "docs/agent-governance/faith/owner.md",
     "policy": "docs/agent-governance/faith/policy.md",
     "authority": "docs/agent-governance/faith/authority.md",
     "operations": "docs/agent-governance/faith/operations.md",
     "write_policy": "human_only",
-    "agent_access": "read_only"
+    "agent_access": "read_only",
+    "semantic_location": "inside_faculty_and_power_of_faith",
+    "preliminary_layer": false
   },
   "canonical_sources": {
     "context_current_state": [],
@@ -33,8 +35,10 @@
     "governance_self_modification": "review_required"
   },
   "notes": [
-    "Faith anchors are human-authored and agent-read-only. The scaffold intentionally does not create their canonical contents.",
+    "The four faith anchors are the protected basis inside 信根 and 信力, are human-authored, and are agent-read-only. They are not a preliminary layer before 五根.",
+    "Hard write protection is external enforcement serving the faith pair; it is not an extra faith factor.",
     "Prefer references to existing canonical human-authored anchors over duplication.",
     "Replace ordinary governance defaults only after repository-specific evidence or explicit human decision."
   ]
 }
+

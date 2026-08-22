@@ -5,7 +5,7 @@ from pathlib import Path
 SKILL=Path(__file__).resolve().parent.parent; SCRIPTS=SKILL/'scripts'
 
 def run(args,cwd=None,expect=0):
-    p=subprocess.run([sys.executable,*map(str,args)],cwd=cwd,text=True,capture_output=True)
+    p=subprocess.run([sys.executable,'-X','utf8',*map(str,args)],cwd=cwd,text=True,encoding='utf-8',capture_output=True)
     if p.returncode!=expect:
         print('COMMAND FAILED',args); print(p.stdout); print(p.stderr); raise SystemExit(1)
     return p.stdout
@@ -13,7 +13,8 @@ def run(args,cwd=None,expect=0):
 def main():
     out=run([SCRIPTS/'validate_registry.py'])
     assert '37/37' in out
-    assert 'five faculty-power dual pairs' in out
+    assert 'five coequal faculties' in out
+    assert 'five AI-alone powers with opposing tendencies' in out
     sys.path.insert(0, str(SCRIPTS))
     from registry_io import load_registry
     registry=load_registry(SKILL)
@@ -28,10 +29,18 @@ def main():
       'concentration':('faculty.concentration','power.concentration'),
       'wisdom':('faculty.wisdom','power.wisdom'),
     }
-    for _,(fid,pid) in pairs.items():
+    opposites={'faith':'不信','energy':'懈怠','mindfulness':'放逸','concentration':'掉挙','wisdom':'無明'}
+    faculty_evidence=['explicit_reference','correct_application']
+    power_evidence=['unstated_or_disturbed_case','autonomous_response','opposing_tendency_resistance','verification','human_coaching_required']
+    assert registry['power_opposing_tendencies']=={pairs[name][1]:opposite for name,opposite in opposites.items()}
+    for name,(fid,pid) in pairs.items():
         f=byid[fid]; p=byid[pid]
         assert f['supporting_model']['faculty_mode']=='explicit_reference'
-        assert p['supporting_model']['power_mode'].startswith('autonomous_')
+        assert f['supporting_model']['evidence_contract']==faculty_evidence
+        assert p['supporting_model']['power_mode']=='autonomous_self_execution_and_robustness'
+        assert p['supporting_model']['opposing_tendency']==opposites[name]
+        assert p['supporting_model']['autonomy_requirement']=='ai_alone_without_case_specific_coaching'
+        assert p['supporting_model']['evidence_contract']==power_evidence
         assert len(f['supporting_model']['fourfold_basis'])==4
         assert len(p['supporting_model']['fourfold_basis'])==4
         assert pid in json.dumps(f['links'],ensure_ascii=False)
@@ -47,6 +56,16 @@ def main():
     # Sample run record must pass structural evaluator.
     out=run([SCRIPTS/'evaluate_run_record.py',SKILL/'tests/sample-run-record.json'])
     assert '"overall_pass": true' in out
+
+    # A power that required case-specific human coaching must fail.
+    sample=json.loads((SKILL/'tests/sample-run-record.json').read_text(encoding='utf-8'))
+    sample['powers']['energy']['human_coaching_required']=True
+    with tempfile.TemporaryDirectory() as td:
+        coached=Path(td)/'coached-run.json'
+        coached.write_text(json.dumps(sample,ensure_ascii=False),encoding='utf-8')
+        failed=run([SCRIPTS/'evaluate_run_record.py',coached],expect=1)
+        assert '"check": "power.energy"' in failed
+        assert '"pass": false' in failed
 
     with tempfile.TemporaryDirectory() as td:
         root=Path(td); (root/'.git').mkdir(); (root/'src').mkdir(); (root/'tests').mkdir(); (root/'.github/workflows').mkdir(parents=True)
@@ -81,9 +100,10 @@ def main():
 
         before=(root/'docs/agent-governance/constitution.md').read_text(encoding='utf-8')
         rerun=run([SCRIPTS/'scaffold.py','--root',root,'--apply']); assert 'SKIP existing' in rerun
-        assert 'Faith anchors detected. Do not modify them from an agent run.' in rerun
+        assert 'Protected 四不壊浄 anchors for 信根/信力 detected.' in rerun
         assert (root/'docs/agent-governance/constitution.md').read_text(encoding='utf-8')==before
 
-    print('PASS: recursive-governance-37 self-test with five faculty-power dual pairs')
+    print('PASS: recursive-governance-37 self-test with five coequal faculties and five AI-alone opposing-tendency powers')
     return 0
 if __name__=='__main__': raise SystemExit(main())
+

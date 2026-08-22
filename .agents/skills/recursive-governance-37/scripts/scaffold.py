@@ -36,12 +36,13 @@ def main():
         if not (root/rel).exists(): missing.append((label,rel))
 
     if missing:
-        print('\nHUMAN INITIALIZATION REQUIRED: faith anchors are human-authored and agent-read-only.')
+        print('\nHUMAN INITIALIZATION REQUIRED: the protected 四不壊浄 basis inside 信根/信力 is human-authored and agent-read-only.')
         print('This scaffold intentionally does NOT create or populate the following canonical files:')
         for label,rel in missing: print(f'- {label}: {rel}')
         print('An authorized human must create them directly, or update manifest.json to reference existing human-authored canonical documents.')
         print('After initialization, configure a hard agent write-deny/read-only boundary for those anchors and rerun validation.')
     else:
-        print('\nFaith anchors detected. Do not modify them from an agent run.')
+        print('\nProtected 四不壊浄 anchors for 信根/信力 detected. Do not modify them from an agent run.')
     return 0
 if __name__=='__main__': raise SystemExit(main())
+

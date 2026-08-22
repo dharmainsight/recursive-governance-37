@@ -1,6 +1,6 @@
 # 37/37 coverage
 
-Registry schema: `2.0.0`
+Registry schema: `2.1.0`
 
 ## 四念処 — 4
 
@@ -25,19 +25,23 @@ Registry schema: `2.0.0`
 
 ## 五根 — 5
 
-- `faculty.faith` — 信根 — trust/provenance capability
-- `faculty.energy` — 精進根 — autonomous improvement capability
-- `faculty.mindfulness` — 念根 — persistent state-awareness capability
-- `faculty.concentration` — 定根 — stable execution capability
-- `faculty.wisdom` — 慧根 — causal problem-solving capability
+- `faculty.faith` — 信根 — explicit 四不壊浄 understanding
+- `faculty.energy` — 精進根 — explicit 四正断 execution
+- `faculty.mindfulness` — 念根 — explicit 四念処 observation
+- `faculty.concentration` — 定根 — explicit harness/convergence execution
+- `faculty.wisdom` — 慧根 — explicit 四聖諦 causal-frame application
+
+All five faculties are coequal explicit-reference capabilities. 信 is not a preliminary layer.
 
 ## 五力 — 5
 
-- `power.faith` — 信力 — robust trust under adversarial/conflicting context
-- `power.energy` — 精進力 — robust improvement under failure
-- `power.mindfulness` — 念力 — robust state awareness under long horizons
-- `power.concentration` — 定力 — robust convergence under distraction
-- `power.wisdom` — 慧力 — robust epistemics under uncertainty
+- `power.faith` — 信力 — AI-alone derivation resisting 不信
+- `power.energy` — 精進力 — AI-alone implementation resisting 懈怠
+- `power.mindfulness` — 念力 — sustained attention to fact resisting 放逸
+- `power.concentration` — 定力 — objective-preserving convergence resisting 掉挙
+- `power.wisdom` — 慧力 — causal judgment resisting 無明
+
+Every power requires an unstated or disturbed case, autonomous response, opposing-tendency resistance, verification, and no case-specific human coaching.
 
 ## 七覚支 — 7
 
@@ -66,5 +70,8 @@ Registry schema: `2.0.0`
 - 正念 integrates the four establishments of mindfulness.
 - 正定 integrates concentration capability within a harness; the four-jhāna mapping is an engineering analogy, not literal identity.
 - 正見 uses the four-truth task model; its path component recursively points to the integrated path architecture.
-- 五根 capability layers reuse operational-kernel functions; 五力 stress-test the corresponding faculties under disturbance.
+- The 4+4+4 kernel closes only after action, changed state, and reobservation.
+- 五根 are five coequal explicit-reference capabilities; 五力 stabilize them against 不信・懈怠・放逸・掉挙・無明.
+- Canonical 四不壊浄 content remains inside 信根・信力 and is Human Only Write / Agent Read Only through external enforcement.
 - 七覚支 is the adaptive meta-controller: mindfulness remains active; investigation/energy/joy activate sluggish loops; tranquility/concentration/equanimity calm restless loops.
+
