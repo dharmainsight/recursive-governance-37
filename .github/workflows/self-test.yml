@@ -22,3 +22,10 @@ jobs:
         run: python .agents/skills/recursive-governance-37/scripts/validate_registry.py
       - name: Run skill self-test
         run: python .agents/skills/recursive-governance-37/tests/self_test.py
+      - name: Upload validated skill source
+        uses: actions/upload-artifact@v4
+        with:
+          name: recursive-governance-37-skill-source
+          path: .agents/skills/recursive-governance-37
+          retention-days: 7
+          if-no-files-found: error
