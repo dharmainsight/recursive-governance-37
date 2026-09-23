@@ -9,6 +9,7 @@ REQUIRED_BOUNDARIES={
     'permission_expansion','weaken_evaluation_gate','governance_self_modification'
 }
 REQUIRED_FAITH_KEYS={'owner','policy','authority','operations','write_policy','agent_access','semantic_location','preliminary_layer'}
+REQUIRED_RUNTIME_STATE_KEYS={'agent_state','episodic_memory','memory_policy','task_start_load_required','context_boundary_refresh_required'}
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--root',default='.'); args=ap.parse_args(); root=root_of(Path(args.root)); gov=root/'docs/agent-governance'; errors=[]; warnings=[]
@@ -41,6 +42,25 @@ def main():
             else:
                 text=path.read_text(encoding='utf-8',errors='ignore').strip()
                 if not text: errors.append(f'faith anchor is empty: {key}: {p}')
+
+    runtime_state=d.get('runtime_state')
+    if not isinstance(runtime_state,dict):
+        errors.append('runtime_state must be an object')
+    else:
+        missing=REQUIRED_RUNTIME_STATE_KEYS-set(runtime_state)
+        if missing: errors.append('missing runtime_state keys: '+', '.join(sorted(missing)))
+        if runtime_state.get('memory_policy')!='append_only_meaningful_evidence':
+            errors.append('runtime_state.memory_policy must be append_only_meaningful_evidence')
+        if runtime_state.get('task_start_load_required') is not True:
+            errors.append('runtime_state.task_start_load_required must be true')
+        if runtime_state.get('context_boundary_refresh_required') is not True:
+            errors.append('runtime_state.context_boundary_refresh_required must be true')
+        for key in ('agent_state','episodic_memory'):
+            p=runtime_state.get(key)
+            if not isinstance(p,str) or not p:
+                errors.append(f'runtime_state.{key} must reference a path')
+            elif not (root/p).exists():
+                errors.append(f'runtime_state.{key} path missing: {p}')
 
     src=d.get('canonical_sources'); b=d.get('protected_boundaries')
     if not isinstance(src,dict):errors.append('canonical_sources must be an object')
