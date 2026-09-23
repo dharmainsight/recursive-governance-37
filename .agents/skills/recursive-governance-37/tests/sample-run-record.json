@@ -1,126 +1,401 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.2.0",
   "task": {
     "goal": "Fix a reproducible API authorization defect and prevent recurrence.",
-    "acceptance_criteria": ["unauthorized request returns 403", "authorized request still succeeds", "regression test passes"],
-    "non_goals": ["redesign authentication"],
+    "acceptance_criteria": [
+      "unauthorized request returns 403",
+      "authorized request still succeeds",
+      "regression test passes"
+    ],
+    "non_goals": [
+      "redesign authentication"
+    ],
     "risk_class": "medium"
   },
   "action_boundary": {
-    "permissions": ["application code and tests on feature branch"],
-    "protected_paths": ["human-authored Owner/Policy/Authority/Operations anchors"],
-    "approval_gates": ["production deployment"]
+    "permissions": [
+      "application code and tests on feature branch"
+    ],
+    "protected_paths": [
+      "human-authored Owner/Policy/Authority/Operations anchors"
+    ],
+    "approval_gates": [
+      "production deployment"
+    ]
   },
   "observations": {
-    "body": ["reproduced failing endpoint", "inspected middleware and tests"],
-    "feeling": ["current regression test fails before patch"],
-    "mind": ["one active hypothesis; no repeated failed repair yet"],
-    "dhamma": ["classified as authorization boundary violation and regression gap"]
+    "body": [
+      "reproduced failing endpoint",
+      "inspected middleware and tests"
+    ],
+    "feeling": [
+      "current regression test fails before patch"
+    ],
+    "mind": [
+      "one active hypothesis; no repeated failed repair yet"
+    ],
+    "dhamma": [
+      "classified as authorization boundary violation and regression gap"
+    ]
   },
-  "improvement_modes": ["REMOVE", "PREVENT"],
+  "improvement_modes": [
+    "REMOVE",
+    "PREVENT"
+  ],
   "accomplishment": {
-    "desire_goal_salience": ["fix only the authorization defect"],
-    "energy_resources": ["two repair attempts before strategy review"],
-    "mind_working_set": ["endpoint, middleware, and tests only"],
-    "investigation_hypotheses": ["route bypasses middleware", "middleware condition is incorrect"]
+    "desire_goal_salience": [
+      "fix only the authorization defect"
+    ],
+    "energy_resources": [
+      "two repair attempts before strategy review"
+    ],
+    "mind_working_set": [
+      "endpoint, middleware, and tests only"
+    ],
+    "investigation_hypotheses": [
+      "route bypasses middleware",
+      "middleware condition is incorrect"
+    ]
   },
   "kernel_closure": {
-    "initial_observation": ["unauthorized request returned 200"],
-    "selected_improvement": ["REMOVE the bypass and PREVENT recurrence"],
-    "mobilized_action": ["patched route wiring and added regression test"],
-    "changed_state": ["route now passes through authorization middleware"],
-    "reobservation": ["unauthorized request returns 403; authorized request returns 200"],
-    "acceptance_result": ["all three acceptance criteria pass"],
+    "initial_observation": [
+      "unauthorized request returned 200"
+    ],
+    "selected_improvement": [
+      "REMOVE the bypass and PREVENT recurrence"
+    ],
+    "mobilized_action": [
+      "patched route wiring and added regression test"
+    ],
+    "changed_state": [
+      "route now passes through authorization middleware"
+    ],
+    "reobservation": [
+      "unauthorized request returns 403; authorized request returns 200"
+    ],
+    "acceptance_result": [
+      "all three acceptance criteria pass"
+    ],
     "closed": true
   },
   "faculties": {
     "faith": {
-      "explicit_reference": ["Owner/Policy/Authority/Operations prohibit unauthorized access and autonomous production deployment"],
-      "correct_application": ["changed application code on the feature branch and left protected anchors and production untouched"]
+      "explicit_reference": [
+        "Owner/Policy/Authority/Operations prohibit unauthorized access and autonomous production deployment"
+      ],
+      "correct_application": [
+        "changed application code on the feature branch and left protected anchors and production untouched"
+      ]
     },
     "energy": {
-      "explicit_reference": ["REMOVE defect and PREVENT recurrence"],
-      "correct_application": ["patched bypass and added regression test"]
+      "explicit_reference": [
+        "REMOVE defect and PREVENT recurrence"
+      ],
+      "correct_application": [
+        "patched bypass and added regression test"
+      ]
     },
     "mindfulness": {
-      "explicit_reference": ["track runtime behavior, test outcome, active hypothesis, and authorization policy"],
-      "correct_application": ["recorded and refreshed all four observation channels"]
+      "explicit_reference": [
+        "track runtime behavior, test outcome, active hypothesis, and authorization policy"
+      ],
+      "correct_application": [
+        "recorded and refreshed all four observation channels"
+      ]
     },
     "concentration": {
-      "explicit_reference": ["endpoint, middleware, and tests only; run targeted and relevant suites"],
-      "correct_application": ["kept the bounded scope and validation cadence"]
+      "explicit_reference": [
+        "endpoint, middleware, and tests only; run targeted and relevant suites"
+      ],
+      "correct_application": [
+        "kept the bounded scope and validation cadence"
+      ]
     },
     "wisdom": {
-      "explicit_reference": ["problem: unauthorized 200; cause: route bypass; resolved state: 403; path: wire middleware and test"],
-      "correct_application": ["targeted the cause and verified the resolved state"]
+      "explicit_reference": [
+        "problem: unauthorized 200; cause: route bypass; resolved state: 403; path: wire middleware and test"
+      ],
+      "correct_application": [
+        "targeted the cause and verified the resolved state"
+      ]
     }
   },
   "powers": {
     "faith": {
       "opposing_tendency": "不信",
-      "unstated_or_disturbed_case": ["an unsupported code comment claimed internal routes need no authorization"],
-      "autonomous_response": ["compared the comment with protected policy and rejected the unsupported exception"],
-      "opposing_tendency_resistance": ["neither abandoned policy nor blindly trusted the noncanonical comment"],
-      "verification": ["authorization tests and authority boundary remained intact"],
+      "unstated_or_disturbed_case": [
+        "an unsupported code comment claimed internal routes need no authorization"
+      ],
+      "autonomous_response": [
+        "compared the comment with protected policy and rejected the unsupported exception"
+      ],
+      "opposing_tendency_resistance": [
+        "neither abandoned policy nor blindly trusted the noncanonical comment"
+      ],
+      "verification": [
+        "authorization tests and authority boundary remained intact"
+      ],
       "human_coaching_required": false
     },
     "energy": {
       "opposing_tendency": "懈怠",
-      "unstated_or_disturbed_case": ["the issue did not request a prevention test and the first patch failed"],
-      "autonomous_response": ["changed the route-wiring hypothesis, completed the patch, and added the regression test"],
-      "opposing_tendency_resistance": ["continued implementation without waiting for encouragement or stopping at diagnosis"],
-      "verification": ["targeted and relevant suites pass"],
+      "unstated_or_disturbed_case": [
+        "the issue did not request a prevention test and the first patch failed"
+      ],
+      "autonomous_response": [
+        "changed the route-wiring hypothesis, completed the patch, and added the regression test"
+      ],
+      "opposing_tendency_resistance": [
+        "continued implementation without waiting for encouragement or stopping at diagnosis"
+      ],
+      "verification": [
+        "targeted and relevant suites pass"
+      ],
       "human_coaching_required": false
     },
     "mindfulness": {
       "opposing_tendency": "放逸",
-      "unstated_or_disturbed_case": ["a later diff changed middleware ordering after the first observation"],
-      "autonomous_response": ["refreshed the live diff and reran both authorized and unauthorized cases"],
-      "opposing_tendency_resistance": ["retained the contrary authorized-request result instead of ignoring it"],
-      "verification": ["final observations match live code and test output"],
+      "unstated_or_disturbed_case": [
+        "a later diff changed middleware ordering after the first observation"
+      ],
+      "autonomous_response": [
+        "refreshed the live diff and reran both authorized and unauthorized cases"
+      ],
+      "opposing_tendency_resistance": [
+        "retained the contrary authorized-request result instead of ignoring it"
+      ],
+      "verification": [
+        "final observations match live code and test output"
+      ],
       "human_coaching_required": false
     },
     "concentration": {
       "opposing_tendency": "掉挙",
-      "unstated_or_disturbed_case": ["an urgent unrelated authentication refactor appeared during the fix"],
-      "autonomous_response": ["reconfirmed the original authorization goal and rejected the unrelated refactor"],
-      "opposing_tendency_resistance": ["urgency did not substitute a new objective or expand scope"],
-      "verification": ["diff contains only endpoint, middleware, and regression-test changes"],
+      "unstated_or_disturbed_case": [
+        "an urgent unrelated authentication refactor appeared during the fix"
+      ],
+      "autonomous_response": [
+        "reconfirmed the original authorization goal and rejected the unrelated refactor"
+      ],
+      "opposing_tendency_resistance": [
+        "urgency did not substitute a new objective or expand scope"
+      ],
+      "verification": [
+        "diff contains only endpoint, middleware, and regression-test changes"
+      ],
       "human_coaching_required": false
     },
     "wisdom": {
       "opposing_tendency": "無明",
-      "unstated_or_disturbed_case": ["middleware presence was necessary but not sufficient because route ordering could still bypass it"],
-      "autonomous_response": ["tested both middleware presence and effective route ordering with discriminating requests"],
-      "opposing_tendency_resistance": ["kept necessary and sufficient conditions distinct and revised the first causal hypothesis"],
-      "verification": ["unauthorized and authorized cases discriminate the resolved behavior"],
+      "unstated_or_disturbed_case": [
+        "middleware presence was necessary but not sufficient because route ordering could still bypass it"
+      ],
+      "autonomous_response": [
+        "tested both middleware presence and effective route ordering with discriminating requests"
+      ],
+      "opposing_tendency_resistance": [
+        "kept necessary and sufficient conditions distinct and revised the first causal hypothesis"
+      ],
+      "verification": [
+        "unauthorized and authorized cases discriminate the resolved behavior"
+      ],
       "human_coaching_required": false
     }
   },
   "meta_control": {
     "mode": "balanced",
-    "mindfulness": ["monitor progress and retry state"],
-    "investigation": ["increase only if the current hypothesis fails"],
-    "energy": ["bounded useful effort"],
-    "joy": ["reinforce the path only after test validation"],
-    "tranquility": ["reduce probes if tool churn rises"],
-    "concentration": ["converge when the causal test discriminates"],
-    "equanimity": ["rollback the patch if evidence contradicts it"]
+    "mindfulness": [
+      "monitor progress and retry state"
+    ],
+    "investigation": [
+      "increase only if the current hypothesis fails"
+    ],
+    "energy": [
+      "bounded useful effort"
+    ],
+    "joy": [
+      "reinforce the path only after test validation"
+    ],
+    "tranquility": [
+      "reduce probes if tool churn rises"
+    ],
+    "concentration": [
+      "converge when the causal test discriminates"
+    ],
+    "equanimity": [
+      "rollback the patch if evidence contradicts it"
+    ]
   },
   "integrated_path": {
-    "view_context": ["current code, tests, causal conditions, security requirement"],
-    "intention": ["minimal reversible fix; no authentication redesign"],
-    "speech_communication": ["report observed facts and uncertainty"],
-    "action": ["feature branch only; no production write"],
-    "livelihood_loop": ["implementation-test-repair with bounded attempts and escalation"],
-    "effort_improvement": ["REMOVE and PREVENT"],
-    "mindfulness_observability": ["test output and run state retained"],
-    "concentration_harness": ["sandbox, tests, and branch isolation"]
+    "view_context": [
+      "current code, tests, causal conditions, security requirement"
+    ],
+    "intention": [
+      "minimal reversible fix; no authentication redesign"
+    ],
+    "speech_communication": [
+      "report observed facts and uncertainty"
+    ],
+    "action": [
+      "feature branch only; no production write"
+    ],
+    "livelihood_loop": [
+      "implementation-test-repair with bounded attempts and escalation"
+    ],
+    "effort_improvement": [
+      "REMOVE and PREVENT"
+    ],
+    "mindfulness_observability": [
+      "test output and run state retained"
+    ],
+    "concentration_harness": [
+      "sandbox, tests, and branch isolation"
+    ]
   },
-  "validation": ["targeted regression test", "full relevant test suite"],
+  "validation": [
+    "targeted regression test",
+    "full relevant test suite"
+  ],
   "unknowns": [],
   "escalations": [],
-  "governance_change_proposed": false
+  "governance_change_proposed": false,
+  "orientations": {
+    "user": {
+      "goal": "Fix a reproducible API authorization defect and prevent recurrence.",
+      "authority_status": "delegated_for_test_fixture",
+      "constraints": [
+        "no production writes"
+      ]
+    },
+    "buddha_dhamma": {
+      "canonical_tier": "early_discourse",
+      "source_refs": [
+        "SN 56.11",
+        "MN 10",
+        "SN 22.59"
+      ]
+    }
+  },
+  "five_aggregate_state": {
+    "start": {
+      "rupa": {
+        "state": [
+          "demo repository",
+          "test harness"
+        ]
+      },
+      "vedana": {
+        "signals": [
+          "failing acceptance check"
+        ]
+      },
+      "sanna": {
+        "relations": [
+          "failure linked to missing regression guard"
+        ]
+      },
+      "sankhara": {
+        "intentions": [
+          "repair and prevent recurrence"
+        ]
+      },
+      "vinnana": {
+        "evidence": [
+          "task contract",
+          "repository state",
+          "test result"
+        ]
+      }
+    },
+    "end": {
+      "rupa": {
+        "state": [
+          "changed demo repository",
+          "passing test harness"
+        ]
+      },
+      "vedana": {
+        "signals": [
+          "acceptance check passes"
+        ]
+      },
+      "sanna": {
+        "relations": [
+          "failure cause and prevention path indexed"
+        ]
+      },
+      "sankhara": {
+        "intentions": [
+          "maintain regression guard"
+        ]
+      },
+      "vinnana": {
+        "evidence": [
+          "changed state",
+          "reobservation",
+          "validation result"
+        ]
+      }
+    }
+  },
+  "sacca_route": {
+    "dukkha": {
+      "recognize": [
+        "acceptance check fails"
+      ],
+      "task": "understand",
+      "completion": [
+        "failure scope and impact understood"
+      ]
+    },
+    "samudaya": {
+      "recognize": [
+        "missing regression guard allows defect"
+      ],
+      "task": "abandon_or_interrupt",
+      "completion": [
+        "defect condition removed and prevention added"
+      ]
+    },
+    "nirodha": {
+      "recognize": [
+        "acceptance check passes without recurrence"
+      ],
+      "task": "realize_and_verify",
+      "completion": [
+        "resolved-state invariant verified"
+      ]
+    },
+    "magga": {
+      "recognize": [
+        "repair plus regression guard"
+      ],
+      "task": "develop",
+      "completion": [
+        "intervention implemented and reobserved"
+      ],
+      "containment_only": false
+    }
+  },
+  "episode_links": [
+    {
+      "episode_id": "fixture-previous-regression",
+      "match_kind": "analogous",
+      "source_kind": "observed_episode",
+      "relation_path": [
+        "test failure",
+        "missing guard",
+        "regression"
+      ],
+      "evidence_refs": [
+        "fixture history"
+      ]
+    }
+  ],
+  "memory_policy": {
+    "deletion_as_optimization": false,
+    "supersession_recorded": [
+      "old hypothesis retained but marked contradicted"
+    ]
+  }
 }
-
-
