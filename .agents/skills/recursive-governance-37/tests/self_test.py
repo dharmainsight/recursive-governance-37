@@ -91,6 +91,12 @@ def main():
 
         applied=run([SCRIPTS/'scaffold.py','--root',root,'--apply'])
         assert (root/'docs/agent-governance/manifest.json').exists()
+        assert (root/'docs/agent-governance/agent-state.json').exists()
+        assert (root/'docs/agent-governance/episodes.jsonl').exists()
+        manifest=json.loads((root/'docs/agent-governance/manifest.json').read_text(encoding='utf-8'))
+        assert manifest['runtime_state']['task_start_load_required'] is True
+        assert manifest['runtime_state']['context_boundary_refresh_required'] is True
+        assert manifest['runtime_state']['memory_policy']=='append_only_meaningful_evidence'
         assert 'HUMAN INITIALIZATION REQUIRED' in applied
         assert not (root/'docs/agent-governance/faith/owner.md').exists()
         assert not (root/'docs/agent-governance/faith/policy.md').exists()
