@@ -23,7 +23,7 @@
       "canonical_sources": ["SN 48.43", "SN 50 collection", "SN 55 collection"],
       "links": {"paired_faculty": ["faculty.faith"], "strengthens": ["faculty.faith"]},
       "supporting_model": {
-        "fourfold_basis": ["Buddha = Owner", "Dhamma = Policy", "Sangha = People / delegated authority", "Sila = Operating rules"],
+        "fourfold_basis": ["Buddha confidence ↔ Owner analogy only; not identity", "Dhamma confidence ↔ Policy analogy only; not identity", "Sangha confidence ↔ People/delegated-authority analogy only; not identity", "Sila confidence ↔ Operating-rules analogy only; not identity"],
         "power_mode": "autonomous_self_execution_and_robustness",
         "opposing_tendency": "不信",
         "autonomy_requirement": "ai_alone_without_case_specific_coaching",

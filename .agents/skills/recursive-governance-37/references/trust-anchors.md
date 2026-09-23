@@ -2,10 +2,10 @@
 
 The Buddhist mapping is an engineering analogy. The four forms of unbreakable confidence form the explicit fourfold basis of the faith faculty and power:
 
-- **仏 / Buddha → Owner**: who has ultimate human authority;
-- **法 / Dhamma → Policy**: which human-authored mission, principles, strategy, and decisions govern;
-- **僧 / Sangha → People and delegated authority**: who may decide or authorize what;
-- **戒 / Sīla → Operating rules**: which invariants, prohibitions, approvals, security/privacy constraints, and procedures apply.
+- **仏 / Buddha ↔ Owner analogy**: the canonical Buddhist object of confidence is the Buddha; the software-governance analogy uses an Owner as the final human authority. These are not identical.
+- **法 / Dhamma ↔ Policy analogy**: Dhamma remains a canonical Buddhist reference; the governance analogy uses human-authored Policy. These are not identical.
+- **僧 / Sangha ↔ delegated-authority analogy**: Saṅgha remains the canonical Buddhist referent; the governance analogy uses people and delegated authority.
+- **戒 / Sīla ↔ Operating-rules analogy**: sīla remains the canonical Buddhist referent; the governance analogy uses invariants, prohibitions, approvals, security/privacy constraints, and procedures.
 
 These anchors are not a separate stage before 五根. They are understood as 信根 and generalized as 信力.
 
@@ -76,10 +76,10 @@ Resistance to 不信 is not blind belief. Evidence can reveal that an anchor is 
 
 For governed tasks, resolve authority in this order:
 
-1. Owner / 仏;
-2. Owner-issued Policy / 法;
-3. Delegated human authority / 僧;
-4. Human-authored Operating Rules / 戒;
+1. Owner / final human authority (engineering trust anchor; not the historical Buddha);
+2. Owner-issued Policy (engineering trust anchor; not canonical Dhamma);
+3. Delegated human authority (engineering trust anchor; not the Saṅgha);
+4. Human-authored Operating Rules (engineering trust anchor; not canonical sīla);
 5. current task instruction from a human acting within delegated authority;
 6. ordinary repository governance and technical documentation;
 7. current observed state;

@@ -104,10 +104,10 @@
 
 | 四不壊浄 | 組織・サービス | 問い |
 |---|---|---|
-| 仏 | Owner | 誰が最終権限を持つか |
-| 法 | Policy | 何を目的・方針とするか |
-| 僧 | People / Delegated Authority | 誰が何を決めてよいか |
-| 戒 | Operating Rules | どのように行動してよいか |
+| 仏 | Ownerへの工学的アナロジー（同一視しない） | 誰が最終権限を持つか |
+| 法 | Policyへの工学的アナロジー（同一視しない） | 何を目的・方針とするか |
+| 僧 | People / Delegated Authorityへの工学的アナロジー（同一視しない） | 誰が何を決めてよいか |
+| 戒 | Operating Rulesへの工学的アナロジー（同一視しない） | どのように行動してよいか |
 
 ## 信根
 
@@ -144,9 +144,11 @@
 しかし、Canonicalな信の内容だけは特殊である。
 
 ```text
-仏 / 法 / 僧 / 戒
+組織ガバナンスへ写像した Owner / Policy / Delegated Authority / Operating Rules
 = Human Only Write
 = Agent Read Only
+
+※ Canonicalな仏・法・僧・戒そのものとSoftware上のAuthorityを同一視しない。
 ```
 
 AgentはRead / Cite / Reason / Proposeまではできるが、自分のAuthorityの根拠を自分でCanonical化してはいけない。この意味は信根・信力の内部にあり、Harness Write DenyやCI guardはその内容を守る外部実装であって、五根より前に追加される「信の層」ではない。
