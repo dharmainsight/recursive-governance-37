@@ -23,7 +23,7 @@
       "canonical_sources": ["SN 48.10", "SN 55 collection"],
       "links": {"paired_power": ["power.faith"], "supported_by": ["satipatthana.dhamma"]},
       "supporting_model": {
-        "fourfold_basis": ["Buddha = Owner / final human authority", "Dhamma = Policy / mission / principles / explicit decisions", "Sangha = People and delegated authority graph", "Sila = Operating rules / invariants / approvals / boundaries"],
+        "fourfold_basis": ["Buddha confidence ↔ Owner/final human authority analogy only; not identity", "Dhamma confidence ↔ Policy/mission/principles analogy only; not identity", "Sangha confidence ↔ people/delegated-authority analogy only; not identity", "Sila confidence ↔ operating-rules/invariants/approvals analogy only; not identity"],
         "faculty_mode": "explicit_reference",
         "evidence_contract": ["explicit_reference", "correct_application"],
         "write_boundary": "Canonical fourfold faith content is Human Only Write / Agent Read Only; enforcement is external to the conceptual layer."
