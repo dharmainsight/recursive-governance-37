@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0.0",
+  "name": "Sacca-Panna Wisdom Graph",
+  "factor_count_impact": "none; this is a navigation/judgment overlay on the canonical 37-factor registry",
+  "source_tiers": [
+    {
+      "id": "L0",
+      "name": "early_discourse",
+      "authority": "normative Buddhist reference for this skill"
+    },
+    {
+      "id": "L1",
+      "name": "canonical_ontology",
+      "authority": "machine-readable relationships with L0 provenance"
+    },
+    {
+      "id": "L2",
+      "name": "engineering_interpretation",
+      "authority": "software/agent mapping; falsifiable and revisable"
+    },
+    {
+      "id": "L3",
+      "name": "presentation_adapter",
+      "authority": "UI/explanatory dialect only; Mahayana vocabulary permitted as upaya-style metaphor"
+    }
+  ],
+  "truths": [
+    {
+      "id": "dukkha",
+      "ja": "苦",
+      "task": "understand",
+      "question": "What is actually unsatisfactory, failing, risky, or lost?"
+    },
+    {
+      "id": "samudaya",
+      "ja": "集",
+      "task": "abandon_or_interrupt",
+      "question": "Under which causes and conditions does it arise?"
+    },
+    {
+      "id": "nirodha",
+      "ja": "滅",
+      "task": "realize_and_verify",
+      "question": "What observable state demonstrates cessation or resolution?"
+    },
+    {
+      "id": "magga",
+      "ja": "道",
+      "task": "develop",
+      "question": "What reproducible intervention or practice leads there?"
+    }
+  ],
+  "three_turns": [
+    "recognize",
+    "task",
+    "completion"
+  ],
+  "routing_rules": [
+    "Keep dukkha, samudaya, nirodha, and magga distinct.",
+    "Do not mark a durable remedy magga-complete before samudaya and nirodha are defined.",
+    "Emergency containment may precede full diagnosis only when delay increases harm; mark containment_only and require retrospective completion.",
+    "Use discriminating evidence to choose between competing causes.",
+    "Expose remaining unknowns and revise under counterevidence."
+  ],
+  "memory_policy": {
+    "mode": "append_only_evidence",
+    "deletion_as_optimization": false,
+    "rules": [
+      "Retain meaningful observations, hypotheses, counterevidence, failed interventions, and superseded judgments.",
+      "Change status/scope/confidence/applicability instead of erasing history.",
+      "Fresh mutable-state observation may outrank stale records without deleting them.",
+      "Record supersession and provenance."
+    ]
+  },
+  "projections": [
+    "sacca_tree",
+    "path_trace",
+    "sibling_compare",
+    "causal_graph",
+    "three_turn_matrix",
+    "memory_timeline"
+  ],
+  "canonical_sources": [
+    "SN 56.11",
+    "SN 45.8",
+    "AN 8.30"
+  ]
+}
