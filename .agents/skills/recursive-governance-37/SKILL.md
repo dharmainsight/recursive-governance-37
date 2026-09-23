@@ -1,6 +1,6 @@
 ---
 name: recursive-governance-37
-description: "Audit, retrofit, and operate an existing software repository as a recursive self-governing agent loop using an explicit 37-factor architecture: four establishments of mindfulness, four right efforts, four bases of accomplishment, five coequal faculties, five autonomous powers, seven awakening factors, and the noble eightfold path. Use for loop engineering, agent governance, self-correcting workflows, repository SoT/harness/observability/meta-control, or autonomy-readiness audits."
+description: "Audit, retrofit, and operate an existing software repository as a recursive self-governing agent loop using an explicit 37-factor architecture plus a Four Noble Truths wisdom-routing graph, three-turn/twelve-aspect decision state, and append-only evidence memory. Use for loop engineering, agent governance, self-correcting workflows, repository SoT/harness/observability/meta-control, causal diagnosis, or autonomy-readiness audits."
 ---
 
 # Recursive Governance 37
@@ -14,10 +14,11 @@ This is an engineering analogy, not a doctrinal identity claim. Read `references
 1. `references/architecture.md`
 2. `references/faculty-power-duality.md`
 3. `references/trust-anchors.md`
-4. `references/runtime-protocol.md`
-5. `references/risk-and-escalation.md`
-6. `references/repository-mapping.md`
-7. `references/factor-registry.json` and referenced `factor-groups/*.json`
+4. `references/wisdom-graph.md` and `references/wisdom-graph.json`
+5. `references/runtime-protocol.md`
+6. `references/risk-and-escalation.md`
+7. `references/repository-mapping.md`
+8. `references/factor-registry.json` and referenced `factor-groups/*.json`
 
 Validate the registry before claiming model completeness:
 
@@ -49,8 +50,10 @@ The five pairs are:
    - 定根: follow explicit scope, harness, validation, resource, and stop constraints.
    - 定力: resist **掉挙**. Preserve the actual objective without urgency-driven substitution and restore sustained convergence under distraction, scope drift, tool churn, and over-parallelism.
 5. **慧 — 四聖諦**
-   - 慧根: apply an explicit problem / cause / resolved-state / path model.
-   - 慧力: resist **無明**. Independently distinguish necessary from sufficient conditions, construct and test the causal model, and revise it under counterevidence.
+   - 慧根: apply an explicit 苦 / 集 / 滅 / 道 frame and track each truth through recognize → task → completion.
+   - 慧力: resist **無明**. Independently discover and test the causal frame, use discriminating evidence, distinguish necessary from sufficient conditions, and revise it under counterevidence.
+   - Do not jump from 苦 directly to a durable 道. Emergency containment may come first only when delay increases harm; mark it containment-only and complete 集 → 滅 → 道 afterward.
+   - Keep meaningful evidence append-only. Improve judgment speed by routing/indexing, not by deleting inconvenient or old experience.
 
 The Human Only Write rule protects the fourfold basis **inside 信根 and 信力**. Hard enforcement belongs outside the model—write-deny, protected paths, human review, CI guards, and audit logs—but that enforcement is not an extra faith layer or an additional factor.
 
@@ -87,6 +90,8 @@ Find when present: faith anchors, AGENTS/CLAUDE instructions, requirements/specs
 
 # Phase 2 — MAP
 
+Start with the Four Noble Truths wisdom trunk from `references/wisdom-graph.md`. Treat the underlying structure as a graph: the four truths are the decision trunk; the 37 factors remain the canonical factor registry and are reached as observation, improvement, mobilization, capability, robustness, meta-control, and governance functions. This adds no 38th factor.
+
 Map the integrated architecture:
 
 - 正見 → Context / world model / SoT
@@ -106,6 +111,8 @@ Then map lower layers:
 - 五根 → explicit-reference capability for each fivefold axis
 - 五力 → autonomous-derivation/robustness for the same five axes
 - 七覚支 → adaptive loop control
+- 四聖諦 wisdom route → 苦 / 集 / 滅 / 道 with three-turn state and evidence-linked path trace
+- 念 memory policy → retain meaningful observations, counterevidence, failed interventions, and superseded judgments; alter applicability/status rather than erase history
 
 Reuse existing canonical files by reference. Do not create duplicate truth merely to fit this model.
 
@@ -169,16 +176,19 @@ Structural validation is not semantic success; verify task-specific acceptance c
 # Runtime sequence
 
 0. Establish the task contract and technical action boundary. This is safety enforcement, not 信 and not a maturity layer.
-1. Observe — 四念処.
-2. Improve — 四正断.
-3. Mobilize and act — 四神足.
-4. Reobserve the changed state and close the minimum 4+4+4 loop.
-5. Test all five **根** together as coequal explicit-reference capabilities.
-6. Test all five **力** as AI-alone execution that resists 不信 / 懈怠 / 放逸 / 掉挙 / 無明.
-7. Adapt loop — 七覚支.
-8. Integrate/govern — 八正道.
-9. Evaluate against external state and return the feedback to observation.
-10. Learn: ordinary governance may follow governed change; protected-anchor changes remain human-authored proposals.
+1. Establish the 四聖諦 route: identify the current 苦 and the unresolved truth/task; do not preselect a durable solution.
+2. Observe — 四念処 — and attach fresh evidence to the route.
+3. Complete enough 集 and 滅 analysis to discriminate causes and define a verifiable cessation/resolved state.
+4. Improve — 四正断.
+5. Mobilize and act — 四神足.
+6. Reobserve the changed state and close the minimum 4+4+4 loop.
+7. Update the three-turn/twelve-aspect state; containment is not completion.
+8. Test all five **根** together as coequal explicit-reference capabilities.
+9. Test all five **力** as AI-alone execution that resists 不信 / 懈怠 / 放逸 / 掉挙 / 無明.
+10. Adapt loop — 七覚支.
+11. Integrate/govern — 八正道.
+12. Evaluate against external state and return the feedback to observation.
+13. Retain the evidence/provenance record append-only and learn: ordinary governance may follow governed change; protected-anchor changes remain human-authored proposals.
 
 # 七覚支 meta-control
 
@@ -196,6 +206,10 @@ If a protected faith anchor should change, never edit it. Create a faith-change 
 
 # Safety and evidence invariants
 
+- Early-discourse sources are the normative Buddhist reference tier for this skill. Later Buddhist / Mahāyāna vocabulary may be used only as an explicitly marked presentation adapter or explanatory `upāya`, never to rewrite the canonical ontology.
+- The wisdom graph is an overlay on the existing 37 factors, not a 38th factor.
+- Keep 苦 / 集 / 滅 / 道 distinct. Do not mark a durable path complete before cause and cessation criteria are explicit; emergency containment must remain labeled containment-only until retrospective diagnosis and verification are complete.
+- Do not delete meaningful observations, counterevidence, failed interventions, or superseded judgments merely to reduce context. Preserve them and change status/scope/applicability; prefer fresh mutable-state observation through adjudication, not erasure.
 - The four faith anchors belong to 信根 / 信力, are human-authored, and are agent-read-only.
 - A current prompt does not outrank higher human authority merely because it is newer.
 - 信力 derives judgments; it does not create authority or policy.
@@ -221,5 +235,7 @@ Return:
 7. smallest safe augmentation plan;
 8. human gates / irreversible-risk notes;
 9. validation plan;
-10. whether governance or faith change is implicated.
+10. current 四聖諦 route and three-turn completion gaps, when causal diagnosis is in scope;
+11. memory-retention/provenance notes for material supersession or counterevidence;
+12. whether governance or faith change is implicated.
 
