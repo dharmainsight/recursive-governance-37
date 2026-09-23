@@ -63,10 +63,10 @@ Each power must handle an unstated or disturbed case without case-specific human
 
 The four canonical sources are the protected basis inside 信根 and 信力:
 
-- 仏 / Owner
-- 法 / Policy
-- 僧 / People and delegated authority
-- 戒 / Operating rules
+- 仏 / Buddha ↔ Owner analogy (not identity)
+- 法 / Dhamma ↔ Policy analogy (not identity)
+- 僧 / Saṅgha ↔ people/delegated-authority analogy (not identity)
+- 戒 / sīla ↔ operating-rules analogy (not identity)
 
 Their content is **Human Only Write / Agent Read Only**. The harness, repository protection, CI guards, and audit logs enforce that boundary externally; those controls do not create an extra faith factor or maturity layer.
 
