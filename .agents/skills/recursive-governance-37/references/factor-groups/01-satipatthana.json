@@ -11,7 +11,8 @@
       "engineering_role": "physical/runtime observability",
       "responsibility": [
         "Observe repository, runtime, browser, database and tool-result state before asserting facts.",
-        "Prefer direct inspection over model recollection for mutable state."
+        "Prefer direct inspection over model recollection for mutable state.",
+        "At task/context boundaries, record the external/runtime portion of the episode before and after state change."
       ],
       "observables": [
         "git status/diff",
@@ -51,7 +52,8 @@
       "engineering_role": "outcome/valence observability",
       "responsibility": [
         "Classify consequences as favorable, unfavorable, or neutral using explicit signals.",
-        "Separate observed outcome from interpretation."
+        "Separate observed outcome from interpretation.",
+        "Preserve the episode's outcome/quality signal so later recollection can distinguish what actually helped, hurt, or remained ambiguous."
       ],
       "observables": [
         "tests pass/fail",
@@ -92,7 +94,8 @@
       "engineering_role": "agent-state observability",
       "responsibility": [
         "Track externally inspectable operating state of the agent/loop.",
-        "Detect fixation, uncertainty, context pressure, drift, and repeated failure."
+        "Detect fixation, uncertainty, context pressure, drift, and repeated failure.",
+        "Record the operating/attentional state at episode boundaries so later recall does not lose the conditions under which a judgment was made."
       ],
       "observables": [
         "retry count",
@@ -135,7 +138,8 @@
       "engineering_role": "structural/diagnostic observability",
       "responsibility": [
         "Interpret observations through explicit taxonomies, policies, causal models, and evaluation frameworks.",
-        "Use the correct diagnostic frame instead of ad-hoc impressions."
+        "Use the correct diagnostic frame instead of ad-hoc impressions.",
+        "Link observations to labels, causal frames, and relation paths while preserving the raw observation separately from the interpretation."
       ],
       "observables": [
         "failure taxonomy",
