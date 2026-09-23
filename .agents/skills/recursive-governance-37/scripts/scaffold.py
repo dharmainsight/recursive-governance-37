@@ -10,7 +10,9 @@ FILES={
  'manifest.json':'manifest.json.tpl',
  'factor-overrides.json':'factor-overrides.json.tpl',
  'governance-change.md':'governance-change.md.tpl',
- 'run-record.json':'run-record.json.tpl'
+ 'run-record.json':'run-record.json.tpl',
+ 'agent-state.json':'agent-state.json.tpl',
+ 'episodes.jsonl':'episodes.jsonl.tpl'
 }
 
 FAITH_PATHS={

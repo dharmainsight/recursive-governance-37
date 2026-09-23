@@ -14,12 +14,24 @@ def main():
     out=run([SCRIPTS/'validate_registry.py'])
     assert '37/37' in out
     assert 'five coequal faculties' in out
-    assert 'five AI-alone powers with opposing tendencies' in out
+    assert 'five AI-alone powers' in out
+    assert 'Four Noble Truths wisdom overlay' in out
     sys.path.insert(0, str(SCRIPTS))
     from registry_io import load_registry
     registry=load_registry(SKILL)
     assert len(registry['factors'])==37
     assert registry['group_counts']=={'四念処':4,'四正断':4,'四神足':4,'五根':5,'五力':5,'七覚支':7,'八正道':8}
+    assert registry['schema_version']=='2.2.0'
+    overlays=registry['overlays']
+    wisdom=json.loads((SKILL/'references'/overlays['wisdom_graph']).read_text(encoding='utf-8'))
+    assert [x['id'] for x in wisdom['truths']]==['dukkha','samudaya','nirodha','magga']
+    assert wisdom['three_turns']==['recognize','task','completion']
+    assert wisdom['memory_policy']['mode']=='append_only_evidence'
+    assert wisdom['memory_policy']['deletion_as_optimization'] is False
+    khandha=json.loads((SKILL/'references'/overlays['five_aggregate_agent_state_schema']).read_text(encoding='utf-8'))
+    agg_required=set(khandha['properties']['aggregates']['required'])
+    assert agg_required=={'rupa','vedana','sanna','sankhara','vinnana'}
+    assert set(khandha['properties']['orientation']['required'])=={'user','buddha_dhamma'}
 
     byid={x['id']:x for x in registry['factors']}
     pairs={
@@ -79,6 +91,12 @@ def main():
 
         applied=run([SCRIPTS/'scaffold.py','--root',root,'--apply'])
         assert (root/'docs/agent-governance/manifest.json').exists()
+        assert (root/'docs/agent-governance/agent-state.json').exists()
+        assert (root/'docs/agent-governance/episodes.jsonl').exists()
+        manifest=json.loads((root/'docs/agent-governance/manifest.json').read_text(encoding='utf-8'))
+        assert manifest['runtime_state']['task_start_load_required'] is True
+        assert manifest['runtime_state']['context_boundary_refresh_required'] is True
+        assert manifest['runtime_state']['memory_policy']=='append_only_meaningful_evidence'
         assert 'HUMAN INITIALIZATION REQUIRED' in applied
         assert not (root/'docs/agent-governance/faith/owner.md').exists()
         assert not (root/'docs/agent-governance/faith/policy.md').exists()
@@ -103,7 +121,7 @@ def main():
         assert 'Protected 四不壊浄 anchors for 信根/信力 detected.' in rerun
         assert (root/'docs/agent-governance/constitution.md').read_text(encoding='utf-8')==before
 
-    print('PASS: recursive-governance-37 self-test with five coequal faculties and five AI-alone opposing-tendency powers')
+    print('PASS: recursive-governance-37 self-test with 37 factors, sacca wisdom routing, episodic sati, and five-aggregate task state')
     return 0
 if __name__=='__main__': raise SystemExit(main())
 

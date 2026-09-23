@@ -6,7 +6,7 @@ Install this package so the skill lives at:
 .agents/skills/recursive-governance-37/
 ~~~
 
-The skill implements the complete **4 + 4 + 4 + 5 + 5 + 7 + 8 = 37** engineering model as a five-layer recursive self-governance architecture.
+The skill implements the complete **4 + 4 + 4 + 5 + 5 + 7 + 8 = 37** engineering model as a recursive self-governance architecture, with a **Four Noble Truths wisdom-routing overlay**, **episodic sati**, and a **transient five-aggregate task-state model**. These overlays do not add a 38th factor.
 
 ## Structural order
 
@@ -21,15 +21,31 @@ The skill implements the complete **4 + 4 + 4 + 5 + 5 + 7 + 8 = 37** engineering
 
 The 4+4+4 kernel is closed only when action changes state and that changed state is observed again.
 
+## v2.2 decision and memory overlays
+
+Every consequential task now begins by reconstructing a five-aggregate task snapshot:
+
+- **色 / rūpa** — repository, runtime, tools, permissions, external state
+- **受 / vedanā** — outcome and quality signals
+- **想 / saññā** — recognition, labels, schemas, cue signatures, relations
+- **行 / saṅkhāra** — active intentions, plans, policies-in-force, action tendencies
+- **識 / viññāṇa** — the currently cognized/attended evidence field
+
+This is conditioned process state, not a permanent agent self. The snapshot keeps both a **user orientation** (authorized living task) and a **Buddha/Dhamma orientation** (early-discourse canonical provenance) explicit without collapsing operational permission into doctrine or doctrine into permission.
+
+Meaningful experience is retained as episodic evidence. At task/resume/environment/permission/state-change boundaries, current cues and relations reconnect to prior episodes. Recalled historical evidence, reconstructed recall, counterfactual imagination, and prospective simulation must remain explicitly distinct.
+
+Wisdom routes judgment through **苦 → 集 → 滅 → 道** and tracks each truth through **recognize → task → completion**. Durable solutions may not bypass cause and cessation criteria; emergency containment remains labeled containment-only until retrospective diagnosis and verification are complete.
+
 ## Five coequal faculties
 
 Each faculty uses the same evidence shape: explicit fourfold reference plus correct application.
 
 - **信根 / 四不壊浄** — understand explicit Owner / Policy / Delegated Authority / Operating Rules.
 - **精進根 / 四正断** — execute an explicit REMOVE / PREVENT / DEVELOP / MAINTAIN mode.
-- **念根 / 四念処** — observe and preserve explicit Body / Feeling / Mind / Dhamma channels.
+- **念根 / 四念処** — observe and preserve explicit Body / Feeling / Mind / Dhamma channels and ground retained episodes in them.
 - **定根 / 四禅 analogy** — follow explicit scope, harness, validation, resource, and stop constraints.
-- **慧根 / 四聖諦** — apply an explicit Problem / Cause / Resolved State / Path frame.
+- **慧根 / 四聖諦** — apply an explicit 苦 / 集 / 滅 / 道 frame with recognize / task / completion state.
 
 信 is not a preliminary layer outside 五根.
 
@@ -39,9 +55,9 @@ Each power must handle an unstated or disturbed case without case-specific human
 
 - **信力 ↔ 不信** — derive an unstated case from protected anchors without blind acceptance, invention, or self-authorization.
 - **精進力 ↔ 懈怠** — diagnose, implement, persist through bounded failure, and verify completion without prodding.
-- **念力 ↔ 放逸** — keep attending to relevant observed facts and constraints across change and interruption.
+- **念力 ↔ 放逸** — keep attending to relevant observed facts and constraints across change and interruption, and retrieve relevant episodes at context boundaries without confusing reconstruction with observation.
 - **定力 ↔ 掉挙** — preserve the actual objective and sustained convergence under urgency or distraction.
-- **慧力 ↔ 無明** — distinguish necessary from sufficient conditions and revise causal judgment under counterevidence.
+- **慧力 ↔ 無明** — route through the Four Noble Truths, distinguish necessary from sufficient conditions, use discriminating evidence, and revise causal judgment under counterevidence.
 
 ## Protected 四不壊浄
 

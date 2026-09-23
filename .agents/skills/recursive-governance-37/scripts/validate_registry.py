@@ -26,7 +26,9 @@ POWER_EVIDENCE=['unstated_or_disturbed_case','autonomous_response','opposing_ten
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--registry'); args=ap.parse_args()
     path=Path(args.registry) if args.registry else Path(__file__).resolve().parent.parent/'references/factor-registry.json'
-    data=load_registry(path.parent.parent if args.registry else None)
+    skill_root=path.parent.parent if args.registry else Path(__file__).resolve().parent.parent
+    refs=skill_root/'references'
+    data=load_registry(skill_root if args.registry else None)
     errors=[]; factors=data.get('factors',[])
     if len(factors)!=37: errors.append(f'factor count {len(factors)} != 37')
     ids=[x.get('id') for x in factors]
@@ -41,6 +43,41 @@ def main():
         for key in ('responsibility','observables','failure_modes','interventions','eval_questions','canonical_sources'):
             if not x.get(key): errors.append(f"{x.get('id')}: {key} must be non-empty")
     if counts!=EXPECTED: errors.append(f'group counts {counts} != {EXPECTED}')
+
+    # v2.2 overlays do not alter the canonical 37-factor count.
+    overlays=data.get('overlays') or {}
+    if data.get('schema_version')!='2.2.0':
+        errors.append(f"schema_version {data.get('schema_version')} != 2.2.0")
+    if overlays.get('factor_count_effect')!='none':
+        errors.append('overlays.factor_count_effect must be none')
+    wg_path=refs/str(overlays.get('wisdom_graph',''))
+    ka_path=refs/str(overlays.get('five_aggregate_agent_state_schema',''))
+    if not wg_path.is_file():
+        errors.append(f'missing wisdom graph overlay: {wg_path}')
+    else:
+        try:
+            wg=json.loads(wg_path.read_text(encoding='utf-8'))
+            if [x.get('id') for x in wg.get('truths',[])]!=['dukkha','samudaya','nirodha','magga']:
+                errors.append('wisdom graph must define dukkha/samudaya/nirodha/magga in order')
+            if wg.get('three_turns')!=['recognize','task','completion']:
+                errors.append('wisdom graph three_turns must be recognize/task/completion')
+            if (wg.get('memory_policy') or {}).get('deletion_as_optimization') is not False:
+                errors.append('wisdom graph must forbid deletion as memory optimization')
+        except Exception as e:
+            errors.append(f'invalid wisdom graph JSON: {e}')
+    if not ka_path.is_file():
+        errors.append(f'missing five-aggregate state schema: {ka_path}')
+    else:
+        try:
+            ka=json.loads(ka_path.read_text(encoding='utf-8'))
+            req=set((((ka.get('properties') or {}).get('aggregates') or {}).get('required') or []))
+            if req!={'rupa','vedana','sanna','sankhara','vinnana'}:
+                errors.append(f'five-aggregate schema required set invalid: {sorted(req)}')
+            ori=(((ka.get('properties') or {}).get('orientation') or {}).get('required') or [])
+            if set(ori)!={'user','buddha_dhamma'}:
+                errors.append('five-aggregate schema must require user and buddha_dhamma orientation')
+        except Exception as e:
+            errors.append(f'invalid five-aggregate schema JSON: {e}')
 
     valid=set(ids)
     def check_links(obj, owner):
@@ -119,7 +156,7 @@ def main():
         print('\nFAIL')
         for e in errors: print('-',e)
         return 1
-    print('\nPASS: exact 37/37 registry, five coequal faculties, five AI-alone powers with opposing tendencies, protected faith-pair boundary, and recursive links validated')
+    print('\nPASS: exact 37/37 registry, five coequal faculties, five AI-alone powers, protected faith boundary, Four Noble Truths wisdom overlay, episodic-retention policy, and five-aggregate task-state schema validated')
     return 0
 if __name__=='__main__': raise SystemExit(main())
 

@@ -58,13 +58,14 @@
       "japanese": "念根",
       "pali": "sati",
       "layer": "capability",
-      "engineering_role": "explicit observation and state-preservation capability",
+      "engineering_role": "explicit observation, episodic retention, and state-preservation capability",
       "responsibility": [
         "Inspect and preserve explicitly required Body, Feeling, Mind, and Dhamma observation channels.",
-        "Refresh specified runtime, outcome, agent-state, and structural evidence when instructed."
+        "Refresh specified runtime, outcome, agent-state, and structural evidence when instructed.",
+        "Ground meaningful episodes in the four observation channels and preserve provenance for later recollection."
       ],
       "observables": ["explicitly required observation channels", "state snapshot", "freshness marker", "correct explicit application"],
-      "failure_modes": ["forgetting an explicitly required observation", "constraint loss", "stale required state", "history amnesia"],
+      "failure_modes": ["forgetting an explicitly required observation", "constraint loss", "stale required state", "history amnesia", "episode retained without provenance", "reconstruction mistaken for observation"],
       "interventions": ["refresh the specified channels", "persist the required state", "reconcile the specified observation with live state"],
       "eval_questions": ["Can the AI maintain the observation set it was explicitly told to track?", "Can it correctly apply all four observation categories?"],
       "canonical_sources": ["SN 48.10", "MN 10", "DN 22"],
@@ -105,19 +106,21 @@
       "japanese": "慧根",
       "pali": "paññā",
       "layer": "capability",
-      "engineering_role": "explicit four-truth causal-frame capability",
+      "engineering_role": "explicit four-truth causal-frame and three-turn state capability",
       "responsibility": [
-        "Correctly understand and apply an explicit Problem, Cause, Resolved State, and Path structure.",
-        "Target the supplied cause and verify the supplied resolved state."
+        "Correctly understand and apply an explicit 苦 / 集 / 滅 / 道 structure.",
+        "Track recognize / task / completion for each truth.",
+        "Target the supplied cause and verify the supplied cessation/resolved state without solution-jumping."
       ],
-      "observables": ["explicit problem statement", "explicit cause evidence", "explicit resolved-state invariant", "explicit path", "verification criteria"],
+      "observables": ["explicit dukkha/problem statement", "explicit samudaya/cause evidence", "explicit nirodha/resolved-state invariant", "explicit magga/path", "three-turn state", "verification criteria"],
       "failure_modes": ["misreading the supplied causal frame", "confusing problem with cause", "ignoring explicit success criteria", "solutionism"],
       "interventions": ["reconstruct the explicit four-part frame", "target the supplied cause", "verify the stated resolved state", "follow or test the stated path"],
-      "eval_questions": ["Can the AI correctly use the supplied Problem/Cause/Resolved State/Path model?", "Does it keep the four parts distinct?"],
+      "eval_questions": ["Can the AI correctly use the supplied 苦/集/滅/道 model?", "Does it keep the four parts distinct?", "Does it track recognize/task/completion without treating containment as completion?"],
       "canonical_sources": ["SN 48.10", "SN 56.11"],
       "links": {"paired_power": ["power.wisdom"]},
       "supporting_model": {
-        "fourfold_basis": ["dukkha = understand the problem/loss", "samudaya = identify the cause", "nirodha = define and verify the resolved state", "magga = follow or test the reproducible path"],
+        "fourfold_basis": ["dukkha = understand the problem/loss", "samudaya = identify and abandon/interupt the cause/conditions", "nirodha = realize and verify cessation/resolved state", "magga = develop and test the reproducible path"],
+        "three_turns": ["recognize", "task", "completion"],
         "faculty_mode": "explicit_reference",
         "evidence_contract": ["explicit_reference", "correct_application"]
       }

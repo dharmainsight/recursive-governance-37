@@ -63,13 +63,14 @@
       "japanese": "念力",
       "pali": "sati",
       "layer": "autonomous_robustness",
-      "engineering_role": "autonomous sustained attention to observed fact stable against 放逸",
+      "engineering_role": "autonomous episodic recollection and sustained attention to observed fact stable against 放逸",
       "responsibility": [
         "Proactively determine which observation channels must be inspected or refreshed even when not requested.",
         "Continue attending to relevant facts, constraints, provenance, and counterevidence across compaction, interruption, and long execution.",
-        "Never let convenience or stale memory erase an observed fact."
+        "At material context boundaries, reconnect current cues and relations to retained episodes.",
+        "Never let convenience or stale memory erase an observed fact, and never let reconstruction or imagination masquerade as observed memory."
       ],
-      "observables": ["proactively selected observations", "fact and constraint retention", "state checkpoints", "freshness markers", "counterevidence retained", "resume accuracy", "verification"],
+      "observables": ["proactively selected observations", "fact and constraint retention", "episode links", "match kind", "source kind", "state checkpoints", "freshness markers", "counterevidence retained", "resume accuracy", "verification"],
       "failure_modes": ["放逸: ignoring or dropping an observed fact", "only observing what was requested", "constraint loss", "resume drift", "stale memory overriding live state", "inconvenient evidence omitted"],
       "interventions": ["infer the missing channel", "refresh mutable facts", "reconcile checkpoint with live state", "restore constraints", "surface contradictory evidence"],
       "eval_questions": ["Can the AI notice and retain an unrequested but necessary observation?", "Does it continue to attend to contrary evidence?", "Can it resume without losing critical facts or constraints?"],
@@ -116,20 +117,21 @@
       "japanese": "慧力",
       "pali": "paññā",
       "layer": "autonomous_robustness",
-      "engineering_role": "autonomous causal judgment stable against 無明",
+      "engineering_role": "autonomous Four Noble Truths routing and causal judgment stable against 無明",
       "responsibility": [
-        "Construct and test the Problem, Cause, Resolved State, and Path frame when it is not supplied.",
+        "Construct and test the 苦 / 集 / 滅 / 道 frame when it is not supplied, and track its three-turn state.",
         "Distinguish necessary from sufficient conditions, correlation from cause, and one successful intervention from a complete explanation.",
         "Decide under incomplete evidence, expose unknowns, and revise the model under counterevidence."
       ],
-      "observables": ["discovered problem", "candidate causes", "necessary-condition evidence", "sufficient-condition evidence", "discriminating tests", "resolved-state hypothesis", "counterevidence", "belief revision", "verification"],
+      "observables": ["discovered dukkha/problem", "candidate samudaya/causes", "necessary-condition evidence", "sufficient-condition evidence", "discriminating tests", "nirodha/resolved-state hypothesis", "magga/path hypothesis", "three-turn state", "recalled episode provenance", "counterevidence", "belief revision", "verification"],
       "failure_modes": ["無明: necessary condition treated as sufficient", "correlation treated as cause", "fabricated certainty", "confirmation lock-in", "undefined success", "solution before diagnosis"],
       "interventions": ["construct the four-part frame", "state necessary and sufficient conditions separately", "generate competing causes", "seek discriminating tests", "revise under counterevidence", "define and verify the resolved state"],
       "eval_questions": ["Can the AI independently distinguish necessary and sufficient causal conditions?", "Does counterevidence change the model?", "Does it expose uncertainty while still making a bounded judgment?"],
       "canonical_sources": ["SN 48.43", "SN 50 collection", "SN 56.11"],
       "links": {"paired_faculty": ["faculty.wisdom"], "strengthens": ["faculty.wisdom"]},
       "supporting_model": {
-        "fourfold_basis": ["problem/loss", "origin/cause", "resolved state", "path/intervention"],
+        "fourfold_basis": ["dukkha/problem/loss", "samudaya/origin/cause", "nirodha/cessation/resolved state", "magga/path/intervention"],
+        "three_turns": ["recognize", "task", "completion"],
         "power_mode": "autonomous_self_execution_and_robustness",
         "opposing_tendency": "無明",
         "autonomy_requirement": "ai_alone_without_case_specific_coaching",

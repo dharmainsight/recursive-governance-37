@@ -1,8 +1,8 @@
 {
-  "schema_version": "2.1.0",
+  "schema_version": "2.2.0",
   "model_name": "Recursive Self-Governance 37",
-  "purpose": "Engineering analogy that operationalizes all 37 bodhipakkhiya-dhamma factors as responsibilities, evidence, failure modes, interventions, and evals for repository-based agent loops.",
-  "doctrinal_boundary": "This is an engineering analogy, not a claim that Buddhist doctrine is reducible to software architecture. Canonical-source identifiers constrain the Buddhist side; engineering mappings are explicitly interpretive.",
+  "purpose": "Engineering analogy that operationalizes all 37 bodhipakkhiya-dhamma factors for repository-based agent loops, with a Four Noble Truths wisdom-routing overlay, episodic sati, and transient five-aggregate task state.",
+  "doctrinal_boundary": "Early-discourse identifiers are the normative Buddhist source tier for this skill. Canonical ontology and engineering mappings retain provenance; later Buddhist/Mahayana vocabulary may appear only as an explicitly marked presentation adapter and never silently rewrite the early-discourse source layer.",
   "group_counts": {
     "四念処": 4,
     "四正断": 4,
@@ -28,7 +28,13 @@
     "All five faculties are coequal explicit-reference capabilities; 信 is not a preliminary layer outside 五根.",
     "五力 require AI-alone execution under an unstated or disturbed case and resist 不信, 懈怠, 放逸, 掉挙, and 無明 respectively.",
     "Canonical 四不壊浄 content belongs inside 信根 and 信力 while remaining Human Only Write / Agent Read Only through external technical enforcement.",
-    "七覚支 is the adaptive meta-controller: mindfulness remains active; investigation/energy/joy activate sluggish loops; tranquility/concentration/equanimity calm restless loops."
+    "七覚支 is the adaptive meta-controller: mindfulness remains active; investigation/energy/joy activate sluggish loops; tranquility/concentration/equanimity calm restless loops.",
+    "The Four Noble Truths wisdom graph is a navigation/judgment overlay on the existing 37 factors; it does not add a 38th factor.",
+    "Durable intervention may not be marked complete while samudaya/cause and nirodha/cessation criteria remain undefined; emergency containment must remain explicitly containment-only until retrospective completion.",
+    "Meaningful observations, counterevidence, failed interventions, and superseded judgments are retained with provenance; judgment speed comes from indexing/routing rather than deletion.",
+    "At consequential task start and material context boundaries, the agent reconstructs a transient five-aggregate task state; this state is not a permanent self or authority source.",
+    "Sati is modeled as episodic retention/recollection, sanna as recognition/structuring, and panna as adjudication; observed memory, reconstructed recall, counterfactual, and prospective simulation remain explicitly distinct.",
+    "User orientation and Buddha/Dhamma canonical orientation remain explicit and non-collapsible: the user supplies the authorized living task while early-discourse sources constrain the Buddhist-model side."
   ],
   "factor_files": [
     "factor-groups/01-satipatthana.json",
@@ -38,6 +44,10 @@
     "factor-groups/05-powers.json",
     "factor-groups/06-awakening-factors.json",
     "factor-groups/07-eightfold-path.json"
-  ]
+  ],
+  "overlays": {
+    "wisdom_graph": "wisdom-graph.json",
+    "five_aggregate_agent_state_schema": "five-aggregates-agent-state.schema.json",
+    "factor_count_effect": "none"
+  }
 }
-

@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Recursive Governance 37 Five-Aggregate Agent State",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task",
+    "orientation",
+    "aggregates",
+    "sacca_route",
+    "episode_links"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "id",
+        "goal",
+        "acceptance"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "acceptance": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "started_at": {
+          "type": "string"
+        },
+        "resume_of": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "orientation": {
+      "type": "object",
+      "required": [
+        "user",
+        "buddha_dhamma"
+      ],
+      "properties": {
+        "user": {
+          "type": "object",
+          "required": [
+            "goal",
+            "authority_status"
+          ],
+          "properties": {
+            "goal": {
+              "type": "string"
+            },
+            "authority_status": {
+              "type": "string"
+            },
+            "constraints": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "buddha_dhamma": {
+          "type": "object",
+          "required": [
+            "canonical_tier"
+          ],
+          "properties": {
+            "canonical_tier": {
+              "const": "early_discourse"
+            },
+            "source_refs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "aggregates": {
+      "type": "object",
+      "required": [
+        "rupa",
+        "vedana",
+        "sanna",
+        "sankhara",
+        "vinnana"
+      ],
+      "properties": {
+        "rupa": {
+          "type": "object",
+          "description": "repository/runtime/tools/permissions/external state"
+        },
+        "vedana": {
+          "type": "object",
+          "description": "outcome and quality signals"
+        },
+        "sanna": {
+          "type": "object",
+          "description": "labels, patterns, schemas, relations, cue signatures"
+        },
+        "sankhara": {
+          "type": "object",
+          "description": "intentions, plans, action tendencies and policies in force"
+        },
+        "vinnana": {
+          "type": "object",
+          "description": "currently cognized/attended objects and evidence"
+        }
+      }
+    },
+    "sacca_route": {
+      "type": "object",
+      "required": [
+        "dukkha",
+        "samudaya",
+        "nirodha",
+        "magga"
+      ],
+      "properties": {
+        "dukkha": {
+          "type": "object"
+        },
+        "samudaya": {
+          "type": "object"
+        },
+        "nirodha": {
+          "type": "object"
+        },
+        "magga": {
+          "type": "object"
+        }
+      }
+    },
+    "episode_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "episode_id",
+          "match_kind",
+          "source_kind"
+        ],
+        "properties": {
+          "episode_id": {
+            "type": "string"
+          },
+          "match_kind": {
+            "enum": [
+              "exact",
+              "analogous",
+              "associative"
+            ]
+          },
+          "source_kind": {
+            "enum": [
+              "observed_episode",
+              "recalled_reconstruction",
+              "counterfactual",
+              "prospective_simulation"
+            ]
+          },
+          "relation_path": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

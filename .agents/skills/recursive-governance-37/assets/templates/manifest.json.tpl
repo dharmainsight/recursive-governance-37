@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "faith_anchors": {
     "owner": "docs/agent-governance/faith/owner.md",
     "policy": "docs/agent-governance/faith/policy.md",
@@ -38,7 +38,15 @@
     "The four faith anchors are the protected basis inside 信根 and 信力, are human-authored, and are agent-read-only. They are not a preliminary layer before 五根.",
     "Hard write protection is external enforcement serving the faith pair; it is not an extra faith factor.",
     "Prefer references to existing canonical human-authored anchors over duplication.",
-    "Replace ordinary governance defaults only after repository-specific evidence or explicit human decision."
-  ]
+    "Replace ordinary governance defaults only after repository-specific evidence or explicit human decision.",
+    "Five-aggregate agent-state is conditioned task/process state, not a permanent self or authority source.",
+    "Meaningful episodes are retained append-only; current activation is controlled by cue/relation retrieval and wisdom adjudication, not deletion."
+  ],
+  "runtime_state": {
+    "agent_state": "docs/agent-governance/agent-state.json",
+    "episodic_memory": "docs/agent-governance/episodes.jsonl",
+    "memory_policy": "append_only_meaningful_evidence",
+    "task_start_load_required": true,
+    "context_boundary_refresh_required": true
+  }
 }
-

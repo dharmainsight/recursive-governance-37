@@ -14,6 +14,15 @@ POWER_OPPOSITES = {
     "wisdom": "無明",
 }
 FACULTY_FIELDS = ("explicit_reference", "correct_application")
+AGGREGATES = ("rupa", "vedana", "sanna", "sankhara", "vinnana")
+SACCA_TASKS = {
+    "dukkha": "understand",
+    "samudaya": "abandon_or_interrupt",
+    "nirodha": "realize_and_verify",
+    "magga": "develop",
+}
+EPISODE_SOURCE_KINDS = {"observed_episode", "recalled_reconstruction", "counterfactual", "prospective_simulation"}
+EPISODE_MATCH_KINDS = {"exact", "analogous", "associative"}
 POWER_FIELDS = (
     "unstated_or_disturbed_case",
     "autonomous_response",
@@ -36,11 +45,71 @@ def main():
     def add(name, ok, detail):
         checks.append({"check": name, "pass": bool(ok), "detail": detail})
 
-    add("schema_version", data.get("schema_version") == "2.0.0", "run record must use schema 2.0.0")
+    add("schema_version", data.get("schema_version") == "2.2.0", "run record must use schema 2.2.0")
 
     task = data.get("task", {})
     add("goal", nonempty(task.get("goal")), "explicit goal required")
     add("acceptance_criteria", bool(task.get("acceptance_criteria")), "at least one acceptance criterion")
+
+    orientations = data.get("orientations", {})
+    user_orientation = orientations.get("user", {}) if isinstance(orientations, dict) else {}
+    dhamma_orientation = orientations.get("buddha_dhamma", {}) if isinstance(orientations, dict) else {}
+    add(
+        "orientation.user",
+        nonempty(user_orientation.get("goal")) and nonempty(user_orientation.get("authority_status")),
+        "user orientation requires the living goal and authority status",
+    )
+    add(
+        "orientation.buddha_dhamma",
+        dhamma_orientation.get("canonical_tier") == "early_discourse"
+        and bool(dhamma_orientation.get("source_refs")),
+        "Buddha/Dhamma orientation requires early-discourse tier and source references",
+    )
+
+    five_state = data.get("five_aggregate_state", {})
+    for moment in ("start", "end"):
+        snapshot = five_state.get(moment, {}) if isinstance(five_state, dict) else {}
+        add(
+            f"five_aggregates.{moment}",
+            isinstance(snapshot, dict)
+            and set(snapshot) == set(AGGREGATES)
+            and all(nonempty(snapshot.get(k)) for k in AGGREGATES),
+            f"{moment} snapshot must contain nonempty rupa/vedana/sanna/sankhara/vinnana",
+        )
+
+    sacca = data.get("sacca_route", {})
+    add("sacca_shape", set(sacca) == set(SACCA_TASKS), "sacca route must contain dukkha/samudaya/nirodha/magga")
+    for truth, task_name in SACCA_TASKS.items():
+        state = sacca.get(truth, {}) if isinstance(sacca, dict) else {}
+        ok = (
+            isinstance(state, dict)
+            and state.get("task") == task_name
+            and nonempty(state.get("recognize"))
+            and nonempty(state.get("completion"))
+        )
+        if truth == "magga":
+            ok = ok and state.get("containment_only") is False
+        add(
+            f"sacca.{truth}",
+            ok,
+            "requires recognize/task/completion evidence; final magga may not remain containment-only",
+        )
+
+    episodes = data.get("episode_links", [])
+    episode_ok = bool(episodes)
+    for ep in episodes if isinstance(episodes, list) else []:
+        episode_ok = episode_ok and ep.get("source_kind") in EPISODE_SOURCE_KINDS and ep.get("match_kind") in EPISODE_MATCH_KINDS
+    add(
+        "episodic_memory",
+        episode_ok,
+        "at least one linked episode with explicit source_kind and match_kind is required",
+    )
+    memory_policy = data.get("memory_policy", {})
+    add(
+        "memory_no_deletion_optimization",
+        isinstance(memory_policy, dict) and memory_policy.get("deletion_as_optimization") is False,
+        "meaningful evidence may be superseded or re-scoped but deletion is not a context-optimization mechanism",
+    )
 
     observations = data.get("observations", {})
     for key in REQUIRED_OBS:
@@ -167,8 +236,8 @@ def main():
         "score": passed / len(checks),
         "checks": checks,
         "note": (
-            "Structural evidence-contract evaluation only. Semantic correctness, historical ordering, "
-            "and safety still require repository-specific review."
+            "Structural evidence-contract evaluation only. Semantic correctness, episode truthfulness, "
+            "historical ordering, doctrinal interpretation, and safety still require repository-specific review."
         ),
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))

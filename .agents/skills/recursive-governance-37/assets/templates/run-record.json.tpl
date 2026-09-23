@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.2.0",
   "task": {
     "goal": "",
     "acceptance_criteria": [],
@@ -120,7 +120,60 @@
   "validation": [],
   "unknowns": [],
   "escalations": [],
-  "governance_change_proposed": false
+  "governance_change_proposed": false,
+  "orientations": {
+    "user": {
+      "goal": "",
+      "authority_status": "unknown",
+      "constraints": []
+    },
+    "buddha_dhamma": {
+      "canonical_tier": "early_discourse",
+      "source_refs": []
+    }
+  },
+  "five_aggregate_state": {
+    "start": {
+      "rupa": {},
+      "vedana": {},
+      "sanna": {},
+      "sankhara": {},
+      "vinnana": {}
+    },
+    "end": {
+      "rupa": {},
+      "vedana": {},
+      "sanna": {},
+      "sankhara": {},
+      "vinnana": {}
+    }
+  },
+  "episode_links": [],
+  "sacca_route": {
+    "dukkha": {
+      "recognize": [],
+      "task": "understand",
+      "completion": []
+    },
+    "samudaya": {
+      "recognize": [],
+      "task": "abandon_or_interrupt",
+      "completion": []
+    },
+    "nirodha": {
+      "recognize": [],
+      "task": "realize_and_verify",
+      "completion": []
+    },
+    "magga": {
+      "recognize": [],
+      "task": "develop",
+      "completion": [],
+      "containment_only": false
+    }
+  },
+  "memory_policy": {
+    "deletion_as_optimization": false,
+    "supersession_recorded": []
+  }
 }
-
-

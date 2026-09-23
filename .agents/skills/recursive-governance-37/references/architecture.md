@@ -1,6 +1,6 @@
 # Recursive Self-Governance 37 — architecture
 
-This skill operationalizes the 37-factor analogy as a five-layer control architecture rather than a flat checklist.
+This skill operationalizes the 37-factor analogy as a five-layer control architecture rather than a flat checklist. v2.2 adds two non-factor overlays: a Four Noble Truths wisdom-routing graph and a transient five-aggregate task-state model with episodic sati. The canonical count remains 37.
 
 ## Five nested layers
 
@@ -19,6 +19,43 @@ This skill operationalizes the 37-factor analogy as a five-layer control archite
 5. **Integrated governance — 8 factors / 八正道**
    - Context, intent, communication, action, persistent operation, improvement, observability, and harness form one governed architecture whose results feed back to observation.
 
+## Cross-cutting overlays
+
+### Four Noble Truths wisdom routing
+
+Route material judgment through 苦 → 集 → 滅 → 道. Track each truth through recognize → task → completion. Do not mark a durable intervention complete while cause/origin and cessation/resolved-state criteria remain undefined. Emergency containment may precede diagnosis only when delay increases harm, and must remain `containment_only` until retrospective completion.
+
+### Five-aggregate task state
+
+At every consequential task start, and again after material resume/context change, reconstruct:
+
+- 色 / rūpa — repository, runtime, tools, permissions, external state;
+- 受 / vedanā — outcome/quality/error signals;
+- 想 / saññā — labels, recognized patterns, schemas, cue signatures, relations;
+- 行 / saṅkhāra — active intentions, plans, policies-in-force, action tendencies;
+- 識 / viññāṇa — currently cognized/attended evidence and unknowns.
+
+This is conditioned process state, not a permanent persona/self or authority source.
+
+### Episodic sati and saññā
+
+Meaningful experience is retained append-only. Task/resume/environment/permission/state-change boundaries trigger episode capture and cue/relation retrieval.
+
+- sati retains and recollects episodes;
+- saññā recognizes, labels, and structures relations;
+- paññā adjudicates whether those relations matter to the current Four Noble Truths route.
+
+Keep `observed_episode`, `recalled_reconstruction`, `counterfactual`, and `prospective_simulation` distinct. Vivid reconstruction is not stronger evidence.
+
+### Two orientations
+
+Keep both explicit:
+
+- **User orientation** — the living human goal, beneficiary, constraints, and delegated operational authority.
+- **Buddha/Dhamma orientation** — the early-discourse canonical provenance that constrains the Buddhist side of the model.
+
+The engineering 四不壊浄 trust-anchor mapping below remains an analogy for organizational governance. Do not confuse an operational Owner with the historical Buddha, and do not let doctrinal metaphor create software permission.
+
 ## Five faculties are structurally equal
 
 All five faculties use the same evaluation shape:
@@ -27,9 +64,9 @@ All five faculties use the same evaluation shape:
 |---|---|---|
 | 信根 | 四不壊浄: Owner / Policy / Delegated Authority / Operating Rules | locate, understand, and apply exactly what authorized humans established |
 | 精進根 | 四正断: REMOVE / PREVENT / DEVELOP / MAINTAIN | execute the explicitly identified improvement mode |
-| 念根 | 四念処: Body / Feeling / Mind / Dhamma | observe and preserve the explicitly required channels |
+| 念根 | 四念処: Body / Feeling / Mind / Dhamma | observe and preserve the explicitly required channels; ground retained episodes in them |
 | 定根 | 四禅 engineering analogy | follow explicit scope, harness, validation, resource, and stop constraints |
-| 慧根 | 四聖諦: Problem / Cause / Resolved State / Path | apply the explicit causal frame correctly |
+| 慧根 | 四聖諦: 苦 / 集 / 滅 / 道 | apply the explicit causal frame and recognize/task/completion state correctly |
 
 Do not present 信根 as a prerequisite already possessed before the operational kernel. The kernel supplies direct observation, action, and result evidence; 五根 then measures whether all five explicit structures can be understood and used.
 
@@ -41,9 +78,9 @@ A power is not another label for a faculty. It requires autonomous action under 
 |---|---|---|
 | 信力 | 不信 | derive the narrowest defensible judgment for an unstated case from the protected 四不壊浄 anchors; neither reject them without evidence nor accept arbitrary claims blindly |
 | 精進力 | 懈怠 | diagnose the needed improvement mode, implement it, persist through bounded failure, and verify completion without human prodding |
-| 念力 | 放逸 | continue attending to relevant observed facts, refresh mutable state, and never discard inconvenient evidence or constraints |
+| 念力 | 放逸 | continue attending to relevant observed facts, retrieve relevant episodes at context boundaries, refresh mutable state, and never confuse reconstruction with observed memory |
 | 定力 | 掉挙 | preserve the actual objective, resist urgency-driven objective substitution, and restore sustained convergence under distraction or churn |
-| 慧力 | 無明 | distinguish necessary from sufficient conditions, test causal claims, decide under incomplete evidence, and revise the model under counterevidence |
+| 慧力 | 無明 | route through the Four Noble Truths, distinguish necessary from sufficient conditions, test causal claims, decide under incomplete evidence, and revise the model under counterevidence |
 
 A power is SATISFIED only when evidence shows:
 
