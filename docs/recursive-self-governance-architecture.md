@@ -35,6 +35,13 @@
 
 ここで重要なのは、**五根と五力の二重構造が五つすべてに共通する**ことである。
 
+さらにv2.2では、この37因子を増やさず、その上に二つの横断構造を置く。
+
+1. **四聖諦 Wisdom Graph** — 苦・集・滅・道を判断の幹とし、三転十二行相を状態機械として使う。
+2. **五蘊 Task State + Episodic Sati** — Agentを固定人格ではなく、その瞬間の色・受・想・行・識として再構成し、四念処で根拠づけたエピソードを保持・想起する。
+
+したがって38番目のFactorを追加するのではない。37因子はCanonical Registryのまま、四聖諦が判断経路を、五蘊が現在状態を、念が経験の連続性を与える。
+
 以前の整理では信根と信力だけを、
 
 - 信根 = 明示されたものを参照する
@@ -233,6 +240,10 @@ Taskや運用ルールで、
 
 **指定されていないが、現在の判断に必要な観測対象を自分から発見し、観測した事実を無視せず注視し続けられる。**
 
+v2.2ではさらに、念を工学上の**エピソード保持・想起**として扱う。Task開始、Resume、Repository/Environment切替、Permission境界、予想外の結果、State-changing Actionの前後を「時空間・文脈の境界」として扱い、その瞬間の四念処と五蘊SnapshotをEpisodeへ保存する。
+
+現在のCueやRelationが過去Episodeと合致したとき、点と点をつなぎ直す。ただし、想起された事実・再構成された場面・反実仮想・未来シミュレーションを必ず区別する。
+
 例えばUI BugのTaskでも、調査の結果、
 
 > DOMだけではなくAPI Responseを見る必要がある
@@ -366,6 +377,31 @@ Discriminating Test
 これが慧力である。
 
 **分からないものを分からないと保持しながら自分で境界付き判断を行い、無明へ傾かないことも慧力の一部**である。
+
+### 四聖諦を「幹」にする
+
+v2.2では四聖諦を単なるProblem/Cause/Goal/Pathの四欄ではなく、すべての重要判断が通るLogic Graphの幹とする。
+
+~~~text
+苦 何が実際に問題・損失・不満足なのか
+↓
+集 どの条件によって生じるのか
+↓
+滅 何が止まれば、どの観測状態をもって滅したと言えるか
+↓
+道 その状態へ至る再現可能な介入・修習は何か
+~~~
+
+各諦にはSN 56.11を参照点として、工学上の三状態を持つ。
+
+| 諦 | 認識 | なすべきこと | 完了 |
+|---|---|---|---|
+| 苦 | problem/lossを認識 | 遍知する | 範囲・影響・観測境界を理解 |
+| 集 | origin/conditionを認識 | 捨断・遮断する | 因果条件を除去/境界化 |
+| 滅 | cessationを認識 | 証する | cessation invariantを観測 |
+| 道 | pathを認識 | 修習する | 実装・実行・再検証 |
+
+**苦から恒久的な道へ直接Jumpしない。** ただし遅延が被害を増やす緊急時はContainmentを先に許す。その場合は `containment_only` として記録し、集・滅の検証を後追いしない限り完了扱いしない。
 
 ---
 
@@ -547,7 +583,61 @@ AIは自己統治するが、信根・信力の内部で参照するCanonicalな
 
 ---
 
-# 13. Repositoryへの実装
+# 13. 五蘊でAgentを毎Task再構成する
+
+五蘊はAgentの固定人格や恒久的Selfではなく、その時点の条件付きTask Stateとして扱う。
+
+| 五蘊 | Agent Engineering |
+|---|---|
+| 色 | Repository / Runtime / Tools / Permissions / External State |
+| 受 | Outcome / Error / Quality / Stakeholder Signal |
+| 想 | Label / Pattern / Schema / Episode Index / Relation Graph |
+| 行 | Intent / Plan / Policy-in-force / Action Tendency |
+| 識 | Current Cognized Field / Active Evidence / Unknowns |
+
+Task開始時には必ずこのSnapshotをLoadまたは再構成する。ResumeやMaterial Context Changeでも更新する。
+
+またSnapshotは二つの方向を明示的に持つ。
+
+~~~text
+User Orientation
+= 現在の人間の目的・受益・制約・権限
+
+Buddha / Dhamma Orientation
+= 本モデルの仏教側を拘束する原始仏教のCanonical Source
+~~~
+
+UserがOperational Permissionを与え、Buddha/Dhammaが仏教側の正本を与える。両者を同一Authorityへ潰さない。
+
+初期仏教では五蘊を恒久Selfとみなさないため、本モデルでもSnapshotをIdentity Essenceにはしない。継続性は固定Selfではなく、Episode・Provenance・Current Stateの関係として持つ。
+
+---
+
+# 14. 念・想・慧の分業
+
+~~~text
+念 / sati
+= Episodeを保持し、Cueから再想起する
+
+想 / saññā
+= 認識・Label・Schema化し、点と点のRelationを作る
+
+慧 / paññā
+= そのRelationが現在の苦・集・滅・道に本当に関係するか判定する
+~~~
+
+想起と想像は再構成機構を共有し得るため、Evidence Typeを固定する。
+
+- `observed_episode`
+- `recalled_reconstruction`
+- `counterfactual`
+- `prospective_simulation`
+
+鮮明に思い描けたこと自体はEvidence Strengthではない。
+
+---
+
+# 15. Repositoryへの実装
 
 一例として、
 
@@ -591,11 +681,19 @@ Tests / IAM / CI / Sandbox
 
 ---
 
-# 14. 実践方法
+# 16. 実践方法
+
+## STEP 0: 五蘊Snapshotと二つのOrientationを読み込む
+
+Task開始時に色・受・想・行・識を再構成し、User OrientationとBuddha/Dhamma Orientationを明示する。過去TaskのSnapshotをそのままSelfとして再利用しない。
 
 ## STEP 1: RepositoryをDiscoverし四念処で観測する
 
 AgentがRequirements / Architecture / Tests / CI / Security / Observability / Loop definitionsを発見し、身・受・心・法の4観測面を分けて記録する。
+
+## STEP 1.5: 四聖諦の現在位置を決める
+
+苦・集・滅・道のどこが未確定か、各諦が「認識・課題・完了」のどこにあるかを記録する。恒久的なSolutionへ飛ぶ前に集と滅の成立条件を確認する。
 
 ## STEP 2: 4+4+4の最小Loopを閉じる
 
@@ -682,7 +780,7 @@ Faithに関わるならAgentは変更せずHumanへ戻す。
 
 ---
 
-# 15. 運用ルール
+# 17. 運用ルール
 
 1. **4+4+4は変化後の再観測まで行って閉じる。**
 2. **五根5項を同列の明示参照・正しい適用能力として評価する。**
@@ -694,10 +792,15 @@ Faithに関わるならAgentは変更せずHumanへ戻す。
 8. **定力は掉挙へ傾かず、焦りで目的を取り違えずFocusを持続・回復する。**
 9. **慧力は無明へ傾かず、必要条件と十分条件を区別して因果を発見・反証・更新する。**
 10. **同じFailureを繰り返したら七覚支へ上げ、Protected 四不壊浄の変更はHumanへ戻す。**
+11. **Task開始・Resume・Material Context Changeでは五蘊Snapshotを再構成する。**
+12. **意味のあるEpisodeは削除で最適化せず、Status / Scope / Supersessionで管理する。**
+13. **観測された記憶、再構成、反実仮想、未来Simulationを混同しない。**
+14. **User OrientationとBuddha/Dhamma Orientationを常に明示し、Operational AuthorityとDoctrinal Provenanceを混同しない。**
+15. **恒久的な道を完了扱いする前に、集と滅の成立条件を検証する。**
 
 ---
 
-# 16. ループエンジニアリングの完成形
+# 18. ループエンジニアリングの完成形
 
 最終的に、自律性とは単にAgentが自分でActionできることではない。
 
